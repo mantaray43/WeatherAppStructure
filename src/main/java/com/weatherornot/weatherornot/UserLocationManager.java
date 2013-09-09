@@ -26,7 +26,7 @@ public class UserLocationManager implements LocationListener{
 
     public UserLocationManager (GetWeatherDataTask x){
         super();
-        Log.e("look","rufus called location service");
+        Log.e("look","rufus called location service getting update");
         getWeatherDataTask = x;   // use getWeatherDataTask when onLocationChanged is called
         lm = (LocationManager) getWeatherDataTask.pantsWeatherDisplay.getSystemService(Context.LOCATION_SERVICE);
 
@@ -47,7 +47,7 @@ public class UserLocationManager implements LocationListener{
     public void onLocationChanged(Location location) {
 
         lm.removeUpdates(this);
-        lm = null;
+        //lm = null;
         getWeatherDataTask.receiveUserLocation(location);
         Log.e("Look", "Step 4 updates removed");
 

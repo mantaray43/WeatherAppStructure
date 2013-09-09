@@ -42,13 +42,13 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
         Log.e("look","step 2 works");
         pantsWeatherDisplay = b;  //This is a DisplayWeatherActivity (refers to our display view) we
         //are referencing it as pantsWeatherDisplay a
-        myLocationManager = new UserLocationManager(this);
+        //myLocationManager = new UserLocationManager(this);
         goGetLocation();
 
     }
 
     public void goGetLocation(){
-        Log.e("look","shirley");
+        Log.e("look","shirley step 3");
         myLocationManager = new UserLocationManager(this);
 
     }
