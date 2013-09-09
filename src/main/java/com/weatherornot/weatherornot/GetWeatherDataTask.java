@@ -26,6 +26,7 @@ import org.json.JSONTokener;
 import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 
 import static java.lang.reflect.Array.getDouble;
 
@@ -82,8 +83,23 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                 JSONObject currentlyJSON = rootJSON.getJSONObject("currently");
                 JSONObject hourlyJSON = rootJSON.getJSONObject("hourly");
                 JSONArray hourlyDataJSON = hourlyJSON.getJSONArray("data");
+                HashMap<Long,JSONObject> hourlyHashMap = new HashMap<Long,JSONObject>();
 
+                for(int i = 0; i<hourlyDataJSON.length();i++){
+                    Long value = hourlyDataJSON.getJSONObject(i).getLong("time");
+                    JSONObject name = hourlyDataJSON.getJSONObject(i);
+                    hourlyHashMap.put(value,name);
+                    Double temperature = name.getDouble("temperature");
+
+
+//                    hourlyHashMap.put(String, value);
+                    Log.e("getweatherdatatask", value.toString() + " , " + temperature.toString());
+                }
                 myData.setmCurrentTemp(currentlyJSON.getDouble("temperature"));
+
+               // hourlyDataJSON.length()
+
+
 
                 Log.e("Look","Shirley Farted parsing data");
 
