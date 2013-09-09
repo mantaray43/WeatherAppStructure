@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="app_name">WeatherPants</string>
+    <string name="currenttemp"></string>
+    <string name="snarky">Damn it\'s hot!</string>
+    <string name="tempLabel">Current Temperature</string>
+    <string name="hourlyRow"></string>
+    <string name="action_settings"></string>
+    <string name="hello_world">HelloWorld</string>
+
+</resources>
