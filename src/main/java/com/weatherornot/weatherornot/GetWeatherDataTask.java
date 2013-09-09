@@ -20,6 +20,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import java.io.ByteArrayOutputStream;
@@ -52,9 +53,10 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
         myLocationManager = new UserLocationManager(this);
 
     }
-    public void receivePantsData(Location location){
+    public void receiveUserLocation(Location location){
         ForecastAPIRequestObject forecastAPIRequestObject = new ForecastAPIRequestObject(location);
         this.execute(forecastAPIRequestObject);
+        Log.e("look", "step 6 - step 5 has successfully worked");
     }
     //public void ForecastAPIRequestObject(Location location)
 
@@ -78,10 +80,12 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
                 JSONObject rootJSON = new JSONObject(responseString);
                 JSONObject currentlyJSON = rootJSON.getJSONObject("currently");
+                JSONObject hourlyJSON = rootJSON.getJSONObject("hourly");
+                JSONArray hourlyDataJSON = hourlyJSON.getJSONArray("data");
 
                 myData.setmCurrentTemp(currentlyJSON.getDouble("temperature"));
 
-                Log.e("Look","Shirley Farted");
+                Log.e("Look","Shirley Farted parsing data");
 
 
 
@@ -120,6 +124,6 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
     }
 
 
-    public void receiveUserLocation(Location location) {
-    }
+    //public void receiveUserLocation(Location location) {
+//    }
 }
