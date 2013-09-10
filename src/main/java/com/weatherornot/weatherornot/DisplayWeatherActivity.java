@@ -1,17 +1,37 @@
 package com.weatherornot.weatherornot;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 //The main activity that we will be using to display weather data
 
 
+
 public class DisplayWeatherActivity extends Activity {
 
-
+    ListView mListView;
+    ArrayList<JSONArray> myJSONArrayList = new ArrayList<JSONArray>();
+    Context context;
+    LayoutInflater inflater;
+    ArrayList<HashMap<Long,JSONObject>> data;
+    HashMap<Long,JSONObject> resultp = new HashMap<Long,JSONObject>();
+    static String TIME = "time";
+    static String TEMPERATURE = "temperature";
 
 
     public UserLocationManager mMyLocationManager;
@@ -40,7 +60,13 @@ public class DisplayWeatherActivity extends Activity {
 
         TextView textview = (TextView) findViewById(R.id.currenttemp);
         textview.setText(myDataObject.getmCurrentTempString());
-    }
+
+
+
+
+
+        }
+
 
 
 

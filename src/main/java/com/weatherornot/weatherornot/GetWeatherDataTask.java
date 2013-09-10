@@ -35,6 +35,8 @@ import static java.lang.reflect.Array.getDouble;
 public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integer,PantsWeatherData> {
     public DisplayWeatherActivity pantsWeatherDisplay;
     UserLocationManager myLocationManager;
+    ListView mListView;
+
 
 
 
@@ -115,6 +117,8 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
         e.printStackTrace();
     }
         return myData;
+
+
     }
 
 
