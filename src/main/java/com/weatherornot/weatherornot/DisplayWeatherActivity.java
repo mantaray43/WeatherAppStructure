@@ -28,10 +28,12 @@ public class DisplayWeatherActivity extends Activity {
     ArrayList<JSONArray> myJSONArrayList = new ArrayList<JSONArray>();
     Context context;
     LayoutInflater inflater;
-    ArrayList<HashMap<Long,JSONObject>> data;
-    HashMap<Long,JSONObject> resultp = new HashMap<Long,JSONObject>();
     static String TIME = "time";
     static String TEMPERATURE = "temperature";
+    //ArrayList<HashMap<Long,JSONObject>> data;
+   // HashMap<Long,JSONObject> resultp = new HashMap<Long,JSONObject>();
+
+    //above code is in regards to the jason hashmap -
 
 
     public UserLocationManager mMyLocationManager;

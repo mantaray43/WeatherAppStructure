@@ -8,6 +8,6 @@
     <string name="tempLabel">Current Temperature</string>
     <string name="hourlyRow"></string>
     <string name="action_settings"></string>
-    <string name="hello_world">HelloWorld</string>
+
 
 </resources>
