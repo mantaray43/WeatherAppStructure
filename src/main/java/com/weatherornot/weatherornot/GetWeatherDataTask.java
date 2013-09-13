@@ -28,6 +28,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 
+import static java.lang.reflect.Array.getChar;
 import static java.lang.reflect.Array.getDouble;
 
 
@@ -35,7 +36,10 @@ import static java.lang.reflect.Array.getDouble;
 public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integer,PantsWeatherData> {
     public DisplayWeatherActivity pantsWeatherDisplay;
     UserLocationManager myLocationManager;
-    ListView mListView;
+
+
+
+
 
 
 
@@ -84,33 +88,50 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                 JSONObject rootJSON = new JSONObject(responseString);
                 JSONObject currentlyJSON = rootJSON.getJSONObject("currently");
 
+                //get the temperature
                 myData.setmCurrentTemp(currentlyJSON.getDouble("temperature"));
 
 
-//                JSONObject hourlyJSON = rootJSON.getJSONObject("hourly");
-//                JSONArray hourlyDataJSON = hourlyJSON.getJSONArray("data");
+                JSONObject hourlyJSON = rootJSON.getJSONObject("hourly");
+                JSONArray hourlyDataJSON = hourlyJSON.getJSONArray("data");
+
+                String[] myHourlyText = new String[hourlyDataJSON.length()];
+
+                for(int i = 0; i<hourlyDataJSON.length();i++){
+                    Long value = hourlyDataJSON.getJSONObject(i).getLong("time");
+                    JSONObject name = hourlyDataJSON.getJSONObject(i);
+                    Double temperature = name.getDouble("temperature");
+                    String summary = name.getString("summary");
+
+                    //create the string you want to display
+                    String a = "time" + " " + "temperature" + " " + "summary";
+                    myHourlyText[i] = a;
+
+                    Log.e("getweatherdatatask", value.toString() + " , " + temperature.toString() + summary);
+                }
+
+                myData.setmHourlyData(myHourlyText);
+
+
+
+                // This is for future versions of the application
 //                HashMap<Long,JSONObject> hourlyHashMap = new HashMap<Long,JSONObject>();
-
-
-
-
 //                for(int i = 0; i<hourlyDataJSON.length();i++){
 //                    Long value = hourlyDataJSON.getJSONObject(i).getLong("time");
 //                    JSONObject name = hourlyDataJSON.getJSONObject(i);
 //                    hourlyHashMap.put(value,name);
 //                    Double temperature = name.getDouble("temperature");
+//
+//
+//                    //hourlyHashMap.put(String, value);
+//                    Log.e("getweatherdatatask", value.toString() + " , " + temperature.toString());
+//                }
+//               hourlyDataJSON.length();
 
 
-//                    hourlyHashMap.put(String, value);
-                    //Log.e("getweatherdatatask", value.toString() + " , " + temperature.toString());
-                //}
-                //myData.setmCurrentTemp(currentlyJSON.getDouble("temperature"));
-
-               // hourlyDataJSON.length()
 
 
-
-                Log.e("Look","Shirley Farted parsing data");
+               Log.e("Look","Shirley Farted parsing data");
 
 
 
@@ -129,9 +150,6 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
     }
 
 
-
-
-
         @Override
     protected void onPreExecute() {
         super.onPreExecute();
@@ -142,6 +160,8 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
         super.onPostExecute(myData);
 
         pantsWeatherDisplay.receiveWeatherData(myData);
+
+
 
     }
 
