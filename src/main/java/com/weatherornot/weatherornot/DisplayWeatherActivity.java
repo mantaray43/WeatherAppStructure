@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -25,13 +26,11 @@ import java.util.HashMap;
 public class DisplayWeatherActivity extends Activity {
 
     ListView mListView;
-    ArrayList<JSONArray> myJSONArrayList = new ArrayList<JSONArray>();
-    Context context;
-    LayoutInflater inflater;
+
     static String TIME = "time";
     static String TEMPERATURE = "temperature";
-    //ArrayList<HashMap<Long,JSONObject>> data;
-   // HashMap<Long,JSONObject> resultp = new HashMap<Long,JSONObject>();
+
+
 
     //above code is in regards to the jason hashmap -
 
@@ -43,8 +42,12 @@ public class DisplayWeatherActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mListView = (ListView)findViewById(R.id.hourly);
+
         Log.e("duh","it runs");
         getWeather();
+
+
 
     }
 
@@ -63,11 +66,11 @@ public class DisplayWeatherActivity extends Activity {
         TextView textview = (TextView) findViewById(R.id.currenttemp);
         textview.setText(myDataObject.getmCurrentTempString());
 
+        mListView = (ListView)findViewById(R.id.hourly);
+        ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.row, myDataObject.getmHourlyData() );
 
-
-
-
-        }
+        mListView.setAdapter(adapter);
+       }
 
 
 

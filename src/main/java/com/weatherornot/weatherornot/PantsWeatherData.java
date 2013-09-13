@@ -11,6 +11,17 @@ public class PantsWeatherData {
     private Double[] mHourly;
 
 
+    private String[] mHourlyData;
+
+
+
+    public String[] getmHourlyData() {
+        return mHourlyData;
+    }
+
+    public void setmHourlyData(String[] mHourlyData) {
+        this.mHourlyData = mHourlyData;
+    }
 
     public String getmCurrentTempString(){
         return mCurrentTemp.toString();
