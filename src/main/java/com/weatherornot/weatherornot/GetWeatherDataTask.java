@@ -24,6 +24,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import java.io.ByteArrayOutputStream;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -36,7 +37,8 @@ import static java.lang.reflect.Array.getDouble;
 public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integer,PantsWeatherData> {
     public DisplayWeatherActivity pantsWeatherDisplay;
     UserLocationManager myLocationManager;
-    PantsWeatherData myData;
+    public Date formattedTime;
+
 
 
 
@@ -70,7 +72,7 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
     @Override                                           ///...means array of forecastAPIRequestObjects
     protected PantsWeatherData doInBackground(ForecastAPIRequestObject... forecastAPIRequestObjects) {
-             myData = new PantsWeatherData();
+             PantsWeatherData myData = new PantsWeatherData();
 
     try{
         HttpClient httpClient = new DefaultHttpClient ();
@@ -100,20 +102,31 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                 String[] myHourlyText = new String[hourlyDataJSON.length()];
 
                 for(int i = 0; i<hourlyDataJSON.length();i++){
-                    Long value = hourlyDataJSON.getJSONObject(i).getLong("time");
-//                    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-//                    Date formattedValue = new Date();
-//                    formattedValue = format.parse(value.toString());
+
 
                     JSONObject name = hourlyDataJSON.getJSONObject(i);
+                    Long value = hourlyDataJSON.getJSONObject(i).getLong("time");
+                    SimpleDateFormat format = new SimpleDateFormat("hh:mm aa");
+                    formattedTime = new Date();
+
+                    try {
+                        formattedTime = format.parse(value.toString());
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
+
+
                     Double temperature = name.getDouble("temperature");
                     String summary = name.getString("summary");
 
+
+
                     //create the string you want to display
-                    String a = value.toString() + " " + temperature.toString() + " " + summary.toString();
+                    String a = formattedTime.toString() + " " + temperature.toString() + " " + summary.toString();
                     myHourlyText[i] = a;
 
-                    Log.e("getweatherdatatask", value.toString() + " , " + temperature.toString() + summary.toString());
+                    Log.e("getweatherdatatask", formattedTime.toString() + " , " + temperature.toString() + summary.toString());
                 }
 
                 myData.setmHourlyData(myHourlyText);
