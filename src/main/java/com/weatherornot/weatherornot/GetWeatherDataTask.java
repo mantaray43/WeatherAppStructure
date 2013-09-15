@@ -121,6 +121,10 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
 
                     Double temperature = name.getDouble("temperature");
+
+
+
+
                     String summary = name.getString("summary");
 
 

@@ -51,7 +51,7 @@ public class DisplayWeatherActivity extends Activity {
 
         Date now = new Date();
         Date giveDate = Calendar.getInstance().getTime();
-        String nowAsString = new SimpleDateFormat("EEEE,  LLLLL  dd  yyyy").format(now);
+        String nowAsString = new SimpleDateFormat("EEEE,  LLLLL  dd,  yyyy").format(now);
 
 
         TextView dateview = (TextView) findViewById(R.id.date);
@@ -81,7 +81,12 @@ public class DisplayWeatherActivity extends Activity {
 //        dateview.setText(giveDate);
 
         TextView textview = (TextView) findViewById(R.id.currenttemp);
-        textview.setText(myDataObject.getmCurrentTempString());
+        //textview.setText(myDataObject.getmCurrentTempString());
+        String mCurrentTemp = myDataObject.getmCurrentTempString();
+        String roundedDouble = "";
+        roundedDouble = mCurrentTemp.substring(0,mCurrentTemp.indexOf('.'));
+        textview.setText(roundedDouble + "\u00B0");
+
 
 
 
