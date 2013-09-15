@@ -68,7 +68,7 @@ public class DisplayWeatherActivity extends Activity {
 
         mListView = (ListView)findViewById(R.id.hourly);
         ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.row, myDataObject.getmHourlyData() );
-
+        
         mListView.setAdapter(adapter);
        }
 

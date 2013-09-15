@@ -104,7 +104,7 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                     String summary = name.getString("summary");
 
                     //create the string you want to display
-                    String a = value.toString() + " " + temperature.toString() + " " + summary.toString();
+                    String a = value.toString() + " " + temperature.toString() + " " + "summary";
                     myHourlyText[i] = a;
 
                     Log.e("getweatherdatatask", value.toString() + " , " + temperature.toString() + summary.toString());
