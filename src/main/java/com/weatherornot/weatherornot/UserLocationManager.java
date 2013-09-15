@@ -26,7 +26,8 @@ public class UserLocationManager implements LocationListener{
 
     private GetWeatherDataTask getWeatherDataTask;
     LocationManager lm;
-    public String giveDate;
+
+
 
 
 
@@ -40,6 +41,7 @@ public class UserLocationManager implements LocationListener{
 
         try{
             lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+
 
 
 
@@ -59,7 +61,8 @@ public class UserLocationManager implements LocationListener{
         lm.removeUpdates(this);
         //lm = null;
         getWeatherDataTask.receiveUserLocation(location);
-        Log.i("lm=", location.getLatitude() + "," + location.getLongitude());
+
+
 
 
         Log.e("Look", "Step 4 updates removed");
@@ -85,14 +88,7 @@ public class UserLocationManager implements LocationListener{
     }
 
 
-//    public String giveDate(){
-//        Calendar cal = Calendar.getInstance();
-//        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM d, yyyy");
-//        giveDate =  sdf.format(cal.getTime());
-//        return giveDate;
-//
-//
-//    }
+
 
 
 }

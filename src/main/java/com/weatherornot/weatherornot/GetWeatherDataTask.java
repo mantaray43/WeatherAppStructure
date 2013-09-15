@@ -27,6 +27,7 @@ import java.io.ByteArrayOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -117,6 +118,10 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
+//                    Date now = new Date();
+//                    Date giveDate = Calendar.getInstance().getTime();
+//                    String nowAsString = new SimpleDateFormat("EEEE,  LLLLL  dd,  yyyy").format(now);
+
 
 
 
