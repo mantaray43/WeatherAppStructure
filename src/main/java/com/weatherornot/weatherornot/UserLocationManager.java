@@ -8,6 +8,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import static android.location.LocationManager.*;
 
 /**
@@ -20,13 +25,16 @@ public class UserLocationManager implements LocationListener{
 
 
     private GetWeatherDataTask getWeatherDataTask;
-       LocationManager lm;
+    LocationManager lm;
+    public String giveDate;
+
 
 
 
     public UserLocationManager (GetWeatherDataTask x){
         super();
         Log.e("look","rufus called location service getting update");
+
         getWeatherDataTask = x;   // use getWeatherDataTask when onLocationChanged is called
         lm = (LocationManager) getWeatherDataTask.pantsWeatherDisplay.getSystemService(Context.LOCATION_SERVICE);
 
@@ -38,17 +46,21 @@ public class UserLocationManager implements LocationListener{
         }catch (Exception e){
             e.printStackTrace();
         }
-
-
     }
+
+
+
 
 
     @Override
     public void onLocationChanged(Location location) {
 
+
         lm.removeUpdates(this);
         //lm = null;
         getWeatherDataTask.receiveUserLocation(location);
+        Log.i("lm=", location.getLatitude() + "," + location.getLongitude());
+
 
         Log.e("Look", "Step 4 updates removed");
 
@@ -72,6 +84,15 @@ public class UserLocationManager implements LocationListener{
 
     }
 
+
+//    public String giveDate(){
+//        Calendar cal = Calendar.getInstance();
+//        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM d, yyyy");
+//        giveDate =  sdf.format(cal.getTime());
+//        return giveDate;
+//
+//
+//    }
 
 
 }

@@ -6,7 +6,10 @@
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/date" />
+            android:gravity="center_horizontal"
+            android:id="@+id/date"
+            android:background="#fdffff"
+            android:textColor="#24090b" />
 
     <TextView
             android:layout_width="match_parent"

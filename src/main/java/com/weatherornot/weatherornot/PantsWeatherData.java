@@ -9,9 +9,26 @@ public class PantsWeatherData {
     private Double mtime;
     private Double mCurrentTemp;
     private Double[] mHourly;
-
-
     private String[] mHourlyData;
+
+    public String getGiveDate() {
+        return giveDate;
+    }
+
+    public void setGiveDate(String giveDate) {
+        this.giveDate = giveDate;
+    }
+
+    private String giveDate;
+
+
+
+
+
+
+
+
+
 
 
 

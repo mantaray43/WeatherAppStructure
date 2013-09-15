@@ -26,6 +26,7 @@ import org.json.JSONTokener;
 import java.io.ByteArrayOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+
 import java.util.Date;
 import java.util.HashMap;
 
@@ -61,10 +62,12 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
         Log.e("look","shirley step 3");
         myLocationManager = new UserLocationManager(this);
 
+
     }
     public void receiveUserLocation(Location location){
         ForecastAPIRequestObject forecastAPIRequestObject = new ForecastAPIRequestObject(location);
         this.execute(forecastAPIRequestObject);
+
         Log.e("look", "step 6 - step 5 has successfully worked");
     }
     //public void ForecastAPIRequestObject(Location location)

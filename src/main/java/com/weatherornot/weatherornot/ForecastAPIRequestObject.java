@@ -5,8 +5,9 @@ import android.location.Location;
 import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.util.Log;
 
-import org.apache.commons.logging.Log;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.StatusLine;
@@ -27,6 +28,7 @@ public class ForecastAPIRequestObject {
     public Double mlongitude;
     private String mURL ="https://api.forecast.io/forecast/";
     private String mAPI_KEY = "e23af31f7c88b9c76b05b3bbcaae176f";
+
     public Location myLocation;
 
 
@@ -48,12 +50,16 @@ public class ForecastAPIRequestObject {
             mlongitude = myLocation.getLongitude();
 
 
+
     }
 
     public String getAssembledURL() {
             String pantsURL;
             pantsURL = mURL + mAPI_KEY + "/" + mlatitude.toString() + "," + mlongitude.toString();
             return pantsURL;
+
+
+
 
 
 

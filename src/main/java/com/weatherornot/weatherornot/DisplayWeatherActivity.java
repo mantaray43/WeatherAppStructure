@@ -16,7 +16,10 @@ import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 
 //The main activity that we will be using to display weather data
@@ -29,6 +32,7 @@ public class DisplayWeatherActivity extends Activity {
 
     static String TIME = "time";
     static String TEMPERATURE = "temperature";
+    public String giveDate;
 
 
 
@@ -43,6 +47,16 @@ public class DisplayWeatherActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mListView = (ListView)findViewById(R.id.hourly);
+
+
+        Date now = new Date();
+        Date giveDate = Calendar.getInstance().getTime();
+        String nowAsString = new SimpleDateFormat("EEEE,  LLLLL  dd  yyyy").format(now);
+
+
+        TextView dateview = (TextView) findViewById(R.id.date);
+        dateview.setText(nowAsString);
+
 
         Log.e("duh","it runs");
         getWeather();
@@ -63,8 +77,13 @@ public class DisplayWeatherActivity extends Activity {
     public void receiveWeatherData (PantsWeatherData myDataObject){
         Log.e("look","step 3 receive weather data works");
 
+//        TextView dateview = (TextView) findViewById(R.id.date);
+//        dateview.setText(giveDate);
+
         TextView textview = (TextView) findViewById(R.id.currenttemp);
         textview.setText(myDataObject.getmCurrentTempString());
+
+
 
         mListView = (ListView)findViewById(R.id.hourly);
         ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.row, myDataObject.getmHourlyData() );
