@@ -36,7 +36,7 @@ import static java.lang.reflect.Array.getDouble;
 public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integer,PantsWeatherData> {
     public DisplayWeatherActivity pantsWeatherDisplay;
     UserLocationManager myLocationManager;
-
+    PantsWeatherData myData;
 
 
 
@@ -70,7 +70,7 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
     @Override                                           ///...means array of forecastAPIRequestObjects
     protected PantsWeatherData doInBackground(ForecastAPIRequestObject... forecastAPIRequestObjects) {
-        PantsWeatherData myData = new PantsWeatherData();
+             myData = new PantsWeatherData();
 
     try{
         HttpClient httpClient = new DefaultHttpClient ();
@@ -92,6 +92,8 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                 myData.setmCurrentTemp(currentlyJSON.getDouble("temperature"));
 
 
+
+
                 JSONObject hourlyJSON = rootJSON.getJSONObject("hourly");
                 JSONArray hourlyDataJSON = hourlyJSON.getJSONArray("data");
 
@@ -99,12 +101,16 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
                 for(int i = 0; i<hourlyDataJSON.length();i++){
                     Long value = hourlyDataJSON.getJSONObject(i).getLong("time");
+//                    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+//                    Date formattedValue = new Date();
+//                    formattedValue = format.parse(value.toString());
+
                     JSONObject name = hourlyDataJSON.getJSONObject(i);
                     Double temperature = name.getDouble("temperature");
                     String summary = name.getString("summary");
 
                     //create the string you want to display
-                    String a = value.toString() + " " + temperature.toString() + " " + "summary";
+                    String a = value.toString() + " " + temperature.toString() + " " + summary.toString();
                     myHourlyText[i] = a;
 
                     Log.e("getweatherdatatask", value.toString() + " , " + temperature.toString() + summary.toString());
@@ -145,6 +151,9 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
         e.printStackTrace();
     }
         return myData;
+
+
+
 
 
     }
