@@ -22,10 +22,20 @@
             android:layout_alignParentLeft="true"
             android:background="#85caff"
             android:layout_below="@+id/date" />
+</RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/location"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/snarky">
 
     <ListView
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="250dp"
+            android:layout_weight="50"
             android:id="@+id/hourly"
             android:layout_below="@+id/location"
             android:layout_alignParentRight="true"
@@ -36,7 +46,7 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tempLabel"
+            android:layout_weight="50"
             android:textSize="16sp"
             android:id="@+id/tempLabel"
             android:layout_below="@+id/location"
@@ -45,10 +55,13 @@
             android:layout_marginLeft="15sp"
             android:background="#d4fffd"/>
 
+
+
+
     <TextView
             android:layout_width="150dp"
             android:layout_height="75sp"
-
+            android:layout_weight="50"
             android:textSize="70sp"
             android:gravity="left|center_vertical"
             android:id="@+id/currenttemp"
@@ -57,6 +70,20 @@
             android:layout_below="@+id/tempLabel"
             android:layout_alignParentLeft="true"
             android:background="#ffb5ad"/>
+
+
+    <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/icon"
+            android:layout_above="@+id/snarky"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15sp"
+            android:layout_below="@+id/temp"
+            android:src="@drawable/ic_launcher"/>
+
+
+</LinearLayout>
 
     <TextView
             android:layout_width="match_parent"
@@ -79,18 +106,6 @@
             android:layout_below="@+id/snarky"
             android:background="#0b0b17"
             />
-
-    <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/icon"
-            android:layout_above="@+id/snarky"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="15sp"
-            android:layout_below="@+id/temp"
-            android:src="@drawable/ic_launcher"/>
-
-
 
 
 </RelativeLayout>
