@@ -110,13 +110,16 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
                     JSONObject name = hourlyDataJSON.getJSONObject(i);
                     Long value = hourlyDataJSON.getJSONObject(i).getLong("time");
-                    SimpleDateFormat format = new SimpleDateFormat("hh:mm aa");
-                    formattedTime = new Date();
+                    Date hourlyDate;
+                    hourlyDate = new Date(value * 1000);
+                    SimpleDateFormat myFormat = new SimpleDateFormat("hh:mm aa");
+                    String finalFormattedDate = "";
 
-                    try {
-                        formattedTime = format.parse(value.toString());
-                    } catch (ParseException e) {
-                        e.printStackTrace();
+                   try {
+                       finalFormattedDate = myFormat.format(hourlyDate);
+                       //formattedDateTime = format.parse(value.toString());
+                    } catch (Exception e) {
+                       e.printStackTrace();
                     }
 //                    Date now = new Date();
 //                    Date giveDate = Calendar.getInstance().getTime();
@@ -135,10 +138,10 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
 
                     //create the string you want to display
-                    String a = formattedTime.toString() + " " + temperature.toString() + " " + summary.toString();
+                    String a = finalFormattedDate + "   " + temperature.toString() + "   " + summary.toString();
                     myHourlyText[i] = a;
 
-                    Log.e("getweatherdatatask", formattedTime.toString() + " , " + temperature.toString() + summary.toString());
+                    Log.e("getweatherdatatask", finalFormattedDate + " , " + temperature.toString() + summary.toString());
                 }
 
                 myData.setmHourlyData(myHourlyText);
