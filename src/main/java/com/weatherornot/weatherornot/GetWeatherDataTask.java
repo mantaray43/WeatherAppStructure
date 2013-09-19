@@ -121,14 +121,17 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                     } catch (Exception e) {
                        e.printStackTrace();
                     }
-//                    Date now = new Date();
-//                    Date giveDate = Calendar.getInstance().getTime();
-//                    String nowAsString = new SimpleDateFormat("EEEE,  LLLLL  dd,  yyyy").format(now);
-
-
+//
 
 
                     Double temperature = name.getDouble("temperature");
+                    //return String.valueOf(Math.round(Double.valueOf(input))) + "\u00b0";
+
+
+//                    String roundedDouble = "";
+//                    roundedDouble = temperature.substring(0,temperature.indexOf('.'));
+//                    //textview.setText(roundedDouble + "\u00B0");
+
 
 
 
@@ -138,10 +141,10 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
 
                     //create the string you want to display
-                    String a = finalFormattedDate + "   " + temperature.toString() + "   " + summary.toString();
+                    String a = finalFormattedDate + "   " + temperature + "   " + summary.toString();
                     myHourlyText[i] = a;
 
-                    Log.e("getweatherdatatask", finalFormattedDate + " , " + temperature.toString() + summary.toString());
+                    Log.e("getweatherdatatask", finalFormattedDate + " , " + temperature + summary.toString());
                 }
 
                 myData.setmHourlyData(myHourlyText);

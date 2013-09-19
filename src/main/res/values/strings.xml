@@ -4,7 +4,7 @@
 
     <string name="app_name">WeatherPants</string>
     <string name="currenttemp"></string>
-    <string name="snarky">Damn it\'s hot!</string>
+    <string name="snarky">Put on your adventure pants! \nThe weather is awesome!</string>
     <string name="tempLabel">Current Temperature</string>
     <string name="hourlyRow"></string>
     <string name="action_settings"></string>

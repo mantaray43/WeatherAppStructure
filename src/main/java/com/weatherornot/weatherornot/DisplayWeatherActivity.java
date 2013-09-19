@@ -1,6 +1,9 @@
 package com.weatherornot.weatherornot;
 
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
@@ -9,6 +12,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,6 +20,8 @@ import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -47,6 +53,28 @@ public class DisplayWeatherActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mListView = (ListView)findViewById(R.id.hourly);
+
+
+        ////////setting background image as drawable
+        AssetManager manager = getAssets();
+        InputStream open = null;
+
+        try{
+            open = manager.open("background_lg4");
+            Bitmap bitmap = BitmapFactory.decodeStream(open);
+            ImageView view = (ImageView) findViewById(R.id.background);
+            view.setImageBitmap(bitmap);
+        }catch (IOException e){
+            e.printStackTrace();
+        }finally{
+            if(open!= null){
+                try{
+                    open.close();
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }
 
 
         Date now = new Date();
