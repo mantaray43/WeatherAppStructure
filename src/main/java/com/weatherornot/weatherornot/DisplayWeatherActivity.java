@@ -36,16 +36,12 @@ public class DisplayWeatherActivity extends Activity {
 
     ListView mListView;
 
-    static String TIME = "time";
-    static String TEMPERATURE = "temperature";
-    public String giveDate;
 
 
 
     //above code is in regards to the jason hashmap -
 
 
-    public UserLocationManager mMyLocationManager;
 
 
     @Override
@@ -88,11 +84,12 @@ public class DisplayWeatherActivity extends Activity {
         getWeather();
 
 
-
+        }
     }
 
-    }
 
+
+        
 
     ////////////////////////////////////////////////
     public void getWeather(){       //asking for the weather

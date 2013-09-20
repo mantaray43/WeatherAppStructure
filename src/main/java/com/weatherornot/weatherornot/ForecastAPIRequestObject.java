@@ -46,8 +46,7 @@ public class ForecastAPIRequestObject {
 
     public void setMyLocation(Location myLocation) {
             this.myLocation = myLocation;
-            mlatitude = myLocation.getLatitude();
-            mlongitude = myLocation.getLongitude();
+
 
 
 
@@ -57,7 +56,7 @@ public class ForecastAPIRequestObject {
             String pantsURL;
             pantsURL = mURL + mAPI_KEY + "/" + mlatitude.toString() + "," + mlongitude.toString();
             return pantsURL;
-
+      
 
 
 

@@ -24,7 +24,7 @@ import static android.location.LocationManager.*;
 public class UserLocationManager implements LocationListener{
 
 
-    private GetWeatherDataTask getWeatherDataTask;
+    public GetWeatherDataTask getWeatherDataTask;
     LocationManager lm;
 
 
