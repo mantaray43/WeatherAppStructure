@@ -109,8 +109,7 @@
             android:layout_weight="2.6"
             android:gravity="center_horizontal"
             android:textColor="#340607"
-            android:background="#f0a42e"
-            android:typeface="serif" />
+            android:background="#f0a42e" />
 
         <ImageView
             android:layout_width="match_parent"

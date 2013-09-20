@@ -71,8 +71,6 @@ public class DisplayWeatherActivity extends Activity {
                 try{
                     open.close();
                 }catch (IOException e){
-                    e.printStackTrace();
-                }
             }
         }
 
@@ -92,6 +90,9 @@ public class DisplayWeatherActivity extends Activity {
 
 
     }
+
+    }
+
 
     ////////////////////////////////////////////////
     public void getWeather(){       //asking for the weather

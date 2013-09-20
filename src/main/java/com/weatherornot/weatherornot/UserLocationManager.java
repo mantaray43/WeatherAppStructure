@@ -61,6 +61,8 @@ public class UserLocationManager implements LocationListener{
         lm.removeUpdates(this);
         //lm = null;
         getWeatherDataTask.receiveUserLocation(location);
+        Log.e(getWeatherDataTask.toString(),"look");
+
 
 
 
