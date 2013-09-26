@@ -10,6 +10,32 @@ public class PantsWeatherData {
     private Double mCurrentTemp;
     private Double[] mHourly;
     private String[] mHourlyData;
+    public String myCityName;
+
+    public String getIcon(String icon) {
+        return this.icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public String icon;
+
+
+
+//    public PantsWeatherData getCityData() {
+//        return cityData;
+//    }
+//
+//    public void setCityData(PantsWeatherData cityData) {
+//        this.cityData = cityData;
+//    }
+//
+//    public PantsWeatherData cityData = new PantsWeatherData();
+
+
+
 
     public String getGiveDate() {
         return giveDate;
@@ -20,16 +46,6 @@ public class PantsWeatherData {
     }
 
     private String giveDate;
-
-
-
-
-
-
-
-
-
-
 
 
     public String[] getmHourlyData() {
@@ -69,5 +85,6 @@ public class PantsWeatherData {
     }
 
 
-
+    public void setMyCityName(String name) {
+    }
 }

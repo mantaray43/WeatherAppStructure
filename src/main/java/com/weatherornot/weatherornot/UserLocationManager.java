@@ -15,64 +15,46 @@ import java.util.Date;
 
 import static android.location.LocationManager.*;
 
-/**
- * Created by spawrks on 8/30/13.
- */
 
 //  This class wraps all the code we will use to manage getting updates on the location
 
 public class UserLocationManager implements LocationListener{
-
 
     public GetWeatherDataTask getWeatherDataTask;
     LocationManager lm;
 
 
 
-
-
-
+////6
     public UserLocationManager (GetWeatherDataTask x){
         super();
-        Log.e("look","rufus called location service getting update");
 
+////7
         getWeatherDataTask = x;   // use getWeatherDataTask when onLocationChanged is called
         lm = (LocationManager) getWeatherDataTask.pantsWeatherDisplay.getSystemService(Context.LOCATION_SERVICE);
 
         try{
             lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
 
-
-
-
         }catch (Exception e){
             e.printStackTrace();
         }
     }
 
-
-
-
-
+////8
     @Override
     public void onLocationChanged(Location location) {
 
 
         lm.removeUpdates(this);
-        //lm = null;
+
         getWeatherDataTask.receiveUserLocation(location);
-        Log.e(getWeatherDataTask.toString(),"look");
 
-
-
-
-
-        Log.e("Look", "Step 4 updates removed");
+//13
+        Log.e(getWeatherDataTask.toString(),"look here asshole");
 
 
    }
-
-
 
     @Override
     public void onStatusChanged(String s, int i, Bundle bundle) {
@@ -88,9 +70,5 @@ public class UserLocationManager implements LocationListener{
     public void onProviderDisabled(String s) {
 
     }
-
-
-
-
 
 }

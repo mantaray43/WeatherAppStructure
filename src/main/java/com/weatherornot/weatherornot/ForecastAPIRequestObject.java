@@ -31,73 +31,25 @@ public class ForecastAPIRequestObject {
 
     public Location myLocation;
 
-
-
-
-
-
+////9
     public ForecastAPIRequestObject (Location myLocation){
            this.setMyLocation(myLocation);
-
 }
-
-    //private void setMyLocation() {
-    //}
-
+///10
     public void setMyLocation(Location myLocation) {
             this.myLocation = myLocation;
-
-
-
+            mlatitude = myLocation.getLatitude();
+            mlongitude = myLocation.getLongitude();
 
     }
-
+///10.5
     public String getAssembledURL() {
             String pantsURL;
             pantsURL = mURL + mAPI_KEY + "/" + mlatitude.toString() + "," + mlongitude.toString();
+            Log.e("look here!!!", mlatitude.toString()+ " " + mlongitude.toString());
+
             return pantsURL;
-      
 
-
-
-
-
-}
-
-    public Double getMlatitude() {
-        return mlatitude;
-    }
-
-    public void setMlatitude(Double mlatitude) {
-        this.mlatitude = mlatitude;
-    }
-
-    public Double getMlongitude() {
-        return mlongitude;
-    }
-
-    public void setMlongitude(Double mlongitude) {
-        this.mlongitude = mlongitude;
-    }
-
-    public String getmURL() {
-        return mURL;
-    }
-
-    public void setmURL(String mURL) {
-        this.mURL = mURL;
-    }
-
-    public String getmAPI_KEY() {
-        return mAPI_KEY;
-    }
-
-    public void setmAPI_KEY(String mAPI_KEY) {
-        this.mAPI_KEY = mAPI_KEY;
-    }
-
-    public Location getMyLocation() {
-        return myLocation;
     }
 
 }

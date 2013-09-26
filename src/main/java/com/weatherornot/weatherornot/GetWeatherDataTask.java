@@ -30,10 +30,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 import static java.lang.reflect.Array.getChar;
 import static java.lang.reflect.Array.getDouble;
-
 
 //                                               params                    progress     result
 public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integer,PantsWeatherData> {
@@ -41,38 +41,29 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
     UserLocationManager myLocationManager;
     public Date formattedTime;
 
-
-
-
-
-
-
-
+/////4
     public GetWeatherDataTask(DisplayWeatherActivity b){
-        //this is the constructor//expecting a display weather activity and we are calling it B
-        super();
-        Log.e("look","step 2 works");
-        pantsWeatherDisplay = b;  //This is a DisplayWeatherActivity (refers to our display view) we
-        //are referencing it as pantsWeatherDisplay a
-        //myLocationManager = new UserLocationManager(this);
-        goGetLocation();
-
+            //this is the constructor//expecting a display weather activity and we are calling it B
+            super();
+            Log.e("look","step 2 works");
+            pantsWeatherDisplay = b;  //This is a DisplayWeatherActivity (refers to our display view) we
+            //are referencing it as pantsWeatherDisplay a
+            //myLocationManager = new UserLocationManager(this);
+            goGetLocation();
     }
 
+//////5
     public void goGetLocation(){
-        Log.e("look","shirley step 3");
+
         myLocationManager = new UserLocationManager(this);
-
-
     }
+
+///11
     public void receiveUserLocation(Location location){
         ForecastAPIRequestObject forecastAPIRequestObject = new ForecastAPIRequestObject(location);
         this.execute(forecastAPIRequestObject);
 
-        Log.e("look", "step 6 - step 5 has successfully worked");
     }
-    //public void ForecastAPIRequestObject(Location location)
-
 
     @Override                                           ///...means array of forecastAPIRequestObjects
     protected PantsWeatherData doInBackground(ForecastAPIRequestObject... forecastAPIRequestObjects) {
@@ -96,7 +87,7 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
                 //get the temperature
                 myData.setmCurrentTemp(currentlyJSON.getDouble("temperature"));
-
+                //myData.getIcon(currentlyJSON.getString("icon"));/////////////////////////////////////////new
 
 
 
@@ -106,7 +97,6 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                 String[] myHourlyText = new String[hourlyDataJSON.length()];
 
                 for(int i = 0; i<hourlyDataJSON.length();i++){
-
 
                     JSONObject name = hourlyDataJSON.getJSONObject(i);
                     Long value = hourlyDataJSON.getJSONObject(i).getLong("time");
@@ -121,26 +111,10 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                     } catch (Exception e) {
                        e.printStackTrace();
                     }
-//
-
 
                     Double temperature = name.getDouble("temperature");
-                    //return String.valueOf(Math.round(Double.valueOf(input))) + "\u00b0";
-
-
-//                    String roundedDouble = "";
-//                    roundedDouble = temperature.substring(0,temperature.indexOf('.'));
-//                    //textview.setText(roundedDouble + "\u00B0");
-
-
-
-
-
                     String summary = name.getString("summary");
-
-
-
-                    //create the string you want to display
+                   //create the string you want to display
                     String a = finalFormattedDate + "   " + temperature + "   " + summary.toString();
                     myHourlyText[i] = a;
 
@@ -149,32 +123,8 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
                 myData.setmHourlyData(myHourlyText);
 
-
-
-                // This is for future versions of the application
-//                HashMap<Long,JSONObject> hourlyHashMap = new HashMap<Long,JSONObject>();
-//                for(int i = 0; i<hourlyDataJSON.length();i++){
-//                    Long value = hourlyDataJSON.getJSONObject(i).getLong("time");
-//                    JSONObject name = hourlyDataJSON.getJSONObject(i);
-//                    hourlyHashMap.put(value,name);
-//                    Double temperature = name.getDouble("temperature");
-//
-//
-//                    //hourlyHashMap.put(String, value);
-//                    Log.e("getweatherdatatask", value.toString() + " , " + temperature.toString());
-//                }
-//               hourlyDataJSON.length();
-
-
-
-
-               Log.e("Look","Shirley Farted parsing data");
-
-
-
             }else{
                 httpResponse.getEntity().getContent().close();
-
 
             }
 
@@ -183,12 +133,7 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
     }
         return myData;
 
-
-
-
-
     }
-
 
         @Override
     protected void onPreExecute() {
@@ -201,8 +146,6 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
         pantsWeatherDisplay.receiveWeatherData(myData);
 
-
-
     }
 
     @Override
@@ -210,7 +153,4 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
         super.onProgressUpdate(values);
     }
 
-
-    //public void receiveUserLocation(Location location) {
-//    }
 }

@@ -31,30 +31,26 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-//The main activity that we will be using to display weather data
-
-
 
 public class DisplayWeatherActivity extends Activity {
 
     ListView mListView;
 
+    static String TIME = "time";
+    static String TEMPERATURE = "temperature";
+    public String giveDate;
+//    public UserLocationManager mMyLocationManager;
+    public PantsWeatherData cityData;
 
-
-
-    //above code is in regards to the jason hashmap -
-
-
-
-
+    /////1
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mListView = (ListView)findViewById(R.id.hourly);
 
-
-        ////////setting background image as drawable
+/////2
+        //////setting background image as drawable
         AssetManager manager = getAssets();
         InputStream open = null;
 
@@ -69,11 +65,15 @@ public class DisplayWeatherActivity extends Activity {
             if(open!= null){
                 try{
                     open.close();
-                }catch (IOException e){
+                }
+                catch (IOException e){
+
+                }
             }
         }
 
 
+        //setting date from phone
         Date now = new Date();
         Date giveDate = Calendar.getInstance().getTime();
         String nowAsString = new SimpleDateFormat("EEEE,  LLLLL  dd,  yyyy").format(now);
@@ -81,134 +81,41 @@ public class DisplayWeatherActivity extends Activity {
 
         TextView dateview = (TextView) findViewById(R.id.date);
         dateview.setText(nowAsString);
+        getWeather();/////////////?
+
+//        new GeonameAPIObject().execute();
+//        TextView v = (TextView)findViewById(R.id.location);
+//        v.setText((CharSequence) cityData);
 
 
-        Log.e("duh","it runs");
-        getWeather();
-
-
-        }
     }
 
-
-
-        
-
+////3
     ////////////////////////////////////////////////
     public void getWeather(){       //asking for the weather
-        Log.e("now", "get Weather runs");
         new GetWeatherDataTask(this);  //z is a new GetWeatherDataTask get the data and receiving the
         //instance of DisplayWeatherActivity - this refers to the instance of DisplayWeatherActivity(on create) that just got created.
-
     }
-
 /////////////////////////////////////////////////////
     public void receiveWeatherData (PantsWeatherData myDataObject){
-        Log.e("look","step 3 receive weather data works");
 
-//        TextView dateview = (TextView) findViewById(R.id.date);
-//        dateview.setText(giveDate);
-
-        TextView textview = (TextView) findViewById(R.id.currenttemp);
-        //textview.setText(myDataObject.getmCurrentTempString());
+        TextView textView = (TextView) findViewById(R.id.currenttemp);
         String mCurrentTemp = myDataObject.getmCurrentTempString();
         String roundedDouble = "";
         roundedDouble = mCurrentTemp.substring(0,mCurrentTemp.indexOf('.'));
-        textview.setText(roundedDouble + "\u00B0");
-
-
-
+        textView.setText(roundedDouble + "\u00B0");
 
         mListView = (ListView)findViewById(R.id.hourly);
         ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.row, myDataObject.getmHourlyData() );
-        
+
         mListView.setAdapter(adapter);
-       }
-
-    public class GetGeonamesTask extends AsyncTask<Location, Integer, String[]> {
-
-
-
-         public GetGeonamesTask[] myCity = new GetGeonamesTask[0];//I've instantiated this objec and I'm using it in the HTTP so this confuses me?
-         public String myURL = "http://api.geoname.org/findNearbyPlaceName?";
-         public String API_User= "mantaray43";
-         public Double lat;
-         public Double lng;
-
-
-        //string for api call - I'm not sure if I'm actually getting the lat and lng info correctly - the lat and long data comes in
-        //from the pants weather display object.
-        public String geoAssembledURL(){
-            String locationURL;
-            locationURL = myURL  + "lat=" +lat.toString() + "&lng=" + lng.toString() + "&username=" + API_User;
-            return locationURL;
-        }
-
-
-        //making the call
-
-        @Override
-        protected String[] doInBackground(Location... locations) {
-            String[] myGeonameText = new String[0];
-            try {
-                HttpClient httpClient = new DefaultHttpClient();
-                GetGeonamesTask[] myCity = new GetGeonamesTask[0];
-
-                HttpGet g = new HttpGet(myCity[0].geoAssembledURL());
-                HttpResponse httpResponse = httpClient.execute(g);
-                StatusLine statusLine = httpResponse.getStatusLine();
-                if (statusLine.getStatusCode() == HttpStatus.SC_OK) {
-                    ByteArrayOutputStream out = new ByteArrayOutputStream();
-                    httpResponse.getEntity().writeTo(out);
-                    out.close();
-                    String responseString = out.toString();
-
-                    //getting JSON object
-
-                    JSONObject geoJSON = new JSONObject(responseString);
-                    JSONArray geonameJSON = geoJSON.getJSONArray("data");
-                    myGeonameText = new String[geoJSON.length()];
-                    for (int i = 0; i < geonameJSON.length(); i++) {
-
-                        //return data
-                        String value = geonameJSON.getJSONObject(i).getString("toponymName");
-                        String b = (value);
-                        myGeonameText[i] = b;
-                        Log.e("look", String.valueOf(myGeonameText));
-
-                    }
-
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-
-            }
-            return myGeonameText;
-        }
-
-
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected void onPostExecute(String[] myGeonameText) {
-            super.onPostExecute(myGeonameText);
-            //Sparks had a note to send this info to my PantsWeatherData - why would I do this and how?
-
-
     }
 
-        @Override //I get an error on this method does not override or implement a method from a supertype -  don't know what this means.
-        public boolean onCreateOptionsMenu(Menu menu) {
-            super.execute();
-
+    public boolean onCreateOptionsMenu(Menu menu) {
             // Inflate the menu; this adds items to the action bar if it is present.
             getMenuInflater().inflate(R.menu.main, menu);
             return true;
         }
-    }
 }
+
 
