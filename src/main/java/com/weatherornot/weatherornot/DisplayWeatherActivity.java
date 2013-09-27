@@ -7,7 +7,6 @@ import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
-import android.util.Log;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -15,16 +14,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.StatusLine;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
@@ -83,9 +72,7 @@ public class DisplayWeatherActivity extends Activity {
         dateview.setText(nowAsString);
         getWeather();/////////////?
 
-//        new GeonameAPIObject().execute();
-//        TextView v = (TextView)findViewById(R.id.location);
-//        v.setText((CharSequence) cityData);
+
 
 
     }
@@ -109,7 +96,47 @@ public class DisplayWeatherActivity extends Activity {
         ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.row, myDataObject.getmHourlyData() );
 
         mListView.setAdapter(adapter);
+
+        new GeonameAPITask(this).execute(myDataObject.myGeoLocation);
+
     }
+
+    public void updateMyCity(String cityData){
+        TextView v = (TextView)findViewById(R.id.location);
+        v.setText(cityData);
+    }
+
+
+//    //you could do it this way (but dont for this project)
+//
+//    public class AnotherAPICallTask extends AsyncTask<Location,Integer,String>
+//    {
+//        @Override
+//        protected String doInBackground(Location... locationArray) {
+//            //use locationArray[0] to refer to the input
+//            return null;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(String s) {
+//            super.onPostExecute(s);
+//
+//            //one way:
+//            //myTextView.setText(s)
+//            //
+//            //or the way you're already doing it
+//            //
+//            //updateMyCity(s);
+//        }
+//
+//        @Override
+//        protected void onProgressUpdate(Integer... values) {
+//            super.onProgressUpdate(values);
+//        }
+//    }
+
+
+
 
     public boolean onCreateOptionsMenu(Menu menu) {
             // Inflate the menu; this adds items to the action bar if it is present.

@@ -3,11 +3,13 @@ package com.weatherornot.weatherornot;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -40,25 +42,38 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
     public DisplayWeatherActivity pantsWeatherDisplay;
     UserLocationManager myLocationManager;
     public Date formattedTime;
+    private final String CLOUDY = "CLOUDY";
+    private final String CLEAR_DAY = "CLEAR-DAY";
+    private final String CLEAR_NIGHT = "CLEAR-NIGHT";
+    private final String RAIN = "RAIN";
+    private final String SNOW = "SNOW";
+    private final String SLEET = "SLEET";
+    private final String WIND = "WIND";
+    private final String FOG = "FOG";
+    private final String PARTLY_CLOUDY_DAY = "PARTLY-CLOUDY-DAY";
+    private final String PARTLY_CLOUDY_NIGHT = "PARTLY-CLOUDY-NIGHT";
+    private final String HAIL = "HAIL";
+    private final String THUNDERSTORMS = "THUNDERSTORMS";
+    private final String TORNADO = "TORNADO";
 
-/////4
+    /////4
     public GetWeatherDataTask(DisplayWeatherActivity b){
-            //this is the constructor//expecting a display weather activity and we are calling it B
-            super();
-            Log.e("look","step 2 works");
-            pantsWeatherDisplay = b;  //This is a DisplayWeatherActivity (refers to our display view) we
-            //are referencing it as pantsWeatherDisplay a
-            //myLocationManager = new UserLocationManager(this);
-            goGetLocation();
+        //this is the constructor//expecting a display weather activity and we are calling it B
+        super();
+        Log.e("look","step 2 works");
+        pantsWeatherDisplay = b;  //This is a DisplayWeatherActivity (refers to our display view) we
+        //are referencing it as pantsWeatherDisplay a
+        //myLocationManager = new UserLocationManager(this);
+        goGetLocation();
     }
 
-//////5
+    //////5
     public void goGetLocation(){
 
         myLocationManager = new UserLocationManager(this);
     }
 
-///11
+    ///11
     public void receiveUserLocation(Location location){
         ForecastAPIRequestObject forecastAPIRequestObject = new ForecastAPIRequestObject(location);
         this.execute(forecastAPIRequestObject);
@@ -67,13 +82,15 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
     @Override                                           ///...means array of forecastAPIRequestObjects
     protected PantsWeatherData doInBackground(ForecastAPIRequestObject... forecastAPIRequestObjects) {
-             PantsWeatherData myData = new PantsWeatherData();
 
-    try{
-        HttpClient httpClient = new DefaultHttpClient ();
-        HttpGet g = new HttpGet(forecastAPIRequestObjects[0].getAssembledURL());
-        HttpResponse httpResponse = httpClient.execute(g);
-        StatusLine statusLine = httpResponse.getStatusLine();
+        PantsWeatherData myData = new PantsWeatherData();
+        myData.myGeoLocation = forecastAPIRequestObjects[0].myLocation;
+
+        try{
+            HttpClient httpClient = new DefaultHttpClient ();
+            HttpGet g = new HttpGet(forecastAPIRequestObjects[0].getAssembledURL());
+            HttpResponse httpResponse = httpClient.execute(g);
+            StatusLine statusLine = httpResponse.getStatusLine();
             if(statusLine.getStatusCode()== HttpStatus.SC_OK){
                 ByteArrayOutputStream out = new ByteArrayOutputStream();
                 httpResponse.getEntity().writeTo(out);
@@ -88,6 +105,39 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                 //get the temperature
                 myData.setmCurrentTemp(currentlyJSON.getDouble("temperature"));
                 //myData.getIcon(currentlyJSON.getString("icon"));/////////////////////////////////////////new
+
+//                Drawable theIcon;
+//                try {
+//                    if (currentlyJSON.getString("icon").equalsIgnoreCase(CLOUDY) ) {
+//                        theIcon = getResources().getDrawable(R.drawable.cloudy);
+//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(CLEAR_DAY)) {
+//                        theIcon = getResources().getDrawable(R.drawable.sunstandin);
+//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(CLEAR_NIGHT)) {
+//                        theIcon = getResources().getDrawable(R.drawable.clearnight);
+//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(RAIN)) {
+//                        theIcon = getResources().getDrawable(R.drawable.rain);
+//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(SNOW)) {
+//                        theIcon = getResources().getDrawable(R.drawable.snow);
+//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(SLEET)) {
+//                        theIcon = getResources().getDrawable(R.drawable.sleet);
+//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(WIND)) {
+//                        theIcon = getResources().getDrawable(R.drawable.windy);
+//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(FOG)) {
+//                        theIcon = getResources().getDrawable(R.drawable.fog);
+//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(PARTLY_CLOUDY_DAY)) {
+//                        theIcon = getResources().getDrawable(R.drawable.partlycloudyday);
+//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(PARTLY_CLOUDY_NIGHT)) {
+//                        theIcon = getResources().getDrawable(R.drawable.partlycloudynight);
+//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(THUNDERSTORMS)) {
+//                        theIcon = getResources().getDrawable(R.drawable.thunderstorms);
+//                    } else theIcon = getResources().getDrawable(R.drawable.sunstandin);  // Default sunny
+//
+//                    ImageView weatherIconView = (ImageView) findViewById(R.id.weather_icon);
+//                    weatherIconView.setImageDrawable(theIcon);
+//
+//                } catch (Exception e) {
+//                    Log.e(TAG, "Problem parsing weather type" + minutelySummaryString[0]);
+//                }
 
 
 
@@ -105,16 +155,16 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                     SimpleDateFormat myFormat = new SimpleDateFormat("hh:mm aa");
                     String finalFormattedDate = "";
 
-                   try {
-                       finalFormattedDate = myFormat.format(hourlyDate);
-                       //formattedDateTime = format.parse(value.toString());
+                    try {
+                        finalFormattedDate = myFormat.format(hourlyDate);
+                        //formattedDateTime = format.parse(value.toString());
                     } catch (Exception e) {
-                       e.printStackTrace();
+                        e.printStackTrace();
                     }
 
                     Double temperature = name.getDouble("temperature");
                     String summary = name.getString("summary");
-                   //create the string you want to display
+                    //create the string you want to display
                     String a = finalFormattedDate + "   " + temperature + "   " + summary.toString();
                     myHourlyText[i] = a;
 
@@ -128,14 +178,14 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
             }
 
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return myData;
 
     }
 
-        @Override
+    @Override
     protected void onPreExecute() {
         super.onPreExecute();
     }

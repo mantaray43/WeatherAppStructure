@@ -1,5 +1,7 @@
 package com.weatherornot.weatherornot;
 
+import android.location.Location;
+
 /**
 * Created by cheryl on 9/3/13.
 */
@@ -11,6 +13,7 @@ public class PantsWeatherData {
     private Double[] mHourly;
     private String[] mHourlyData;
     public String myCityName;
+    public Location myGeoLocation;
 
     public String getIcon(String icon) {
         return this.icon;
