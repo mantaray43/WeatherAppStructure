@@ -104,41 +104,9 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
                 //get the temperature
                 myData.setmCurrentTemp(currentlyJSON.getDouble("temperature"));
-                //myData.getIcon(currentlyJSON.getString("icon"));/////////////////////////////////////////new
+                myData.getIcon(currentlyJSON.getString("icon"));/////////////////////////////////////////new
 
-//                Drawable theIcon;
-//                try {
-//                    if (currentlyJSON.getString("icon").equalsIgnoreCase(CLOUDY) ) {
-//                        theIcon = getResources().getDrawable(R.drawable.cloudy);
-//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(CLEAR_DAY)) {
-//                        theIcon = getResources().getDrawable(R.drawable.sunstandin);
-//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(CLEAR_NIGHT)) {
-//                        theIcon = getResources().getDrawable(R.drawable.clearnight);
-//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(RAIN)) {
-//                        theIcon = getResources().getDrawable(R.drawable.rain);
-//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(SNOW)) {
-//                        theIcon = getResources().getDrawable(R.drawable.snow);
-//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(SLEET)) {
-//                        theIcon = getResources().getDrawable(R.drawable.sleet);
-//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(WIND)) {
-//                        theIcon = getResources().getDrawable(R.drawable.windy);
-//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(FOG)) {
-//                        theIcon = getResources().getDrawable(R.drawable.fog);
-//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(PARTLY_CLOUDY_DAY)) {
-//                        theIcon = getResources().getDrawable(R.drawable.partlycloudyday);
-//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(PARTLY_CLOUDY_NIGHT)) {
-//                        theIcon = getResources().getDrawable(R.drawable.partlycloudynight);
-//                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(THUNDERSTORMS)) {
-//                        theIcon = getResources().getDrawable(R.drawable.thunderstorms);
-//                    } else theIcon = getResources().getDrawable(R.drawable.sunstandin);  // Default sunny
-//
-//                    ImageView weatherIconView = (ImageView) findViewById(R.id.weather_icon);
-//                    weatherIconView.setImageDrawable(theIcon);
-//
-//                } catch (Exception e) {
-//                    Log.e(TAG, "Problem parsing weather type" + minutelySummaryString[0]);
-//                }
-
+                
 
 
                 JSONObject hourlyJSON = rootJSON.getJSONObject("hourly");
@@ -184,6 +152,8 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
         return myData;
 
     }
+
+
 
     @Override
     protected void onPreExecute() {
