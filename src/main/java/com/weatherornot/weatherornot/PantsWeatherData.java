@@ -15,7 +15,7 @@ public class PantsWeatherData {
     public String myCityName;
     public Location myGeoLocation;
 
-    public String getIcon(String icon) {
+    public String getIcon(String Icon) {
         return this.icon;
     }
 

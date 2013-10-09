@@ -3,10 +3,12 @@ package com.weatherornot.weatherornot;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -25,11 +27,15 @@ public class DisplayWeatherActivity extends Activity {
 
     ListView mListView;
 
+
+
     static String TIME = "time";
     static String TEMPERATURE = "temperature";
     public String giveDate;
 //    public UserLocationManager mMyLocationManager;
     public PantsWeatherData cityData;
+    public Drawable myIcon;
+    int theIcon;
 
     /////1
     @Override
@@ -62,6 +68,7 @@ public class DisplayWeatherActivity extends Activity {
         }
 
 
+
         //setting date from phone
         Date now = new Date();
         Date giveDate = Calendar.getInstance().getTime();
@@ -74,7 +81,6 @@ public class DisplayWeatherActivity extends Activity {
 
 
 
-
     }
 
 ////3
@@ -84,6 +90,10 @@ public class DisplayWeatherActivity extends Activity {
         //instance of DisplayWeatherActivity - this refers to the instance of DisplayWeatherActivity(on create) that just got created.
     }
 /////////////////////////////////////////////////////
+
+    
+
+    /////////////////////////////////////////////////////
     public void receiveWeatherData (PantsWeatherData myDataObject){
 
         TextView textView = (TextView) findViewById(R.id.currenttemp);
@@ -92,10 +102,18 @@ public class DisplayWeatherActivity extends Activity {
         roundedDouble = mCurrentTemp.substring(0,mCurrentTemp.indexOf('.'));
         textView.setText(roundedDouble + "\u00B0");
 
+        ImageView weatherIconView = (ImageView) findViewById(R.id.icon);
+        weatherIconView.setImageResource(theIcon);
+
+
+
+
         mListView = (ListView)findViewById(R.id.hourly);
         ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.row, myDataObject.getmHourlyData() );
 
         mListView.setAdapter(adapter);
+
+
 
         new GeonameAPITask(this).execute(myDataObject.myGeoLocation);
 
@@ -105,6 +123,8 @@ public class DisplayWeatherActivity extends Activity {
         TextView v = (TextView)findViewById(R.id.location);
         v.setText(cityData);
     }
+
+
 
 
 //    //you could do it this way (but dont for this project)
