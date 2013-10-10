@@ -14,14 +14,38 @@ public class PantsWeatherData {
     private String[] mHourlyData;
     public String myCityName;
     public Location myGeoLocation;
+    public static int theIcon;
 
-    public String getIcon(String Icon) {
-        return this.icon;
+    public static int getTheIcon() {
+        return theIcon;
     }
+
+
+
+
+
+
+
+
+
+
+    public PantsWeatherData() {
+
+    }
+
+
+    public String getIcon(){
+        return icon.toString();
+    }
+
+
+
 
     public void setIcon(String icon) {
         this.icon = icon;
     }
+
+
 
     public String icon;
 

@@ -57,7 +57,9 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
     private final String HAIL = "HAIL";
     private final String THUNDERSTORMS = "THUNDERSTORMS";
     private final String TORNADO = "TORNADO";
-    int theIcon;
+    public static int theIcon;
+
+
 
     /////4
     public GetWeatherDataTask(DisplayWeatherActivity b){
@@ -81,6 +83,10 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
         ForecastAPIRequestObject forecastAPIRequestObject = new ForecastAPIRequestObject(location);
         this.execute(forecastAPIRequestObject);
 
+    }
+
+    public static void setTheIcon(int theIcon) {
+        GetWeatherDataTask.theIcon = theIcon;
     }
 
     @Override                                           ///...means array of forecastAPIRequestObjects
@@ -108,32 +114,52 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                 //get the temperature
                 myData.setmCurrentTemp(currentlyJSON.getDouble("temperature"));
                 myData.setIcon(currentlyJSON.getString("icon"));
-                Log.e((String) currentlyJSON.get("icon"), "fuck");
 
 
-                    if (currentlyJSON.getString("icon").equalsIgnoreCase(CLOUDY) )
-                        theIcon = (R.drawable.cloudy);
-                    else if (currentlyJSON.getString("icon").equalsIgnoreCase(CLEAR_DAY)) {
-                        theIcon = (R.drawable.sunstandin);
-                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(CLEAR_NIGHT)) {
-                        theIcon = (R.drawable.clearnight);
-                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(RAIN)) {
-                        theIcon = (R.drawable.rain);
-                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(SNOW)) {
-                        theIcon = (R.drawable.snow);
-                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(SLEET)) {
-                        theIcon = (R.drawable.sleet);
-                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(WIND)) {
-                        theIcon = (R.drawable.windy);
-                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(FOG)) {
-                        theIcon = (R.drawable.fog);
-                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(PARTLY_CLOUDY_DAY)) {
-                        theIcon = (R.drawable.partlycloudyday);
-                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(PARTLY_CLOUDY_NIGHT)) {
-                        theIcon = (R.drawable.partlycloudynight);
-                    } else if (currentlyJSON.getString("icon").equalsIgnoreCase(THUNDERSTORMS)) {
-                        theIcon = (R.drawable.thunderstorms);
-                    } else theIcon = (R.drawable.tornado);  // Default sunny
+
+
+
+
+
+
+
+
+
+                if (currentlyJSON.getString("icon").equalsIgnoreCase(CLOUDY) )
+                     theIcon = (R.drawable.cloudy);
+                else if (currentlyJSON.getString("icon").equalsIgnoreCase(CLEAR_DAY)) {
+                    theIcon = (R.drawable.sunstandin);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(CLEAR_NIGHT)) {
+                    theIcon = (R.drawable.clearnight);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(RAIN)) {
+                    theIcon = (R.drawable.rain);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(SNOW)) {
+                    theIcon = (R.drawable.snow);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(SLEET)) {
+                    theIcon = (R.drawable.sleet);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(WIND)) {
+                    theIcon = (R.drawable.windy);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(FOG)) {
+                    theIcon = (R.drawable.fog);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(PARTLY_CLOUDY_DAY)) {
+                    theIcon = (R.drawable.partlycloudyday);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(PARTLY_CLOUDY_NIGHT)) {
+                    theIcon = (R.drawable.partlycloudynight);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(THUNDERSTORMS)) {
+                    theIcon = (R.drawable.thunderstorms);
+                } else theIcon = (R.drawable.tornado);
+
+
+
+
+
+
+
+                    Log.e((String) currentlyJSON.get("icon"), "fuck");
+
+
+
+
 
 
 
