@@ -148,7 +148,11 @@ public class DisplayWeatherActivity extends Activity {
                 theIcon = getResources().getDrawable (R.drawable.partlycloudynight);;
             }else if (icon.equalsIgnoreCase(THUNDERSTORMS)){
                 theIcon = getResources().getDrawable (R.drawable.thunderstorms);
-            }else theIcon = getResources().getDrawable (R.drawable.tornado);
+            }else if (icon.equalsIgnoreCase(HAIL)){
+                theIcon = getResources().getDrawable (R.drawable.hail);
+            }else if (icon.equalsIgnoreCase(TORNADO)){
+                theIcon = getResources().getDrawable (R.drawable.tornado);
+            }else theIcon = getResources().getDrawable (R.drawable.sunstandin);
 
         ImageView weatherIconView = (ImageView) findViewById(R.id.icon);
         weatherIconView.setImageDrawable(theIcon);
