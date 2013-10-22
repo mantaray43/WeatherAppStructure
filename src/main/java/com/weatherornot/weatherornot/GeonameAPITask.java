@@ -63,9 +63,11 @@ public class GeonameAPITask extends AsyncTask<Location, Integer, String> {
                 if(geonamesJSON.length() > 0){
 
                     JSONObject cName = geonamesJSON.getJSONObject(0);
+                    JSONObject sName = geonamesJSON.getJSONObject(0);
+
                     //cName.getJSONObject("name");
 
-                    myCity = cName.getString("name");
+                    myCity = cName.getString("name")+ ", " + sName.getString("adminCode1" );
 
                     Log.e("look", myCity);
 

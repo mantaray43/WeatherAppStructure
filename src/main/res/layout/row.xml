@@ -4,9 +4,10 @@
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textSize="9sp"
+
+    android:textSize="8sp"
     android:textStyle="italic"
-    android:textColor="#48739b"
+    android:textColor="#d4d2e0"
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rowlabel"

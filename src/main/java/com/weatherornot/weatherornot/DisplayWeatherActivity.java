@@ -3,6 +3,7 @@ package com.weatherornot.weatherornot;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.os.AsyncTask;
@@ -21,13 +22,16 @@ import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import android.graphics.Typeface;
 
 
 public class DisplayWeatherActivity extends Activity {
 
     ListView mListView;
+    Typeface font;
 
-
+    String fontPathB = "fonts/playtime.ttf";
+    String fontPathC = "fonts/edo.ttf";
 
     static String TIME = "time";
     static String TEMPERATURE = "temperature";
@@ -55,6 +59,7 @@ public class DisplayWeatherActivity extends Activity {
     public static int theIcon;
 
 
+
     /////1
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +75,7 @@ public class DisplayWeatherActivity extends Activity {
         InputStream open = null;
 
         try{
-            open = manager.open("background_lg4");
+            open = manager.open("chalkboardbackground.png");
             Bitmap bitmap = BitmapFactory.decodeStream(open);
             ImageView view = (ImageView) findViewById(R.id.background);
             view.setImageBitmap(bitmap);
@@ -96,8 +101,21 @@ public class DisplayWeatherActivity extends Activity {
 
 
         TextView dateview = (TextView) findViewById(R.id.date);
+
         dateview.setText(nowAsString);
         getWeather();/////////////?
+
+        TextView templabel = (TextView)findViewById(R.id.tempLabel);
+        font = Typeface.createFromAsset(getAssets(),fontPathB);
+        templabel.setTypeface(font);
+
+        TextView hourlyscroll = (TextView)findViewById(R.id.Hourlyscroll);
+        font = Typeface.createFromAsset(getAssets(),fontPathB);
+        hourlyscroll.setTypeface(font);
+
+        TextView snarky = (TextView)findViewById(R.id.snarky);
+        font = Typeface.createFromAsset(getAssets(),fontPathB);
+        snarky.setTypeface(font);
 
 
 
@@ -117,6 +135,7 @@ public class DisplayWeatherActivity extends Activity {
     public void receiveWeatherData (PantsWeatherData myDataObject){
 
         TextView textView = (TextView) findViewById(R.id.currenttemp);
+
         String mCurrentTemp = myDataObject.getmCurrentTempString();
         String roundedDouble = "";
         roundedDouble = mCurrentTemp.substring(0,mCurrentTemp.indexOf('.'));
@@ -173,6 +192,8 @@ public class DisplayWeatherActivity extends Activity {
 
     public void updateMyCity(String cityData){
         TextView v = (TextView)findViewById(R.id.location);
+        font = Typeface.createFromAsset(getAssets(),fontPathC);
+        v.setTypeface(font);
         v.setText(cityData);
     }
 

@@ -187,10 +187,10 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
 
 
-                    Double temperature = name.getDouble("temperature");
+                    int temperature = name.getInt("temperature");
                     String summary = name.getString("summary");
                     //create the string you want to display
-                    String a = finalFormattedDate + "   " + temperature + "   " + summary.toString();
+                    String a = finalFormattedDate + "     " + temperature+"\u00BA" + "     " + summary.toString();
                     myHourlyText[i] = a;
 
                     Log.e("getweatherdatatask", finalFormattedDate + " , " + temperature + summary.toString());
