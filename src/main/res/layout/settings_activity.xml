@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/settingbackground"
+        android:layout_weight="5">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="5"
+
+       >
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/directions"
+            android:src="@drawable/adventure_pantsstandin">
+
+            </ImageView>
+
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+
+        android:layout_weight=".5"
+        >
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:id="@+id/hotline"
+        android:layout_weight="1"
+        >
+
+        <TextView
+        android:layout_width="30sp"
+        android:layout_height="fill_parent"
+        android:id="@+id/hotSpace1" />
+
+        <TextView
+            android:layout_width="80sp"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/hotLabel"
+            android:gravity="right"
+            android:id="@+id/hotLabel" />
+
+        <TextView
+            android:layout_width="20sp"
+            android:layout_height="fill_parent"
+            android:id="@+id/hotSpace2" />
+
+
+        <EditText
+            android:layout_width="60sp"
+            android:layout_height="fill_parent"
+            android:inputType="number"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="top"
+            android:text="@string/hotNumber"
+            android:id="@+id/hotNumber" />
+
+        <TextView
+            android:layout_width="95sp"
+            android:layout_height="fill_parent"
+            android:id="@+id/degrees"
+            android:gravity="right"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/degrees"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:id="@+id/coldline"
+        android:layout_weight="1"
+        >
+
+        <TextView
+            android:layout_width="30sp"
+            android:layout_height="fill_parent"
+            android:id="@+id/coldSpace1" />
+
+        <TextView
+            android:layout_width="80sp"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/coldLabel"
+            android:gravity="right"
+            android:id="@+id/coldLabel" />
+
+        <TextView
+            android:layout_width="20sp"
+            android:layout_height="fill_parent"
+            android:id="@+id/coldSpace2" />
+
+
+        <EditText
+            android:layout_width="60sp"
+            android:layout_height="fill_parent"
+            android:inputType="number"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="top"
+            android:text="@string/coldNumber"
+            android:id="@+id/coldNumber" />
+
+        <TextView
+            android:layout_width="95sp"
+            android:layout_height="fill_parent"
+            android:id="@+id/degrees"
+            android:gravity="right"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/degrees"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:id="@+id/perfectline"
+        android:layout_weight="1"
+        >
+
+        <TextView
+            android:layout_width="30sp"
+            android:layout_height="fill_parent"
+            android:id="@+id/perfectSpace1" />
+
+        <TextView
+            android:layout_width="80sp"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/perfectLabel"
+            android:gravity="right"
+            android:id="@+id/perfectLabel" />
+
+        <TextView
+            android:layout_width="20sp"
+            android:layout_height="fill_parent"
+            android:id="@+id/perfectSpace2" />
+
+
+        <EditText
+            android:layout_width="60sp"
+            android:layout_height="fill_parent"
+            android:inputType="number"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="top"
+            android:text="@string/perfectNumber"
+            android:id="@+id/perfectNumber" />
+
+        <TextView
+            android:layout_width="95sp"
+            android:layout_height="fill_parent"
+            android:id="@+id/degrees"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="right"
+            android:text="@string/degrees"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:id="@+id/doneline"
+        android:layout_weight="1"
+        >
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="@string/doneButton"
+            android:id="@+id/donebutton" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:id="@+id/creditline"
+        android:layout_weight=".5"
+       >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/credit"
+            android:gravity="center"
+            android:id="@+id/credit" />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
