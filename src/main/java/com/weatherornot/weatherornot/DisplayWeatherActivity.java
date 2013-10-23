@@ -1,5 +1,6 @@
 package com.weatherornot.weatherornot;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -59,11 +60,24 @@ public class DisplayWeatherActivity extends Activity {
     public static int theIcon;
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
     /////1
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        startActivity();
+        Intent intent = new Intent(this,DisplaySettingsActivity.class);
+        startActivity(intent);
+
+
+
+
+
         setContentView(R.layout.activity_main);
         mListView = (ListView)findViewById(R.id.hourly);
 
@@ -121,7 +135,11 @@ public class DisplayWeatherActivity extends Activity {
 
     }
 
-////3
+    private void startActivity() {
+
+    }
+
+    ////3
     ////////////////////////////////////////////////
     public void getWeather(){       //asking for the weather
         new GetWeatherDataTask(this);  //z is a new GetWeatherDataTask get the data and receiving the

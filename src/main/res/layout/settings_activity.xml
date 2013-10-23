@@ -5,7 +5,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/settingbackground"
-        android:layout_weight="5">
+        android:layout_weight="5"
+    android:background="@drawable/chalkboardbackground">
 
 
     <LinearLayout
@@ -19,10 +20,11 @@
 
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/directions"
-            android:src="@drawable/adventure_pantsstandin">
+            android:layout_gravity="center"
+            android:background="@drawable/directions">
 
             </ImageView>
 
@@ -51,7 +53,7 @@
         android:layout_height="0dip"
         android:id="@+id/hotline"
         android:layout_weight="1"
-        >
+        android:background="@drawable/hot">
 
         <TextView
         android:layout_width="30sp"
@@ -61,10 +63,12 @@
         <TextView
             android:layout_width="80sp"
             android:layout_height="fill_parent"
+            android:paddingTop="10sp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/hotLabel"
             android:gravity="right"
-            android:id="@+id/hotLabel" />
+            android:id="@+id/hotLabel"
+            android:textColor="#1f052f" />
 
         <TextView
             android:layout_width="20sp"
@@ -75,19 +79,24 @@
         <EditText
             android:layout_width="60sp"
             android:layout_height="fill_parent"
+            android:paddingTop="10sp"
             android:inputType="number"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:gravity="top"
+            android:imeOptions="actionNext"
             android:text="@string/hotNumber"
-            android:id="@+id/hotNumber" />
+            android:id="@+id/hotNumber"
+            android:textColor="#1f052f" />
 
         <TextView
             android:layout_width="95sp"
             android:layout_height="fill_parent"
+            android:paddingTop="10sp"
             android:id="@+id/degrees"
             android:gravity="right"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/degrees"/>
+            android:text="@string/degrees"
+            android:textColor="#1f052f" />
     </LinearLayout>
 
 
@@ -97,7 +106,7 @@
         android:layout_height="0dip"
         android:id="@+id/coldline"
         android:layout_weight="1"
-        >
+        android:background="@drawable/cold">
 
         <TextView
             android:layout_width="30sp"
@@ -108,9 +117,11 @@
             android:layout_width="80sp"
             android:layout_height="fill_parent"
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:paddingTop="10sp"
             android:text="@string/coldLabel"
             android:gravity="right"
-            android:id="@+id/coldLabel" />
+            android:id="@+id/coldLabel"
+            android:textColor="#1f052f" />
 
         <TextView
             android:layout_width="20sp"
@@ -124,16 +135,21 @@
             android:inputType="number"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:gravity="top"
+            android:paddingTop="10sp"
+            android:imeOptions="actionNext"
             android:text="@string/coldNumber"
-            android:id="@+id/coldNumber" />
+            android:id="@+id/coldNumber"
+            android:textColor="#1f052f" />
 
         <TextView
             android:layout_width="95sp"
             android:layout_height="fill_parent"
             android:id="@+id/degrees"
+            android:paddingTop="10sp"
             android:gravity="right"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/degrees"/>
+            android:text="@string/degrees"
+            android:textColor="#1f052f" />
 
     </LinearLayout>
 
@@ -143,7 +159,7 @@
         android:layout_height="0dip"
         android:id="@+id/perfectline"
         android:layout_weight="1"
-        >
+        android:background="@drawable/perfect">
 
         <TextView
             android:layout_width="30sp"
@@ -154,9 +170,11 @@
             android:layout_width="80sp"
             android:layout_height="fill_parent"
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:paddingTop="10sp"
             android:text="@string/perfectLabel"
             android:gravity="right"
-            android:id="@+id/perfectLabel" />
+            android:id="@+id/perfectLabel"
+            android:textColor="#1f052f" />
 
         <TextView
             android:layout_width="20sp"
@@ -170,16 +188,21 @@
             android:inputType="number"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:gravity="top"
+            android:paddingTop="10sp"
+            android:imeOptions="actionDone"
             android:text="@string/perfectNumber"
-            android:id="@+id/perfectNumber" />
+            android:id="@+id/perfectNumber"
+            android:textColor="#1f052f" />
 
         <TextView
             android:layout_width="95sp"
             android:layout_height="fill_parent"
             android:id="@+id/degrees"
+            android:paddingTop="10sp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:gravity="right"
-            android:text="@string/degrees"/>
+            android:text="@string/degrees"
+            android:textColor="#1f052f" />
 
 
     </LinearLayout>
@@ -196,7 +219,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:text="@string/doneButton"
             android:id="@+id/donebutton" />
     </LinearLayout>
@@ -212,10 +235,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_gravity="center"
+            android:gravity="bottom"
             android:text="@string/credit"
-            android:gravity="center"
-            android:id="@+id/credit" />
+            android:id="@+id/credit"
+            android:textSize="8dp"
+            android:enabled="false" />
     </LinearLayout>
 
 
