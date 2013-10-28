@@ -1,6 +1,7 @@
 package com.weatherornot.weatherornot;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -37,7 +38,7 @@ public class DisplayWeatherActivity extends Activity {
     static String TIME = "time";
     static String TEMPERATURE = "temperature";
     public String giveDate;
-//    public UserLocationManager mMyLocationManager;
+   //public UserLocationManager mMyLocationManager;
     public PantsWeatherData cityData;
     private final String CLOUDY = "CLOUDY";
     private final String CLEAR_DAY = "CLEAR-DAY";
@@ -58,21 +59,37 @@ public class DisplayWeatherActivity extends Activity {
     }
 
     public static int theIcon;
+    static final String PREFERENCES = "temps";
 
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
 
     /////1
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        startActivity();
-        Intent intent = new Intent(this,DisplaySettingsActivity.class);
-        startActivity(intent);
+
+
+        SharedPreferences myPrefs = getApplicationContext().getSharedPreferences("PREFERENCES",0);
+        SharedPreferences.Editor editor = myPrefs.edit();
+
+
+        if(myPrefs.getBoolean("prefscompleted",false)){
+            Intent intentPrefs;
+            intentPrefs = new Intent (getApplicationContext(),DisplaySettingsActivity.class);
+            startActivity(intentPrefs);
+        }
+        else
+        {
+            editor.putBoolean("prefscompleted",true);
+            onPostResume();
+        }
+
+
+
+
+
+
 
 
 
@@ -80,6 +97,7 @@ public class DisplayWeatherActivity extends Activity {
 
         setContentView(R.layout.activity_main);
         mListView = (ListView)findViewById(R.id.hourly);
+
 
 
 
@@ -135,9 +153,7 @@ public class DisplayWeatherActivity extends Activity {
 
     }
 
-    private void startActivity() {
 
-    }
 
     ////3
     ////////////////////////////////////////////////
@@ -158,6 +174,11 @@ public class DisplayWeatherActivity extends Activity {
         String roundedDouble = "";
         roundedDouble = mCurrentTemp.substring(0,mCurrentTemp.indexOf('.'));
         textView.setText(roundedDouble + "\u00B0");
+
+        mListView = (ListView)findViewById(R.id.hourly);
+        ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.row, myDataObject.getmHourlyData() );
+        ////////////////////is there an error here with context?///////
+        mListView.setAdapter(adapter);
 
         String icon = myDataObject.getIcon();
 
@@ -195,16 +216,14 @@ public class DisplayWeatherActivity extends Activity {
         weatherIconView.setImageDrawable(theIcon);
 
 
-        mListView = (ListView)findViewById(R.id.hourly);
-        ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.row, myDataObject.getmHourlyData() );
-
-        mListView.setAdapter(adapter);
 
         
 
         new GeonameAPITask(this).execute(myDataObject.myGeoLocation);
 
     }
+
+
 
 
 
@@ -216,35 +235,6 @@ public class DisplayWeatherActivity extends Activity {
     }
 
 
-
-
-//    //you could do it this way (but dont for this project)
-//
-//    public class AnotherAPICallTask extends AsyncTask<Location,Integer,String>
-//    {
-//        @Override
-//        protected String doInBackground(Location... locationArray) {
-//            //use locationArray[0] to refer to the input
-//            return null;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(String s) {
-//            super.onPostExecute(s);
-//
-//            //one way:
-//            //myTextView.setText(s)
-//            //
-//            //or the way you're already doing it
-//            //
-//            //updateMyCity(s);
-//        }
-//
-//        @Override
-//        protected void onProgressUpdate(Integer... values) {
-//            super.onProgressUpdate(values);
-//        }
-//    }
 
 
 

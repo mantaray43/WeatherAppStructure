@@ -10,11 +10,11 @@
     <string name="action_settings"></string>
     <string name="hourlytemp">Hourly Temperature</string>
     <string name="hotLabel">Hot</string>
-    <string name="hotNumber">100</string>
-    <string name="coldNumber">50</string>
+    <string name="hotNumber"></string>
+    <string name="coldNumber"></string>
     <string name="degrees">Degrees</string>
     <string name="coldLabel">Cold</string>
-    <string name="perfectNumber">75</string>
+    <string name="perfectNumber"></string>
     <string name="perfectLabel">Perfect</string>
     <string name="doneButton">Done</string>
     <string name="credit">Powered by Forecast API and Geonames API</string>
