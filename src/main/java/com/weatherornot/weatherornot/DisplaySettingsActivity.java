@@ -29,9 +29,9 @@ import android.widget.Toast;
  */
 public class DisplaySettingsActivity extends Activity {
 
-    String hot;
-    String Cold;
-    String Perfect;
+    int hot;
+    int Cold;
+    int Perfect;
 
     static final String PREFERENCES = "temps";
 
@@ -87,7 +87,7 @@ public class DisplaySettingsActivity extends Activity {
         }
 
         SharedPreferences savedPreferencesHot = getSharedPreferences(PREFERENCES,0);
-        String savedTemp = savedPreferencesHot.getString("temphot","0");
+        //String savedTemp = savedPreferencesHot.getString("temphot","0");
 
         String Hot = savedPreferencesHot.getString("temphot","0");
         EditText h = (EditText) findViewById(R.id.hotNumber);
@@ -95,7 +95,7 @@ public class DisplaySettingsActivity extends Activity {
 
 
         SharedPreferences savedPreferencesCold = getSharedPreferences(PREFERENCES,0);
-        String savedTempCold = savedPreferencesCold.getString("tempcold","0");
+        //String savedTempCold = savedPreferencesCold.getString("tempcold","0");
 
         String Cold = savedPreferencesCold.getString("tempcold","0");
         EditText c = (EditText) findViewById(R.id.coldNumber);
@@ -103,7 +103,7 @@ public class DisplaySettingsActivity extends Activity {
 
 
         SharedPreferences savedPreferencesPerfect = getSharedPreferences(PREFERENCES,0);
-        String savedTempPerfect = savedPreferencesCold.getString("tempperfect","0");
+        //String savedTempPerfect = savedPreferencesCold.getString("tempperfect","0");
 
         String Perfect = savedPreferencesPerfect.getString("tempperfect","0");
         EditText p = (EditText) findViewById(R.id.perfectNumber);
