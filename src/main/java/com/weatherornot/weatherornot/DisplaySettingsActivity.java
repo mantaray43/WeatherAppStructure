@@ -29,11 +29,12 @@ import android.widget.Toast;
  */
 public class DisplaySettingsActivity extends Activity {
 
-    int hot;
-    int Cold;
-    int Perfect;
-
     static final String PREFERENCES = "temps";
+    int hot;
+    int cold;
+    int perfect;
+
+
 
 
     @Override
@@ -139,6 +140,7 @@ public class DisplaySettingsActivity extends Activity {
         editor.putString("temphot",hotString);
         editor.commit();
 
+
         SharedPreferences savedPreferencesCold = getSharedPreferences(PREFERENCES, 0);
         SharedPreferences.Editor editorCold = savedPreferencesCold.edit();
 
@@ -155,6 +157,11 @@ public class DisplaySettingsActivity extends Activity {
         String perfectString = p.getText().toString();
         editorPerfect.putString("tempperfect",perfectString);
         editorPerfect.commit();
+
+        int hot = new Integer(h.getText().toString());
+        int cold = new Integer(c.getText().toString());
+        int perfect = new Integer(p.getText().toString());
+
 
     }
 

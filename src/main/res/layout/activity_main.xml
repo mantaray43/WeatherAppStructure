@@ -56,6 +56,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1.6"
             android:text="@string/tempLabel"
+            android:inputType="number"
             android:gravity="center"
             android:id="@+id/tempLabel"
             android:textColor="#340607"
