@@ -1,0 +1,464 @@
+{
+	"bittercold":{
+		 [
+			{
+				"text":"Revenge is a dish best served cold.  Put on your Revenge pants because it is colder than a welldiggers bottom.",
+				"image":"revengepants"
+			},
+			{	"text":"Wear your parka pants today.  It is mind-numbingly cold and you can&t afford to lose any brain power because of the weather.",
+				"image": "parkapants"
+			},
+			{
+				"text":"It&s cold as ice.  Give the weather an obscene gesture and wear your hot pants!",
+				"image": "hotpants"
+			},
+			{
+				"text":"Call in sick, stay in your jammies, it&s apocalyptically cold.  Why torture yourself.",
+				"image": "jammies"
+			},
+			{
+				"text":"Wear your fiery inferno pants today, otherwise you are going to fall down the humiliation hole as you run for shelter.",
+				"image":"infernopants"
+			},
+			{
+				"text":"Triple ply, down filled, heated, pants-O-fire are recommended for today.  Winter peril is not to be sneezed at.",
+				"image":"pantsofire"
+			},
+			{
+				"text":"My God!  Move someplace warmer for pitys sake.",
+				"image":"pitypants"
+			},
+
+			{
+				"text":"These aren&t the pants you�re looking for.",
+				"image":"droidpants"
+			},
+			{
+				"text":"It&s freaking cold outside, wear your bear rug slacks.",
+				"image":"bearpants"
+			},
+			{
+				"text":"Wear your fur trousers today it&s a frigid disaster out there.",
+				"image":"furtrousers"
+			},
+			{	
+				"text":"It will be more fun to have colonic irrigation than going outside today;  wear your polar bear pants.",
+				"image":"polarpants"
+			},
+			{
+				"text":"Stay in your inner sanctum today;  square dancing Cossacks in your front yard mean it&s glacial out there.",
+				"image":"cossackpants"
+			},
+			{
+				"text":"Bompity, bompity, the bongos pound out the wickedly chilled weather of the day; wear your cool cat pants and snap along.",
+				"image":"coolcatpants"
+			},
+			}
+				"text":"It&s so cold all of your bumps will be goosed, best wear your wonder sauna hot pants.",
+				"image":"wondersaunapants"
+			},
+			{
+				"text":"There&s a frozen tundra outside, roam the arctic wild in your Siberian tiger pants.",
+				"image":"siberiantigerpants"
+			{
+				
+		]
+	}
+
+			
+
+	"toocold":{
+		 [
+			{
+				"text":"In the cold light of day these pants may win friends and influence people.",
+				"image":"wildpants"
+			},
+			{
+				"text":"Wear your plastic pants today.  It&s gonna be so cold your nose is going to run like Niagra Falls",
+				"image":"plasticpants"
+			},
+			{
+				"text":"Today is a day Mr. Freeze would bitch about.  Wear your super bat anti-freeze pants.",
+				"image":"batantifreezepants"
+			},
+			{	
+				"text":"Wear your long underwear today or you are  going to be covered in chilled suck sauce.",
+				"image":"longunderwear"
+			},
+			{
+				"text":"Wear your super-heated tweed pants today or you might get an icy enema surprise",
+				"image":"heatedtweedpants"
+			},
+			{
+				"text":"It&s so cold today, you better wear pants with a back door to easily dispose of poop cubes.",
+				"image":"backdoorpants"
+			},
+			{
+				"text":"Wear your kick assery pants today and show the winter bitch who&s the boss.",
+				"image":"kickasserypants"
+			},
+			}
+				"text":"Winter melodrama will not be tolerated.  Put on your Sansabelt Satan Slacks and get out there and make it a great day.",
+				"image":"sansabeltslacks"
+			},
+			{
+				"text":"Slip into your Nuclear Fission underpants today.  It&s the only way to keep the nuts toasty.",
+				"image":"fissionunderpants"
+			},
+			{
+				"text":"The only way to describe the weather is craptastic. Jump in your 'I don&t give a damn'  pants and thumb your nose at Mother Nature.",
+				"image":"damnpants"
+			},
+			{
+				"text":"The weather is served, a savory bowl of suck soup.  Put on your plaid pants to give the day some cheer.",
+				"image":"plaidpants"
+			},
+			{
+				"text":"Today&s weather supplied by the Suck-O-Matic;   Your blow me pants may keep you from getting sucked in.",
+				"image":"blowmepants"
+			},
+			{
+				"text":"Today&s weather brought to you by the Fail Troll.  Your billy goat pants may keep you from getting pulled under the bridge.",
+				"image":"goatpants"
+			},
+			{
+				
+				"text":"Icebox weather for today;  perfect for your ultra-tight super neon pants.",
+				"image":"superneonpants"
+			}
+		]
+	}
+
+			
+	"good":{
+		[
+			{
+				"text":"The cold isn&t too bad today.  You can finally wear those smart cotton plaid pants you&ve been waiting for.  We really can&t monitor good taste...only the weather.",
+				"image":"plaidpantsb"
+			},
+			{
+				"text":"It&s Chilly outside. You should wear your Elvis sequined jumpsuit today, that always gets your minions excited.",
+				"image":"elvispants"
+			},
+			{
+				"text":"There&s a nip in the air. That leather shorts set with the knee high moccasins will get you the attention you deserve.",
+				"image":"leathershortpants"
+			},
+			{	
+				"text":"The air is crisp. Polkas and merrymaking ensue. Snatch your Lederhosen out of the closet; the beer line is long.",
+				"image":"lederhosen"
+			},
+			{	
+				"text":"It&s a great day for a square dance; promenade left in your hootenanny pants.",
+				"image":"hootennanypants"
+			},
+			{
+				"text":"Put on your Jodpurs for an equestrian adventure; the weather is great for horsing around.",
+				"image":"jodpurs"
+			},
+			{
+				"text":"Spin, thrust, parry! Wear your Robin Hood pants and clobber a fat friar!",
+				"image":"robinhoodpants"
+			},
+			}
+				"text":"Wear your vortex pants and suck all the blazing buffoonery from the day." ,
+				"image":"vortexpants"
+			},
+			{
+				"text":"It&s a whiz-bang day; wear your monkey pants and fling some poo.",
+				"image":"monkeypants"
+			},
+			{
+				"text":"Wear your big-ole-nasty pants; just because you can.",
+				"image":"nastypants"
+			},
+			{
+				"text":"The day is perfect for a mythical adventure; get in your dragon pants and go on a quest with the elves.",
+				"image":"dragonpants"
+			},
+			{
+				"text":"It&s a great day for fishing; put on your waders and go jump in a lake.",
+				"image":"waders"
+			},
+			{
+				"text":"It&s just a jump to the left, and a jump to the right;  Be Transylvania bound in your time warp pants.",
+				"image":"timewarppants"
+			},
+			{
+				
+				"text":"It&s a swell day to wear your smarty pants.",
+				"image":"smartypants"
+			}
+		]
+	}
+	
+
+	"perfect":{
+		[
+			{
+				"text":"Jump in your overalls it&s a perfect day for a hoe down!",
+				"image":"overalls"
+			},
+			{
+				"text":"The weather is perfect for a shindig! Put on your party pants and be groovy.",
+				"image":"partypants"
+			},
+			{
+				"text":"The weather is ideal! Put on your Dandy Pants and make a statement.",
+				"image":"dandypants"
+			},
+			{	
+				"text":"The weather is aces! Put on your jet pants and buzz your besties.",
+				"image":"jetpants"
+			},
+			{	
+				"text":"Today&s weather will be primo. Enjoy the day in your imported modern leather pants.",
+				"image":"leatherpants"
+			},
+			{
+				"text":"Today&s weather is far out!  Wear your groovy pants and feel the love.",
+				"image":"groovypants"
+			},
+			{
+				"text":"Utopian is the weather du jour.  Put on your hip huggers and attend a love-in.",
+				"image":"hiphuggers"
+			},
+			}
+				"text":"It will be a bang-up day.  Wear your double knit slacks with pride.",
+				"image":"knitslacks"
+			},
+			{
+				"text":�The weather will be fab to day.  Wear your Batman pants, it�s a good day to fight crime.�,
+				"image":"batpants"
+			},
+			{
+				"text":"CrackerJack weather today! Put on your clam diggers and have a clambake!",
+				"image":"clamdiggers"
+			},
+			{
+				"text":"The weather is mind blowing today!  Put on your oracle pants and prepare to know all.",
+				"image":"oraclepants"
+			},
+			{
+				"text":"The weather is splendid today. Put on your swami pants and search for the meaning of it all.",
+				"image":"swamipants"
+			},
+			{
+				"text":"The clime is fine;  a perfect day to be a mime.",
+				"image":"mimepants"
+			},
+			{
+				
+				"text":"Today is the cat&s pajamas!",
+				"image":"catpajamas"
+			},
+			{
+				"text":"The weather today is divine, perfect for a Bacchanalias feast!",
+				"image":"togapants"
+			},
+			{
+				
+				"text":"Jump for joy, today is balmy and a perfect day to wear your favorite polyester knickers.",
+				"image":"polyknickers"
+			}
+			
+		]
+	}
+	
+
+
+
+	"warm":{
+
+		 [
+			{
+				"text":"Today is slightly steamy;  don your  mesh jumpsuit to keep cool.",
+				"image":"meshsuit"
+			},
+			{
+				"text":"At the moment conditions are tropical; don your bermudas and hit the beach.",
+				"image":"bermudashorts"
+			},
+			{
+				"text":"At high noon the sun will be beating down on you.  Wear your dude pants, head for the nearest saloon, and order a White Russian.",
+				"image":"dudepants"
+			},
+			{	
+				"text":"Outside it&s sweltering, wear your short pants.",
+				"image":"shortpantsb"
+			},
+			{	
+				"text":"The weather is served, a big hot crap casserole, wear your whiny pants and moan all day.",
+				"image":"whinypants"
+			},
+			{
+				"text":"The heat is tolerable today what a kick in the pants.",
+				"image":"kickedpants"
+			},
+			{
+				"text":"Wear your evil genius pants today.  It&s just warm enough to make you fiendishly clever.",
+				"image":"evilpants"
+			},
+			}
+				"text":"It&s hot today, wear some bloomers with good ventilation to prevent chafing.",
+				"image":"bloomers"
+			},
+			{
+				"text":"Today is a day for panties, getting in them or getting out of them.",
+				"image":"panties"
+			},
+			{
+				"text":"Welcome to the sweaty jamboree; wear your dungarees as we  go frog steppin& in the holler.",
+				"image":"dungarees"
+			},
+			{
+				"text":"The weather&s a doozie today; wear pants that show off the inner you.",
+				"image":"dooziepants"
+			},
+			{
+				"text":"Khaki chinos are a good choice for today; it&s hot, bland, and boring outside.",
+				"image":"chinos"
+			},
+			{
+				"text":"Slip on your disco overalls for a far out jamboree!",
+				"image":"discooverals"
+			},
+			{
+				
+				"text":"A warm day calls for alligator ass pants; take a bite out of the day.",
+				"image":"alligatorpants"
+			}
+		]
+	}
+	
+
+
+	"toohot":{
+
+		[
+			{
+				"text":"The only way to describe the weather is craptastic. Jump in your 'I don&t give a damn' pants and thumb your nose at Mother Nature.",
+				"image":"damnpants"
+			},
+			{
+				"text":"The weather is served, a 3 tier poop cake. Put on your bunny pants and hop over the poop slices.",
+				"image":"bunnypants"
+			},
+			{
+				"text":"Today&s weather is a mushroom cloud of failure. Your clown pants will brighten your day.",
+				"image":"clownpants"
+			},
+			{	
+				"text":"Today&s weather supplied by the Suck-O-Matic; Your airfan pants may keep you from getting sucked in.",
+				"image":"airfanpants"
+			},
+			{	
+				"text":"The air is sultry and torrid a perfect day for your  vo-de-o-do pants.",
+				"image":"vodepants"
+			},
+			{
+				"text":"The weather is served, a habanero with a chili pepper chaser; best put on your exploding fireball pants.",
+				"image":"fireballpants"
+			},
+			{
+				"text":"Today is a big scorching kick in the pants.",
+				"image":"scorchingpants"
+			},
+			}
+				"text":"Welcome to the giant toaster oven, your heat reflecting pants will keep you from getting crispy.",
+				"image":"reflectingpants"
+			},
+			{
+				"text":"The weather is hideous and ghastly, your disaster pants may keep you safe from the sun&s wrath.",
+				"image":"disasterpants"
+			},
+			{
+				"text":"It&s Krakatoa outside, put on your frosty pants and avoid all that pesky lava.",
+				"image":"frostypants"
+			},
+			{
+
+				"text":"Fi Fi Fo Fum, it&s too hot to have pants covering your bum.",
+				"image":"underwear"
+			},
+			{
+				"text":"Unpleasant temperatures call for icy shorts and cold beer.",
+				"image":"icyshorts"
+			},
+			{
+				"text":"The heat is cataclysmic; wear your Armageddon pants and keep an eye out for the four horsemen.",
+				"image":"armageddonpants"
+			},
+			{
+				
+				"text":"The heat is beastly, go for the Adam and Eve look today.",
+				"image":"figleaf"
+			}
+		]
+	}
+	
+
+
+	"toodanghot":{
+
+		[
+			{
+				"text":"Today is super steamy hot;  might as well wear your 'Boom-Chick-A-Wow-Wow' pants.",
+				"image":"boomchickpants"
+			},
+			{
+				"text":"Outside it  suckity, suck, sucks.  Might as well wear your crabby pants and gripe all day.",
+				"image":"crabbypants"
+			},
+			{
+				"text":"The sun is scorching the earth with fiery fireballs; garb yourself in your Apocalypse pants.",
+				"image":"apocalypsepants"
+			},
+			{	
+				"text":"You can fry an egg on the sidewalk;  wear your prancing pants and keep moving to avoid ending up an egg sandwich.",
+				"image":"prancing pants"
+			},
+			{	
+				"text":"Flames, flames, flames, up the side of my face, flames.",
+				"image":"flamingpants"
+			},
+			{
+				"text":"The air is like steaming dumplings slapping you in the face; short pants are a must.",
+				"image":"shortpants"
+			},
+			{
+				"text":"The heat is inconceivable and we do know what that word means;  wear as little as possible and lay on the sofa.",
+				"image":"underwearb"
+			},
+			}
+				"text":"Red hot lava! Wear your flame retardant rompers!",
+				"image":"retardantrompers"
+			},
+			{
+				"text":"Hellacious hot air, wear your balloon pants and rise above it.",
+				"image":"balloonpants"
+			},
+			{
+				"text":"Horrific heat and the jumbo enchilada plate you had for lunch have made your pants a smell-ferno of methane",
+				"image":"methanepants"
+			},
+			{
+				"text":"It&s as hot as the Sahara out there, put on your camel pants and look for an oasis.",
+				"image":"camelpants"
+			},
+			{
+				"text":"Burning sand, burning sand!  You&ll be cool as a cucumber in your speedo.",
+				"image":"speedo"
+			},
+			{
+				"text":"Godzilla has scorched the earth, stay cool in your stubbies.",
+				"image":"stubbies"
+			}
+				
+				
+			
+		]
+	}
+	
+
+}

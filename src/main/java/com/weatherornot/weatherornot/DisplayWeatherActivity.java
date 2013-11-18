@@ -26,11 +26,25 @@ import java.util.Calendar;
 import java.util.Date;
 import android.graphics.Typeface;
 
+import org.json.JSONObject;
+
 
 public class DisplayWeatherActivity extends Activity {
 
     ListView mListView;
     Typeface font;
+    static final String PREFERENCES = "temps";
+    static SharedPreferences settings;
+    SharedPreferences.Editor editor;
+    SharedPreferences.Editor editorCold;
+    SharedPreferences.Editor editorPerfect;
+    String hotString;
+    String coldString;
+    String perfectString;
+    String range;
+    String jsonb;
+    JSONObject rootJSON = new JSONObject();
+    int mCTemp;
 
     String fontPathB = "fonts/playtime.ttf";
     String fontPathC = "fonts/edo.ttf";
@@ -59,7 +73,7 @@ public class DisplayWeatherActivity extends Activity {
     }
 
     public static int theIcon;
-    static final String PREFERENCES = "temps";
+
 
 
 
@@ -84,15 +98,6 @@ public class DisplayWeatherActivity extends Activity {
             editor.putBoolean("prefscompleted",true);
             onPostResume();
         }
-
-
-
-
-
-
-
-
-
 
 
         setContentView(R.layout.activity_main);
@@ -148,6 +153,10 @@ public class DisplayWeatherActivity extends Activity {
         TextView snarky = (TextView)findViewById(R.id.snarky);
         font = Typeface.createFromAsset(getAssets(),fontPathB);
         snarky.setTypeface(font);
+
+
+
+
 
 
 
