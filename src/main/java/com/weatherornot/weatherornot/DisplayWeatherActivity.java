@@ -26,25 +26,11 @@ import java.util.Calendar;
 import java.util.Date;
 import android.graphics.Typeface;
 
-import org.json.JSONObject;
-
 
 public class DisplayWeatherActivity extends Activity {
 
     ListView mListView;
     Typeface font;
-    static final String PREFERENCES = "temps";
-    static SharedPreferences settings;
-    SharedPreferences.Editor editor;
-    SharedPreferences.Editor editorCold;
-    SharedPreferences.Editor editorPerfect;
-    String hotString;
-    String coldString;
-    String perfectString;
-    String range;
-    String jsonb;
-    JSONObject rootJSON = new JSONObject();
-    int mCTemp;
 
     String fontPathB = "fonts/playtime.ttf";
     String fontPathC = "fonts/edo.ttf";
@@ -73,7 +59,7 @@ public class DisplayWeatherActivity extends Activity {
     }
 
     public static int theIcon;
-
+    static final String PREFERENCES = "temps";
 
 
 
@@ -82,7 +68,9 @@ public class DisplayWeatherActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        Intent intent = new Intent();
+        Intent i = new Intent(getApplicationContext(),DisplaySettingsActivity.class);
+        startActivity(i);
 
         SharedPreferences myPrefs = getApplicationContext().getSharedPreferences("PREFERENCES",0);
         SharedPreferences.Editor editor = myPrefs.edit();
@@ -96,8 +84,10 @@ public class DisplayWeatherActivity extends Activity {
         else
         {
             editor.putBoolean("prefscompleted",true);
+            setContentView(R.layout.activity_main);
             onPostResume();
         }
+
 
 
         setContentView(R.layout.activity_main);
@@ -156,7 +146,9 @@ public class DisplayWeatherActivity extends Activity {
 
 
 
-
+//        Intent snark = new Intent();
+//        Intent b = new Intent(getApplicationContext(),SnarkyDisplay.class);
+//        startActivity(b);
 
 
 
@@ -172,7 +164,7 @@ public class DisplayWeatherActivity extends Activity {
     }
 /////////////////////////////////////////////////////
 
-    
+
 
     /////////////////////////////////////////////////////
     public void receiveWeatherData (PantsWeatherData myDataObject){
@@ -212,7 +204,7 @@ public class DisplayWeatherActivity extends Activity {
             }else if (icon.equalsIgnoreCase(PARTLY_CLOUDY_DAY)){
                 theIcon = getResources().getDrawable (R.drawable.partlycloudyday);
             }else if (icon.equalsIgnoreCase(PARTLY_CLOUDY_NIGHT)){
-                theIcon = getResources().getDrawable (R.drawable.partlycloudynight);;
+                theIcon = getResources().getDrawable (R.drawable.partlycloudynight);
             }else if (icon.equalsIgnoreCase(THUNDERSTORMS)){
                 theIcon = getResources().getDrawable (R.drawable.thunderstorms);
             }else if (icon.equalsIgnoreCase(HAIL)){
@@ -242,6 +234,10 @@ public class DisplayWeatherActivity extends Activity {
         v.setTypeface(font);
         v.setText(cityData);
     }
+
+//    public void receiveSnarkyData(SnarkyDisplay rootJSON){
+//        new SnarkyDisplay(this);
+
 
 
 

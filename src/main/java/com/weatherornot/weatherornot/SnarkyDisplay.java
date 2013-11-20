@@ -1,8 +1,11 @@
 package com.weatherornot.weatherornot;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -15,9 +18,9 @@ import java.io.InputStream;
 import java.util.Random;
 
 /**
- * Created by cheryl on 11/5/13.
- */
-public class SnarkyDisplay extends DisplayWeatherActivity{
+* Created by cheryl on 11/5/13.
+*/
+public class SnarkyDisplay extends Activity {
 
     static final String PREFERENCES = "temps";
     static SharedPreferences settings;
@@ -28,7 +31,7 @@ public class SnarkyDisplay extends DisplayWeatherActivity{
     String coldString;
     String perfectString;
     String range;
-    String jsonb;
+
     JSONObject rootJSON = new JSONObject();
 
 
@@ -53,6 +56,7 @@ public void onCreate(Bundle savedInstanceState){
     int mCTemp = Integer.valueOf(currentTemp.getText().toString());
 
 
+
     JSONObject rootJSON = new JSONObject();
 
 
@@ -67,6 +71,8 @@ public void onCreate(Bundle savedInstanceState){
             JSONObject selectedRandomObject = bitterCold.getJSONObject(randomObjectIndex);
             String text = selectedRandomObject.getString("text");
             TextView snarky = (TextView) findViewById(R.id.snarky);
+            String image = selectedRandomObject.getString("image");
+  //////////haven't figured out how to get image
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -164,8 +170,11 @@ public void onCreate(Bundle savedInstanceState){
 
     }   else{
         range = "toodanghot";
+        onPostResume();
 
     }
+
+
 
 }
     public String getJSONFile(){
@@ -187,64 +196,14 @@ public void onCreate(Bundle savedInstanceState){
         return json;
     }
 
+
+
+    public SnarkyDisplay(DisplayWeatherActivity d){
+        //this is the constructor//expecting a display weather activity and we are calling it B
+        super();
+        Log.e("look", "snarky works");
+
+    }
+
 }
-
-//using this class to work out code.  May be deleted.
-
-//to display the snarky text and image based on the current temperature
-//steps needed
-
-//get shared prefs data and convert the strings to integers (may do that in the shared prefs section in DisplaySettings
-
-
-
-
-//take shared prefs integers and create 7 number ranges that correspond to the JSON list ranges, bitter cold, too cold, good,
-//perfect, warm, too hot, too dang hot
-
-//take the too cold #
-//(# + 10) == tooColdRange
-
-//take the too cold #
-// anything ># == bitterColdRange
-
-//take too cold #
-// (# + 17) == goodRange
-
-//take perfect #
-// (#-3) == range#one
-// (#+10) == range#two    range#one - range#two = perfectRange
-
-//take perfect #
-//(#+5)   == range#one
-//take toohot#
-//(#-5)   == range#two    range#one - range#two == warmRange
-
-//take toohot#
-//(#-5) == range#one
-//(#+3) == range#two    range#one - range#two = tooHotRange
-
-//take toohot#
-//anything <= (#+4)   == tooDangHotRange
-
-
-
-//Ranges defined
-//bitterCold #>
-//tooCold #-#
-//good #-#
-//perfect #-#
-//warm #-#
-//tooHot #-#
-//tooDangHot #-#
-
-//compare current temp to see which range it falls in
-
-//create JSON file
-
-//parse JSON array according to temp range and display in UI
-//key value pairs?
-
-//either randomize the text/image data that is pulled from the JSON category, or go down the list numerically each time it is called - then rinse and repeat
-
 
