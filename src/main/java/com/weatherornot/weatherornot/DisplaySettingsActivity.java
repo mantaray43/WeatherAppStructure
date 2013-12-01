@@ -162,6 +162,9 @@ public class DisplaySettingsActivity extends Activity {
         int cold = new Integer(c.getText().toString());
         int perfect = new Integer(p.getText().toString());
 
+        //set the preferences completed to true.
+        editorPerfect.putBoolean("prefscompleted", true);
+
 
     }
 
