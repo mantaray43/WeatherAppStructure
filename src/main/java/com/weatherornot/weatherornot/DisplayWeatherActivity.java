@@ -73,10 +73,12 @@ public class DisplayWeatherActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //shoot off the display settings activity
         Intent intent = new Intent();
         Intent i = new Intent(getApplicationContext(), DisplaySettingsActivity.class);
         startActivity(i);
 
+        //get the prefs
         SharedPreferences myPrefs = getApplicationContext().getSharedPreferences("PREFERENCES", 0);
         SharedPreferences.Editor editor = myPrefs.edit();
 
@@ -85,11 +87,8 @@ public class DisplayWeatherActivity extends Activity {
             Intent intentPrefs;
             intentPrefs = new Intent(getApplicationContext(), DisplaySettingsActivity.class);
             startActivity(intentPrefs);
-        } else {
-            editor.putBoolean("prefscompleted", true);
-            setContentView(R.layout.activity_main);
-            onPostResume();
         }
+
 
 
         setContentView(R.layout.activity_main);
@@ -98,25 +97,33 @@ public class DisplayWeatherActivity extends Activity {
 
 /////2
         //////setting background image as drawable
-        AssetManager manager = getAssets();
-        InputStream open = null;
+        //  (THE HARD WAY)
+//        AssetManager manager = getAssets();
+//        InputStream open = null;
+//
+//        try {
+//            open = manager.open("chalkboardbackground.png");
+//            Bitmap bitmap = BitmapFactory.decodeStream(open);
+//            ImageView view = (ImageView) findViewById(R.id.background);
+//            view.setImageBitmap(bitmap);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } finally {
+//            if (open != null) {
+//                try {
+//                    open.close();
+//                } catch (IOException e) {
+//
+//                }
+//            }
+//        }
 
-        try {
-            open = manager.open("chalkboardbackground.png");
-            Bitmap bitmap = BitmapFactory.decodeStream(open);
-            ImageView view = (ImageView) findViewById(R.id.background);
-            view.setImageBitmap(bitmap);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (open != null) {
-                try {
-                    open.close();
-                } catch (IOException e) {
-
-                }
-            }
-        }
+//      //////setting background image as drawable, if it was an image view
+        // its not, its a linear layout- so dont use this code.
+        // also you're already setting it.
+//        ImageView backgroundImageView = (ImageView) findViewById(R.id.background);
+//        int resID = this.getResources().getIdentifier("chalkboardbackground", "drawable", this.getPackageName());
+//        backgroundImageView.setImageResource(resID);
 
 
         //setting date from phone
@@ -217,7 +224,11 @@ public class DisplayWeatherActivity extends Activity {
 
 
         //oh, go and update with a snarky message
-        determineSnark();
+
+        //convert the temperature to an int
+        int currentTemp = (int) myDataObject.getmCurrentTemp().intValue();
+        //pass it to the snark
+        determineSnark(currentTemp);
     }
 
 
@@ -250,7 +261,7 @@ public class DisplayWeatherActivity extends Activity {
     String perfectString = "tempperfect";
     String range;
 
-    public void determineSnark() {
+    public void determineSnark(int mCTemp) {
 
         settings = getSharedPreferences(PREFERENCES, 0);
         SharedPreferences.Editor editor = settings.edit();
@@ -259,13 +270,12 @@ public class DisplayWeatherActivity extends Activity {
         int cold = new Integer(settings.getString(coldString, ""));
         SharedPreferences.Editor editorPerfect = settings.edit();
         int perfect = new Integer(settings.getString(perfectString, ""));
-
-        //this is getting a reference to the view
-        TextView currentTemp = (TextView) findViewById(R.id.currenttemp);
-        //creating a string of whats currenty being displayed
-        String cTemp = currentTemp.getText().toString();
+//
+//        //this is getting a reference to the view
+//        TextView currentTemp = (TextView) findViewById(R.id.currenttemp);
+//        //creating a string of whats currenty being displayed
+//        String cTemp = currentTemp.getText().toString();
         //this is converting that to an integer
-        int mCTemp = Integer.valueOf(currentTemp.getText().toString());
 
 
         if (mCTemp > cold) {    //bittercold
@@ -290,6 +300,11 @@ public class DisplayWeatherActivity extends Activity {
     }
 
     public String getJSONFile() {
+
+        //
+        //  If you get a parsing error, use this website:
+        //  http://jsonformatter.curiousconcept.com/
+        //
 
         String json = null;
 
