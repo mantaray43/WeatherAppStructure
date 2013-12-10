@@ -116,14 +116,14 @@ public class DisplaySettingsActivity extends Activity {
 
         Button buttonToDisplayWeatherActivity = (Button)findViewById(R.id.donebutton);
 
-    buttonToDisplayWeatherActivity.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Intent i = new Intent(getApplicationContext(),DisplayWeatherActivity.class);
-            onPostResume();
-            finish();
-        }
-    }); {
+        buttonToDisplayWeatherActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),DisplayWeatherActivity.class);
+                onPostResume();
+                finish();
+            }
+        }); {
 
 
         }
@@ -162,9 +162,11 @@ public class DisplaySettingsActivity extends Activity {
         int cold = new Integer(c.getText().toString());
         int perfect = new Integer(p.getText().toString());
 
+        //set the preferences completed to true.
+        editorPerfect.putBoolean("prefscompleted", true);
+
 
     }
 
 
 }
-
