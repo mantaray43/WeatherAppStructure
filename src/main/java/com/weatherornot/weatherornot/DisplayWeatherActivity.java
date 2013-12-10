@@ -216,11 +216,11 @@ public class DisplayWeatherActivity extends Activity {
         String hotString = "temphot";
         String coldString = "tempcold";
         String perfectString = "tempperfect";
-        String range;
+//        String range;
 
     public void determineSnark(int mCTemp) {
 
-//        String range;
+        String range;
 
         settings = getSharedPreferences(PREFERENCES, 0);
         SharedPreferences.Editor editor = settings.edit();
