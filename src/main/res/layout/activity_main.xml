@@ -76,7 +76,7 @@
             android:clickable="false"
             android:typeface="serif"
             android:textColor="#340607"
-            android:background="@drawable/hourlychalk"
+            android:background="@drawable/chalkone"
             android:textSize="13sp" />
     </LinearLayout>
 
@@ -144,7 +144,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
 
-            android:textSize="13dp"
+            android:textSize="15dp"
 
             android:id="@+id/snarky"
             android:layout_weight="2.6"
@@ -152,7 +152,7 @@
             android:paddingTop="3sp"
             android:paddingRight="3sp"
             android:paddingLeft="6sp"
-            android:textColor="#340607"
+            android:textColor="#fefefe"
 
             android:background="@drawable/chalktwo" />
 

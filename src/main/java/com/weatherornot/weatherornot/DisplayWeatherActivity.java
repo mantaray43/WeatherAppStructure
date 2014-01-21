@@ -80,7 +80,7 @@ public class DisplayWeatherActivity extends Activity {
         SharedPreferences myPrefs = getApplicationContext().getSharedPreferences("PREFERENCES", 0);
         SharedPreferences.Editor editor = myPrefs.edit();
 
-
+       //if prefs are complete move to main activity
         if (myPrefs.getBoolean("prefscompleted", false)) {
             Intent intentPrefs;
             intentPrefs = new Intent(getApplicationContext(), DisplaySettingsActivity.class);
@@ -105,11 +105,11 @@ public class DisplayWeatherActivity extends Activity {
         getWeather();
 
         TextView templabel = (TextView) findViewById(R.id.tempLabel);
-        font = Typeface.createFromAsset(getAssets(), fontPathB);
+        font = Typeface.createFromAsset(getAssets(), fontPathC);
         templabel.setTypeface(font);
 
         TextView hourlyscroll = (TextView) findViewById(R.id.Hourlyscroll);
-        font = Typeface.createFromAsset(getAssets(), fontPathB);
+        font = Typeface.createFromAsset(getAssets(), fontPathC);
         hourlyscroll.setTypeface(font);
 
         TextView snarky = (TextView) findViewById(R.id.snarky);
@@ -119,7 +119,7 @@ public class DisplayWeatherActivity extends Activity {
     }
 
 
-    ////3
+
     ////////////////////////////////////////////////
     public void getWeather() {       //asking for the weather
         new GetWeatherDataTask(this);
@@ -234,7 +234,8 @@ public class DisplayWeatherActivity extends Activity {
 
 
 
-        if (mCTemp > cold) {    //bittercold
+
+        if (mCTemp < cold) {    //bittercold
             range = "bittercold";
         } else if ((mCTemp >= cold) && mCTemp <= (cold + 10)) {     //toocold
             range = "toocold";
@@ -288,7 +289,7 @@ public class DisplayWeatherActivity extends Activity {
             int snarkyCommentArraySize = snarkyCommentArray.length();
             Random r = new Random();
 
-            int randomObjectIndex = r.nextInt(snarkyCommentArraySize - 0) + 0;
+            int randomObjectIndex = r.nextInt(snarkyCommentArraySize -0) + 0;
             JSONObject selectedRandomObject = snarkyCommentArray.getJSONObject(randomObjectIndex);
             String text = selectedRandomObject.getString("text");
 
