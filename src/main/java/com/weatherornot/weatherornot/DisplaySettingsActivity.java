@@ -36,11 +36,11 @@ public class DisplaySettingsActivity extends Activity {
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
+
 
         // Get Location Manager and check for GPS & Network location services
         LocationManager lm = (LocationManager) getSystemService(LOCATION_SERVICE);
@@ -159,7 +159,7 @@ public class DisplaySettingsActivity extends Activity {
         editorPerfect.commit();
 
         int hot = new Integer(h.getText().toString());
-        int cold = new Integer(c.getText().toString());
+        int cold =  new Integer(c.getText().toString());
         int perfect = new Integer(p.getText().toString());
 
         //set the preferences completed to true.

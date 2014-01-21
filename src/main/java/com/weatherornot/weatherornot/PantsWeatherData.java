@@ -12,7 +12,7 @@ public class PantsWeatherData {
     private Double mCurrentTemp;
     private Double[] mHourly;
     private String[] mHourlyData;
-    public String myCityName;
+
     public Location myGeoLocation;
     public static int theIcon;
 
