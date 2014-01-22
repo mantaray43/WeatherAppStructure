@@ -122,6 +122,7 @@ public class DisplaySettingsActivity extends Activity {
                 Intent i = new Intent(getApplicationContext(),DisplayWeatherActivity.class);
                 onPostResume();
                 finish();
+
             }
         }); {
 

@@ -9,11 +9,11 @@
     <string name="hourlyRow"></string>
     <string name="action_settings"></string>
     <string name="hourlytemp">Hourly Temperature</string>
-    <string name="hotLabel">Hot</string>
+    <string name="hotLabel">Too Hot</string>
     <string name="hotNumber"></string>
     <string name="coldNumber"></string>
     <string name="degrees">Degrees</string>
-    <string name="coldLabel">Cold</string>
+    <string name="coldLabel">Too Cold</string>
     <string name="perfectNumber"></string>
     <string name="perfectLabel">Perfect</string>
     <string name="doneButton">Done</string>

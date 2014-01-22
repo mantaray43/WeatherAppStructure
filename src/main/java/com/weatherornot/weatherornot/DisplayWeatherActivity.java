@@ -11,8 +11,12 @@ import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.widget.ProgressBar;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
@@ -31,6 +35,8 @@ import android.graphics.Typeface;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+
 
 
 public class DisplayWeatherActivity extends Activity {
@@ -64,6 +70,9 @@ public class DisplayWeatherActivity extends Activity {
 
     public static int theIcon;
     static final String PREFERENCES = "temps";
+    //private ProgressDialog progress;
+
+
 
 
     /////1
@@ -91,6 +100,9 @@ public class DisplayWeatherActivity extends Activity {
 
         setContentView(R.layout.activity_main);
         mListView = (ListView) findViewById(R.id.hourly);
+        //progress=new ProgressDialog(this);
+
+
 
 
         //setting date from phone
@@ -119,6 +131,12 @@ public class DisplayWeatherActivity extends Activity {
     }
 
 
+//    public void open(View view){
+//        progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+//        progress.setIndeterminate(true);
+//        progress.show();
+//        progress.cancel();
+//    }
 
     ////////////////////////////////////////////////
     public void getWeather() {       //asking for the weather
@@ -206,7 +224,8 @@ public class DisplayWeatherActivity extends Activity {
         return true;
     }
 
-    //
+//
+//
     //   Here is all the code from SnarkyDisplay moved over to this
     //   Activity so we can use it on our display.
     //
@@ -310,7 +329,18 @@ public class DisplayWeatherActivity extends Activity {
         }
 
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+       switch (item.getItemId()){
+           case R.id.action_settings:
+               Intent a;
+               a = new Intent(getApplicationContext(), DisplaySettingsActivity.class);
+               startActivity(a);
+               return true;
 
+            }
+       return super.onOptionsItemSelected(item);
+   }
 
 }
 
