@@ -109,18 +109,18 @@
         android:background="@drawable/cold">
 
         <TextView
-            android:layout_width="30sp"
+            android:layout_width="15sp"
             android:layout_height="fill_parent"
             android:id="@+id/coldSpace1" />
 
         <TextView
-            android:layout_width="80sp"
+            android:layout_width="95sp"
             android:layout_height="fill_parent"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:paddingTop="10sp"
-            android:text="@string/coldLabel"
             android:gravity="right"
             android:id="@+id/coldLabel"
+            android:text="Too Cold"
             android:textColor="#1f052f" />
 
         <TextView
