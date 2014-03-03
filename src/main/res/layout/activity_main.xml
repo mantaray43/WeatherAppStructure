@@ -132,7 +132,6 @@
             android:layout_weight="1.5"
             android:id="@+id/hourly"
             android:textColor="#ffffff"
-            android:background="@drawable/border"
             android:padding="5dp"
 
 
