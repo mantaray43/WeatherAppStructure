@@ -35,7 +35,7 @@ public class PantsWeatherData {
 
 
     public String getIcon(){
-        return icon.toString();
+        return icon;
     }
 
 
@@ -58,8 +58,8 @@ public class PantsWeatherData {
 //    public void setCityData(PantsWeatherData cityData) {
 //        this.cityData = cityData;
 //    }
-//
-//    public PantsWeatherData cityData = new PantsWeatherData();
+
+    //public PantsWeatherData cityData = new PantsWeatherData();
 
 
 

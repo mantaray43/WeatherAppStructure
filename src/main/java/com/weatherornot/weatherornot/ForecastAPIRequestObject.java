@@ -18,9 +18,7 @@ import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 
-/**
- * Created by cheryl on 9/3/13.
- */
+
 public class ForecastAPIRequestObject {
 
 

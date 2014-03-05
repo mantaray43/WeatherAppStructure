@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         android:id="@+id/settingbackground"
         android:layout_weight="5"
-    android:background="@drawable/chalkboardbackground">
+        android:background="@drawable/chalkboardbackground">
 
 
     <LinearLayout
@@ -221,7 +221,8 @@
             android:layout_height="fill_parent"
             android:layout_gravity="center"
             android:text="@string/doneButton"
-            android:id="@+id/donebutton" />
+            android:id="@+id/donebutton"
+            />
     </LinearLayout>
 
     <LinearLayout
