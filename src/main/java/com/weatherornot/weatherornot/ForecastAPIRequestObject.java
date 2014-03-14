@@ -44,7 +44,7 @@ public class ForecastAPIRequestObject {
     public String getAssembledURL() {
             String pantsURL;
             pantsURL = mURL + mAPI_KEY + "/" + mlatitude.toString() + "," + mlongitude.toString();
-            Log.e("look here!!!", mlatitude.toString()+ " " + mlongitude.toString());
+            Log.e("look here!!! we have location data!", mlatitude.toString()+ " " + mlongitude.toString());
 
             return pantsURL;
 

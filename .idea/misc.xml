@@ -3,16 +3,6 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
-  <component name="GradleLocalSettings">
-    <option name="modificationStamps">
-      <map>
-        <entry key="$USER_HOME$/AndroidStudioProjects/iosched2013" value="1383077580000" />
-        <entry key="$USER_HOME$/AndroidStudioProjects/iosched2013/gradle" value="1383059078000" />
-        <entry key="$USER_HOME$/ControlFlow" value="1382833769000" />
-        <entry key="$PROJECT_DIR$/../aaaaaaasldjflkasdj/deltaobjects" value="1383781870000" />
-      </map>
-    </option>
-  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>

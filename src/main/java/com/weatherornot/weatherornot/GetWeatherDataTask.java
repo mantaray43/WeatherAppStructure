@@ -1,7 +1,6 @@
 package com.weatherornot.weatherornot;
 
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -10,7 +9,6 @@ import android.location.Location;
 
 import android.os.AsyncTask;
 import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -45,23 +43,21 @@ import static java.lang.reflect.Array.getDouble;
 public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integer,PantsWeatherData> {
     public DisplayWeatherActivity pantsWeatherDisplay;
     UserLocationManager myLocationManager;
-//    public Date formattedTime;
-//    private final String CLOUDY = "CLOUDY";
-//    private final String CLEAR_DAY = "CLEAR-DAY";
-//    private final String CLEAR_NIGHT = "CLEAR-NIGHT";
-//    private final String RAIN = "RAIN";
-//    private final String SNOW = "SNOW";
-//    private final String SLEET = "SLEET";
-//    private final String WIND = "WIND";
-//    private final String FOG = "FOG";
-//    private final String PARTLY_CLOUDY_DAY = "PARTLY-CLOUDY-DAY";
-//    private final String PARTLY_CLOUDY_NIGHT = "PARTLY-CLOUDY-NIGHT";
-//    private final String HAIL = "HAIL";
-//    private final String THUNDERSTORMS = "THUNDERSTORMS";
-//    private final String TORNADO = "TORNADO";
+    public Date formattedTime;
+    private final String CLOUDY = "CLOUDY";
+    private final String CLEAR_DAY = "CLEAR-DAY";
+    private final String CLEAR_NIGHT = "CLEAR-NIGHT";
+    private final String RAIN = "RAIN";
+    private final String SNOW = "SNOW";
+    private final String SLEET = "SLEET";
+    private final String WIND = "WIND";
+    private final String FOG = "FOG";
+    private final String PARTLY_CLOUDY_DAY = "PARTLY-CLOUDY-DAY";
+    private final String PARTLY_CLOUDY_NIGHT = "PARTLY-CLOUDY-NIGHT";
+    private final String HAIL = "HAIL";
+    private final String THUNDERSTORMS = "THUNDERSTORMS";
+    private final String TORNADO = "TORNADO";
     public static int theIcon;
-
-
 
 
 
@@ -86,7 +82,6 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
     public void receiveUserLocation(Location location){
         ForecastAPIRequestObject forecastAPIRequestObject = new ForecastAPIRequestObject(location);
         this.execute(forecastAPIRequestObject);
-
 
     }
 
@@ -121,6 +116,44 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                 myData.setIcon(currentlyJSON.getString("icon"));
 
 
+                if (currentlyJSON.getString("icon").equalsIgnoreCase(CLOUDY) )
+                     theIcon = (R.drawable.cloudy);
+                else if (currentlyJSON.getString("icon").equalsIgnoreCase(CLEAR_DAY)) {
+                    theIcon = (R.drawable.sunstandin);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(CLEAR_NIGHT)) {
+                    theIcon = (R.drawable.clearnight);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(RAIN)) {
+                    theIcon = (R.drawable.rain);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(SNOW)) {
+                    theIcon = (R.drawable.snow);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(SLEET)) {
+                    theIcon = (R.drawable.sleet);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(WIND)) {
+                    theIcon = (R.drawable.windy);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(FOG)) {
+                    theIcon = (R.drawable.fog);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(PARTLY_CLOUDY_DAY)) {
+                    theIcon = (R.drawable.partlycloudyday);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(PARTLY_CLOUDY_NIGHT)) {
+                    theIcon = (R.drawable.partlycloudynight);
+                } else if (currentlyJSON.getString("icon").equalsIgnoreCase(THUNDERSTORMS)) {
+                    theIcon = (R.drawable.thunderstorms);
+                } else theIcon = (R.drawable.tornado);
+
+
+
+
+
+
+
+                    Log.e((String) currentlyJSON.get("icon"), "fuck");
+
+
+
+
+
+
+
 
                 JSONObject hourlyJSON = rootJSON.getJSONObject("hourly");
                 JSONArray hourlyDataJSON = hourlyJSON.getJSONArray("data");
@@ -148,10 +181,10 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                     int temperature = name.getInt("temperature");
                     String summary = name.getString("summary");
                     //create the string you want to display
-                    String a = finalFormattedDate + "     " + temperature+"\u00BA" + "     " + summary.toString();
+                    String a = finalFormattedDate + "     " + temperature+"\u00BA" + "   " + summary;
                     myHourlyText[i] = a;
 
-                    Log.e("getweatherdatatask", finalFormattedDate + " , " + temperature + summary.toString());
+                    Log.e("LOOK", finalFormattedDate + " , " + temperature + summary);
                 }
 
                 myData.setmHourlyData(myHourlyText);
@@ -177,18 +210,13 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
         super.onPreExecute();
     }
 
-
-
-
-
     @Override
     public void onPostExecute(PantsWeatherData myData) {
-
         super.onPostExecute(myData);
 
+        pantsWeatherDisplay.receiveWeatherData(myData);
 
-      pantsWeatherDisplay.receiveWeatherData(myData);
-
+        Log.e("LOOK","received weather data");
 
     }
 
