@@ -152,7 +152,7 @@
             android:gravity="left"
             android:paddingTop="3sp"
             android:paddingRight="3sp"
-            android:paddingLeft="15sp"
+            android:paddingLeft="12sp"
             android:textColor="#fefefe"
 
             android:background="@drawable/chalktwo" />
