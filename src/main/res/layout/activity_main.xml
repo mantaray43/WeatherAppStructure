@@ -15,12 +15,7 @@
         android:orientation="vertical"
         android:layout_weight="1.5">
 
-         <!--<ProgressBar-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--style="@android:style/Widget.ProgressBar.Small"-->
-            <!--android:layout_marginRight="5dp"-->
-            <!--/>-->
+
 
         <TextView
             android:tag="@+id/myCustomFont"
@@ -157,7 +152,7 @@
             android:gravity="left"
             android:paddingTop="3sp"
             android:paddingRight="3sp"
-            android:paddingLeft="6sp"
+            android:paddingLeft="15sp"
             android:textColor="#fefefe"
 
             android:background="@drawable/chalktwo" />

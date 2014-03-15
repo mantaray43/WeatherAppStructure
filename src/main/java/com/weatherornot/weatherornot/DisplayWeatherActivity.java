@@ -2,21 +2,13 @@ package com.weatherornot.weatherornot;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.AssetManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.location.Location;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
-import android.app.ProgressDialog;
-import android.widget.ProgressBar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
@@ -30,24 +22,23 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
-import android.graphics.Typeface;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
+import static java.lang.Integer.parseInt;
+import static java.lang.Integer.valueOf;
 
 
 public class DisplayWeatherActivity extends Activity {
 
     ListView mListView;
     Typeface font;
-
-
-
     String fontPathB = "fonts/playtime.ttf";
     String fontPathC = "fonts/edo.ttf";
+    String mCurrentTemp;
+    int currentTemp;
+    int mCTemp;
 
 
     private final String CLOUDY = "CLOUDY";
@@ -72,37 +63,64 @@ public class DisplayWeatherActivity extends Activity {
     static final String PREFERENCES = "temps";
     //private ProgressDialog progress;
 
-
-
-
     /////1
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //shoot off the display settings activity
-        Intent intent = new Intent();
-        Intent i = new Intent(getApplicationContext(), DisplaySettingsActivity.class);
-        startActivity(i);
+
+        // Get Location Manager and check for GPS & Network location services
+//        LocationManager lm = (LocationManager) getSystemService(LOCATION_SERVICE);
+//        if(!lm.isProviderEnabled(LocationManager.GPS_PROVIDER) || !lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+//
+//            // Build the alert dialog
+//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//            builder.setTitle("Location Services Not Active");
+//            builder.setMessage("Please enable Location Services and GPS");
+//            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                public void onClick(DialogInterface dialogInterface, int i) {
+//                    //Show location settings when the user acknowledges the alert dialog
+//                    Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+//                    startActivity(intent);
+//                }
+//            });
+//            Dialog alertDialog = builder.create();
+//            //alertDialog.setCanceledOnTouchOutside(false);
+//            alertDialog.show();
+//
+//        }
+//        else{
+//            Intent intent = new Intent();
+//            Intent i = new Intent(getApplicationContext(), DisplaySettingsActivity.class);
+//            startActivity(intent);
+//        }
+
+
+//        //shoot off the display settings activity
+//        Intent intent = new Intent();
+//        Intent i = new Intent(getApplicationContext(), DisplaySettingsActivity.class);
+//        startActivity(i);
+
+
 
         //get the prefs
-        SharedPreferences myPrefs = getApplicationContext().getSharedPreferences("PREFERENCES", 0);
-        SharedPreferences.Editor editor = myPrefs.edit();
+        SharedPreferences myPrefs = getSharedPreferences(PREFERENCES,0);
+        //boolean prefSave = myPrefs.getBoolean("prefscompleted",false);
 
-       //if prefs are complete move to main activity
-        if (myPrefs.getBoolean("prefscompleted", false)) {
-            Intent intentPrefs;
-            intentPrefs = new Intent(getApplicationContext(), DisplaySettingsActivity.class);
-            startActivity(intentPrefs);
+        //Log.e("LOOK retrieved prefs", String.valueOf(hot) + String.valueOf(cold) + String.valueOf(perfect));
+
+        if(myPrefs.getBoolean("prefscompleted",false)== false){
+            Intent boo = new Intent(getApplicationContext(),DisplaySettingsActivity.class);
+            startActivity(boo);
         }
-
-
+        else {
+            if (myPrefs.getBoolean("prefscompleted", true) == true) {
+                onResume();
+            }
+        }
 
         setContentView(R.layout.activity_main);
         mListView = (ListView) findViewById(R.id.hourly);
-        //progress=new ProgressDialog(this);
-
-
 
 
         //setting date from phone
@@ -131,12 +149,7 @@ public class DisplayWeatherActivity extends Activity {
     }
 
 
-//    public void open(View view){
-//        progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-//        progress.setIndeterminate(true);
-//        progress.show();
-//        progress.cancel();
-//    }
+
 
     ////////////////////////////////////////////////
     public void getWeather() {       //asking for the weather
@@ -151,13 +164,15 @@ public class DisplayWeatherActivity extends Activity {
 
         TextView textView = (TextView) findViewById(R.id.currenttemp);
 
-        String mCurrentTemp = myDataObject.getmCurrentTempString();
+        mCurrentTemp = myDataObject.getmCurrentTempString();
         String roundedDouble = "";
         roundedDouble = mCurrentTemp.substring(0, mCurrentTemp.indexOf('.'));
         textView.setText(roundedDouble + "\u00B0");
 
+        Log.e("LOOK===============value of mCurrentTemp", String.valueOf(mCurrentTemp.toString()));
+
         mListView = (ListView) findViewById(R.id.hourly);
-        ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.row, myDataObject.getmHourlyData());
+        ListAdapter adapter = new ArrayAdapter<String>( getApplicationContext(),R.layout.row, myDataObject.getmHourlyData());
 
         mListView.setAdapter(adapter);
 
@@ -202,9 +217,13 @@ public class DisplayWeatherActivity extends Activity {
 
         //oh, go and update with a snarky message
         //convert the temperature to an int
-        int currentTemp = (int) myDataObject.getmCurrentTemp().intValue();
-        //pass it to the snark
+        int currentTemp =  myDataObject.getmCurrentTemp().intValue();
+
+
+       //pass it to the snark
         determineSnark(currentTemp);
+
+        Log.e("LOOK________________value of currentTemp",String.valueOf(currentTemp));
     }
 
 
@@ -230,50 +249,69 @@ public class DisplayWeatherActivity extends Activity {
     //   Activity so we can use it on our display.
     //
 
-    static SharedPreferences settings;
-//
-        String hotString = "temphot";
-        String coldString = "tempcold";
-        String perfectString = "tempperfect";
-//        String range;
 
-    public void determineSnark(int mCTemp) {
+
+
+
+    public void determineSnark(int currentTemp) {
+
+
 
         String range;
 
-        settings = getSharedPreferences(PREFERENCES, 0);
+
+
+        SharedPreferences settings = getSharedPreferences(PREFERENCES,0);
         SharedPreferences.Editor editor = settings.edit();
-        int hot = new Integer(settings.getString(hotString, "temphot"));
-        SharedPreferences.Editor editorCold = settings.edit();
-        int cold = new Integer(settings.getString(coldString, "tempcold"));
-        SharedPreferences.Editor editorPerfect = settings.edit();
-        int perfect = new Integer(settings.getString(perfectString, "tempperfect"));
+        String a = settings.getString("hot","888");
+        String b = settings.getString("cold","888");
+        String c = settings.getString("perfect","888");
+
+        int hot1 = parseInt(a, 10);
+        int cold1 = parseInt(b, 10);
+        int perfect1 = parseInt(c, 10);
 
 
 
+        Log.e("LOOK-------------------------------------------- shared pref values", String.valueOf("hot")+String.valueOf("cold")+String.valueOf("perfect"));
 
 
+        Log.e("LOOK-------------------------------------------- get prefs convert to int", String.valueOf(hot1) + String.valueOf(cold1) + String.valueOf(perfect1));
+        Log.e("LOOK-------------------------------------------- get prefs convert to int - are these listed", String.valueOf(hot1) + String.valueOf(cold1)+ String.valueOf(perfect1));
 
-        if (mCTemp < cold) {    //bittercold
+        //this is getting a reference to the view
+        TextView myTextView = (TextView) findViewById(R.id.currenttemp);
+
+
+//        //creating a string of  the temp data from the api
+//        int cTemp = currentTemp;
+//        this is converting that to an integer
+        int mCTemp = valueOf(currentTemp);
+
+        Log.e("LOOK----------------------------------------------what is the value of mCTemp?", String.valueOf(mCTemp));
+
+        if (mCTemp < cold1) {    //bittercold
             range = "bittercold";
-        } else if ((mCTemp >= cold) && mCTemp <= (cold + 10)) {     //toocold
+        } else if ((mCTemp <= cold1) && mCTemp <= (cold1 + 10)) {     //toocold
             range = "toocold";
-        } else if ((mCTemp > (cold + 10) && (mCTemp  <= (cold + 17)))) {      //good
+        } else if ((mCTemp > (cold1 + 10) && (mCTemp <= (cold1 + 17)))) {      //good
             range = "good";
-        } else if ((mCTemp > (cold + 10) && (mCTemp <= (perfect + 10)))) {   //perfect
+        } else if ((mCTemp > (cold1 + 10) && (mCTemp <= (perfect1 + 10)))) {   //perfect
             range = "perfect";
-        } else if ((mCTemp > (perfect + 10) && (mCTemp <= (hot - 5)))) {   //warm
+        } else if ((mCTemp > (perfect1 + 10) && (mCTemp <= (hot1 - 5)))) {   //warm
             range = "warm";
-        } else if (mCTemp > (hot - 5) && (mCTemp <= (hot + 3))) { //too hot
+        } else if (mCTemp > (hot1 - 5) && (mCTemp <= (hot1 + 3))) { //too hot
             range = "toohot";
-        } else if (mCTemp > (hot + 4)) {
+        } else if (mCTemp > (hot1 + 4)) {
             range = "toodanghot";
         } else {
             range = "toodanghot";
         }
 
         displaySnarkiness(range);
-        TextView myTextView = (TextView)findViewById(R.id.snarky);
+
+        Log.e("LOOK---------------------------------------------what is the range?",String.valueOf(range) );
+        myTextView = (TextView) findViewById(R.id.snarky);
     }
 
     public String getJSONFile() {
@@ -326,6 +364,7 @@ public class DisplayWeatherActivity extends Activity {
 
         } catch (JSONException e) {
             e.printStackTrace();
+            Log.e("Look----------------------------------",e.getMessage(), e);
         }
 
     }
@@ -336,6 +375,7 @@ public class DisplayWeatherActivity extends Activity {
                Intent a;
                a = new Intent(getApplicationContext(), DisplaySettingsActivity.class);
                startActivity(a);
+
                return true;
 
             }

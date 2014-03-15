@@ -64,10 +64,10 @@ public class DisplaySettingsActivity extends Activity {
                 editor.putString("perfect", perfect);
                 editor.commit();
 
-                Log.e("LOOK prefs saved", hot + cold + perfect);
+                Log.e("LOOK--------------------------------- prefs saved", hot + cold + perfect);
                 editor.putBoolean("prefscompleted", true);
 
-                Log.e("LOOK boolean", "prefscompleted");
+                Log.e("LOOK--------------------------------- boolean", "prefscompleted");
 
                 Intent toWeather = new Intent(getApplicationContext(),DisplayWeatherActivity.class);
                 startActivity(toWeather);

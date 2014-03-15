@@ -51,7 +51,7 @@ public class UserLocationManager implements LocationListener{
         getWeatherDataTask.receiveUserLocation(location);
 
 //13
-        Log.e(getWeatherDataTask.toString(),"look here asshole");
+        Log.e("LOOK-----------------------------Get weather data task", getWeatherDataTask.toString());
 
 
    }

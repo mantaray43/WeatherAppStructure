@@ -69,7 +69,7 @@ public class GeonameAPITask extends AsyncTask<Location, Integer, String> {
 
                     myCity = cName.getString("name")+ ", " + sName.getString("adminCode1" );
 
-                    Log.e("LOOK we have the city name", myCity);
+                    Log.e("LOOK--------------------------------------- we have the city name", myCity);
 
                 }
 
@@ -92,7 +92,7 @@ public class GeonameAPITask extends AsyncTask<Location, Integer, String> {
         super.onPostExecute(cityData);
         cityDisplay.updateMyCity(cityData);
 
-        Log.e("LOOK, city is displayed", cityData);
+                Log.e("LOOK----------------------------------------- city is displayed", cityData);
 
     }
 
