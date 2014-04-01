@@ -6,6 +6,7 @@ import android.content.Context;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.util.Log;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.StatusLine;
@@ -14,13 +15,14 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
 //                                               params                    progress     result
-public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integer,PantsWeatherData> {
+public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject, Integer, PantsWeatherData> {
     public DisplayWeatherActivity pantsWeatherDisplay;
     UserLocationManager myLocationManager;
     public Date formattedTime;
@@ -43,10 +45,10 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
 
     /////4
-    public GetWeatherDataTask(DisplayWeatherActivity b){
+    public GetWeatherDataTask(DisplayWeatherActivity b) {
         //this is the constructor//expecting a display weather activity and we are calling it B
         super();
-        Log.e("LOOK-------------------------------------","step 2 works");
+        Log.e("LOOK-------------------------------------", "Get Weather Data task works");
         pantsWeatherDisplay = b;  //This is a DisplayWeatherActivity (refers to our display view) we
         //are referencing it as pantsWeatherDisplay a
 
@@ -56,23 +58,17 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
     }
 
     //////5
-    public void goGetLocation(){
+    public void goGetLocation() {
 
         myLocationManager = new UserLocationManager(this);
-
-
-
 
 
     }
 
     ///11
-    public void receiveUserLocation(Location location){
+    public void receiveUserLocation(Location location) {
         ForecastAPIRequestObject forecastAPIRequestObject = new ForecastAPIRequestObject(location);
         this.execute(forecastAPIRequestObject);
-
-
-
 
 
     }
@@ -83,21 +79,20 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
     }
 
 
-    @Override                                           ///...means array of forecastAPIRequestObjects
+    @Override
+    ///...means array of forecastAPIRequestObjects
     public PantsWeatherData doInBackground(ForecastAPIRequestObject... forecastAPIRequestObjects) {
 
         PantsWeatherData myData = new PantsWeatherData();
         myData.myGeoLocation = forecastAPIRequestObjects[0].myLocation;
 
 
-
-
-        try{
-            HttpClient httpClient = new DefaultHttpClient ();
+        try {
+            HttpClient httpClient = new DefaultHttpClient();
             HttpGet g = new HttpGet(forecastAPIRequestObjects[0].getAssembledURL());
             HttpResponse httpResponse = httpClient.execute(g);
             StatusLine statusLine = httpResponse.getStatusLine();
-            if(statusLine.getStatusCode()== HttpStatus.SC_OK){
+            if (statusLine.getStatusCode() == HttpStatus.SC_OK) {
                 ByteArrayOutputStream out = new ByteArrayOutputStream();
                 httpResponse.getEntity().writeTo(out);
                 out.close();
@@ -113,8 +108,8 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                 myData.setIcon(currentlyJSON.getString("icon"));
 
 
-                if (currentlyJSON.getString("icon").equalsIgnoreCase(CLOUDY) )
-                     theIcon = (R.drawable.cloudy);
+                if (currentlyJSON.getString("icon").equalsIgnoreCase(CLOUDY))
+                    theIcon = (R.drawable.cloudy);
                 else if (currentlyJSON.getString("icon").equalsIgnoreCase(CLEAR_DAY)) {
                     theIcon = (R.drawable.sunstandin);
                 } else if (currentlyJSON.getString("icon").equalsIgnoreCase(CLEAR_NIGHT)) {
@@ -138,18 +133,7 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                 } else theIcon = (R.drawable.tornado);
 
 
-
-
-
-
-
-                    Log.e("LOOK---------------------------get icon",(String) currentlyJSON.get("icon"));
-
-
-
-
-
-
+                Log.e("LOOK-------------------------------------------getting icon", (String) currentlyJSON.get("icon"));
 
 
                 JSONObject hourlyJSON = rootJSON.getJSONObject("hourly");
@@ -157,7 +141,7 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
                 String[] myHourlyText = new String[hourlyDataJSON.length()];
 
-                for(int i = 0; i<hourlyDataJSON.length();i++){
+                for (int i = 0; i < hourlyDataJSON.length(); i++) {
 
                     JSONObject name = hourlyDataJSON.getJSONObject(i);
                     Long value = hourlyDataJSON.getJSONObject(i).getLong("time");
@@ -174,19 +158,18 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
                     }
 
 
-
                     int temperature = name.getInt("temperature");
                     String summary = name.getString("summary");
                     //create the string you want to display
-                    String a = finalFormattedDate + "     " + temperature+"\u00BA" + "   " + summary;
+                    String a = finalFormattedDate + "     " + temperature + "\u00BA" + "   " + summary;
                     myHourlyText[i] = a;
 
-                    Log.e("LOOK---------------------------weather data", finalFormattedDate + " , " + temperature + summary);
+                    Log.e("LOOK---------------------------------------------------weather data", finalFormattedDate + " , " + temperature + summary);
                 }
 
                 myData.setmHourlyData(myHourlyText);
 
-            }else{
+            } else {
                 httpResponse.getEntity().getContent().close();
 
             }
@@ -199,14 +182,9 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
     }
 
 
-
-
-
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-
-        
 
 
     }
@@ -217,9 +195,8 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
 
         pantsWeatherDisplay.receiveWeatherData(myData);
 
-//        waiting.dismiss();
 
-        Log.e("LOOK------------------------------------","received weather data");
+        Log.e("LOOK---------------------------------------------------------------", "received weather data");
 
     }
 
@@ -227,7 +204,6 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject,Integ
     protected void onProgressUpdate(Integer... values) {
         super.onProgressUpdate(values);
     }
-
 
 
 }

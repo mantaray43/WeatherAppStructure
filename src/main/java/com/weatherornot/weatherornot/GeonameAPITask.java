@@ -19,15 +19,15 @@ public class GeonameAPITask extends AsyncTask<Location, Integer, String> {
 
     public String myCity;
     public String myURL = "http://api.geonames.org/findNearbyPlaceNameJSON?";
-    public String API_User= "mantaray43";
+    public String API_User = "mantaray43";
     public String mlatitude;
     public String mLongitude;
     public DisplayWeatherActivity cityDisplay;
 
-    public String geoAssembledURL(Location l){
+    public String geoAssembledURL(Location l) {
 
         String cityURL;
-        cityURL = myURL  + "lat=" + l.getLatitude() + "&lng=" + l.getLongitude() + "&username=" + API_User;
+        cityURL = myURL + "lat=" + l.getLatitude() + "&lng=" + l.getLongitude() + "&username=" + API_User;
         return cityURL;
 
     }
@@ -40,34 +40,34 @@ public class GeonameAPITask extends AsyncTask<Location, Integer, String> {
     protected String doInBackground(Location... myLocations) {
 
 
-       String myCity = "none";
+        String myCity = "none";
 
-        try{
+        try {
 
 
             HttpClient httpClient = new DefaultHttpClient();
             HttpGet c = new HttpGet(geoAssembledURL(myLocations[0]));
             HttpResponse httpResponse = httpClient.execute(c);
             StatusLine statusLine = httpResponse.getStatusLine();
-            if(statusLine.getStatusCode()== HttpStatus.SC_OK){
+            if (statusLine.getStatusCode() == HttpStatus.SC_OK) {
                 ByteArrayOutputStream out = new ByteArrayOutputStream();
                 httpResponse.getEntity().writeTo(out);
                 out.close();
                 String responseString = out.toString();
-                Log.e("look",responseString);
+                Log.e("look", responseString);
 
 
                 JSONObject gRootJSON = new JSONObject(responseString);
                 JSONArray geonamesJSON = gRootJSON.getJSONArray("geonames");
 
-                if(geonamesJSON.length() > 0){
+                if (geonamesJSON.length() > 0) {
 
                     JSONObject cName = geonamesJSON.getJSONObject(0);
                     JSONObject sName = geonamesJSON.getJSONObject(0);
 
                     //cName.getJSONObject("name");
 
-                    myCity = cName.getString("name")+ ", " + sName.getString("adminCode1" );
+                    myCity = cName.getString("name") + ", " + sName.getString("adminCode1");
 
                     Log.e("LOOK--------------------------------------- we have the city name", myCity);
 
@@ -81,6 +81,7 @@ public class GeonameAPITask extends AsyncTask<Location, Integer, String> {
         return myCity;
 
     }
+
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
@@ -92,7 +93,7 @@ public class GeonameAPITask extends AsyncTask<Location, Integer, String> {
         super.onPostExecute(cityData);
         cityDisplay.updateMyCity(cityData);
 
-                Log.e("LOOK----------------------------------------- city is displayed", cityData);
+        Log.e("LOOK----------------------------------------- city is displayed", cityData);
 
     }
 

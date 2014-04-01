@@ -152,7 +152,7 @@
             android:gravity="left"
             android:paddingTop="3sp"
             android:paddingRight="3sp"
-            android:paddingLeft="12sp"
+            android:paddingLeft="8sp"
             android:textColor="#fefefe"
 
             android:background="@drawable/chalktwo" />
@@ -160,11 +160,12 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             android:id="@+id/pants"
 
             android:layout_weight="1"
             android:baselineAlignBottom="false"
-            android:paddingTop="5sp"
+            android:paddingTop="17sp"
             android:paddingBottom="5sp"/>
 
     </LinearLayout>

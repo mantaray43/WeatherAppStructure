@@ -12,36 +12,45 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import static android.location.LocationManager.*;
 
 
 //  This class wraps all the code we will use to manage getting updates on the location
 
-public class UserLocationManager implements LocationListener{
+public class UserLocationManager implements LocationListener {
 
     public GetWeatherDataTask getWeatherDataTask;
     LocationManager lm;
 
 
 
-////6
-    public UserLocationManager (GetWeatherDataTask x){
+
+
+
+    ////6
+    public UserLocationManager(GetWeatherDataTask x) {
         super();
 
 ////7
         getWeatherDataTask = x;   // use getWeatherDataTask when onLocationChanged is called
         lm = (LocationManager) getWeatherDataTask.pantsWeatherDisplay.getSystemService(Context.LOCATION_SERVICE);
 
-        try{
+        try {
             lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
+            Log.e("Look----------------------------------------------------------------------", e.getMessage(), e);}
         }
-    }
 
-////8
+
+
+
+
+
+    ////8
     @Override
     public void onLocationChanged(Location location) {
 
@@ -54,7 +63,7 @@ public class UserLocationManager implements LocationListener{
         Log.e("LOOK-----------------------------Get weather data task", getWeatherDataTask.toString());
 
 
-   }
+    }
 
     @Override
     public void onStatusChanged(String s, int i, Bundle bundle) {

@@ -19,6 +19,7 @@ import android.widget.ImageView;
 
 import java.io.IOException;
 import java.io.InputStream;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -41,7 +42,10 @@ public class DisplaySettingsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
 
-        Button doneSaveButton = (Button)findViewById(R.id.donebutton);
+
+
+
+        Button doneSaveButton = (Button) findViewById(R.id.donebutton);
 
         doneSaveButton.setOnClickListener(new View.OnClickListener() {
 
@@ -49,15 +53,14 @@ public class DisplaySettingsActivity extends Activity {
             public void onClick(View view) {
 
 
+                EditText h = (EditText) findViewById(R.id.hotNumber);
+                EditText c = (EditText) findViewById(R.id.coldNumber);
+                EditText p = (EditText) findViewById(R.id.perfectNumber);
 
-                EditText h = (EditText)findViewById(R.id.hotNumber);
-                EditText c = (EditText)findViewById(R.id.coldNumber);
-                EditText p = (EditText)findViewById(R.id.perfectNumber);
-
-                SharedPreferences myPrefs = getSharedPreferences(PREFERENCES,0);
+                SharedPreferences myPrefs = getSharedPreferences(PREFERENCES, 0);
                 SharedPreferences.Editor editor = myPrefs.edit();
                 String hot = h.getText().toString();
-                editor.putString("hot",hot);
+                editor.putString("hot", hot);
                 String cold = c.getText().toString();
                 editor.putString("cold", cold);
                 String perfect = p.getText().toString();
@@ -67,28 +70,21 @@ public class DisplaySettingsActivity extends Activity {
                 Log.e("LOOK--------------------------------- prefs saved", hot + cold + perfect);
                 editor.putBoolean("prefscompleted", true);
 
-                Log.e("LOOK--------------------------------- boolean", "prefscompleted");
 
-                Intent toWeather = new Intent(getApplicationContext(),DisplayWeatherActivity.class);
+                Intent toWeather = new Intent(getApplicationContext(), DisplayWeatherActivity.class);
                 startActivity(toWeather);
 
                 editor.commit();
-
-
-
-
-
-
+                finish();
 
 
             }
-        }); {
+        });
+        {
 
 
         }
     }
-
-
 
 
 }

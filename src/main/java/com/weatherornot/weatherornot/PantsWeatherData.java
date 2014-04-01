@@ -3,8 +3,8 @@ package com.weatherornot.weatherornot;
 import android.location.Location;
 
 /**
-* Created by cheryl on 9/3/13.
-*/
+ * Created by cheryl on 9/3/13.
+ */
 public class PantsWeatherData {
 
 
@@ -21,24 +21,14 @@ public class PantsWeatherData {
     }
 
 
-
-
-
-
-
-
-
-
     public PantsWeatherData() {
 
     }
 
 
-    public String getIcon(){
+    public String getIcon() {
         return icon;
     }
-
-
 
 
     public void setIcon(String icon) {
@@ -46,9 +36,7 @@ public class PantsWeatherData {
     }
 
 
-
     public String icon;
-
 
 
 //    public PantsWeatherData getCityData() {
@@ -60,8 +48,6 @@ public class PantsWeatherData {
 //    }
 
     //public PantsWeatherData cityData = new PantsWeatherData();
-
-
 
 
     public String getGiveDate() {
@@ -83,9 +69,10 @@ public class PantsWeatherData {
         this.mHourlyData = mHourlyData;
     }
 
-    public String getmCurrentTempString(){
+    public String getmCurrentTempString() {
         return mCurrentTemp.toString();
     }
+
     public Double getMtime() {
         return mtime;
     }
