@@ -1,22 +1,7 @@
 package com.weatherornot.weatherornot;
 
-import android.annotation.TargetApi;
 import android.location.Location;
-import android.net.http.AndroidHttpClient;
-import android.os.AsyncTask;
-import android.os.Build;
 import android.util.Log;
-
-
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.StatusLine;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONObject;
-
-import java.io.ByteArrayOutputStream;
 
 
 public class ForecastAPIRequestObject {

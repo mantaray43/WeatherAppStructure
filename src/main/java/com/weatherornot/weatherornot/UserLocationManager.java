@@ -6,15 +6,6 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-
-import static android.location.LocationManager.*;
 
 
 //  This class wraps all the code we will use to manage getting updates on the location
@@ -23,10 +14,6 @@ public class UserLocationManager implements LocationListener {
 
     public GetWeatherDataTask getWeatherDataTask;
     LocationManager lm;
-
-
-
-
 
 
     ////6
@@ -42,12 +29,9 @@ public class UserLocationManager implements LocationListener {
 
         } catch (Exception e) {
             e.printStackTrace();
-            Log.e("Look----------------------------------------------------------------------", e.getMessage(), e);}
+            Log.e("Look----------------------------------------------------------------------", e.getMessage(), e);
         }
-
-
-
-
+    }
 
 
     ////8

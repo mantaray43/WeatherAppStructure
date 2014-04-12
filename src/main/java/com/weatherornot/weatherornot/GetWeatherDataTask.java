@@ -2,7 +2,6 @@ package com.weatherornot.weatherornot;
 
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -17,6 +16,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -193,7 +193,11 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject, Inte
     public void onPostExecute(PantsWeatherData myData) {
         super.onPostExecute(myData);
 
-        pantsWeatherDisplay.receiveWeatherData(myData);
+        try {
+            pantsWeatherDisplay.receiveWeatherData(myData);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
 
         Log.e("LOOK---------------------------------------------------------------", "received weather data");
