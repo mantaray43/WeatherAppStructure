@@ -19,6 +19,7 @@ import android.widget.EditText;
 public class DisplaySettingsActivity extends Activity {
 
     static final String PREFERENCES = "temps";
+    public static final String TEMPSAVED = "tempsSaved";
     EditText hot;
     EditText cold;
     EditText perfect;
@@ -34,6 +35,7 @@ public class DisplaySettingsActivity extends Activity {
 
         checkIfNetworkLocationAvailable();
 
+       loadPrefs();
 
 
         Button doneSaveButton = (Button) findViewById(R.id.donebutton);
@@ -56,11 +58,12 @@ public class DisplaySettingsActivity extends Activity {
                 editor.putString("cold", cold);
                 String perfect = p.getText().toString();
                 editor.putString("perfect", perfect);
+                editor.putBoolean("tempSaved",true);
                 editor.commit();
                 finish();
 
                 Log.e("LOOK--------------------------------- prefs saved", hot + cold + perfect);
-                editor.putBoolean("prefscompleted", true);
+                editor.putBoolean("tempSaved",true);
 
 
                 Intent toWeather = new Intent(getApplicationContext(), DisplayWeatherActivity.class);
@@ -98,13 +101,25 @@ public class DisplaySettingsActivity extends Activity {
 
 
             dialog.show();
+
+
         }
         if(networkLocationEnabled){
             onResume();
         }
     }
 
+private void loadPrefs(){
+    SharedPreferences myPrefs = getSharedPreferences(PREFERENCES, 0);
+    boolean lp = myPrefs.getBoolean("tempSaved",false);
 
+    if(lp == true){
+        Intent i = new Intent(getApplicationContext(),DisplayWeatherActivity.class);
+        startActivity(i);
+    }else if(lp == false){
+        onResume();
+    }
+}
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -124,8 +139,7 @@ public class DisplaySettingsActivity extends Activity {
         editor.commit();
 
         Log.e("LOOK--------------------------------- prefs savedx2", hot + cold + perfect);
-        editor.putBoolean("prefscompleted", true);
-
+        editor.putBoolean("tempsSaved",true);
 
     }
 }
