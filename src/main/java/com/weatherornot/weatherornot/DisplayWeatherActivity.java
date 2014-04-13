@@ -116,7 +116,7 @@ public class DisplayWeatherActivity extends Activity {
     public void receiveWeatherData(PantsWeatherData myDataObject) throws ParseException {
 
         TextView textView = (TextView) findViewById(R.id.currenttemp);
-
+        waiting.dismiss();
 
         mCurrentTemp = myDataObject.getmCurrentTempString();
         String roundedDouble = "";
@@ -125,8 +125,8 @@ public class DisplayWeatherActivity extends Activity {
 
         Log.e("LOOK--------------------------------------value of mCurrentTemp", String.valueOf(mCurrentTemp.toString()));
 
-        //end Alert Dialog
-        waiting.dismiss();
+
+
 
         mListView = (ListView) findViewById(R.id.hourly);
         ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.row, myDataObject.getmHourlyData());

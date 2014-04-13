@@ -35,7 +35,7 @@ public class DisplaySettingsActivity extends Activity {
 
         checkIfNetworkLocationAvailable();
 
-       loadPrefs();
+
 
 
         Button doneSaveButton = (Button) findViewById(R.id.donebutton);
@@ -86,7 +86,7 @@ public class DisplaySettingsActivity extends Activity {
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         boolean networkLocationEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER) || locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 
-        if(!networkLocationEnabled){
+        if(networkLocationEnabled==false){
             //show dialog to allow user to enable location settings
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
             dialog.setTitle("Location Services Not Active");
@@ -95,17 +95,21 @@ public class DisplaySettingsActivity extends Activity {
             dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                     startActivityForResult(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS), 0);
-                }
-            });
 
+                    loadPrefs();
+
+                }
+
+            });
 
 
             dialog.show();
 
 
+
         }
-        if(networkLocationEnabled){
-            onResume();
+        if(networkLocationEnabled==true){
+            loadPrefs();
         }
     }
 
@@ -120,6 +124,8 @@ private void loadPrefs(){
         onResume();
     }
 }
+
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
