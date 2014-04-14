@@ -23,7 +23,6 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/directions"
-            android:layout_gravity="center"
             android:background="@drawable/directions">
 
             </ImageView>
@@ -56,32 +55,32 @@
         android:background="@drawable/hot">
 
         <TextView
-        android:layout_width="30dp"
+        android:layout_width="120dp"
         android:layout_height="fill_parent"
         android:id="@+id/hotSpace1" />
 
         <TextView
-            android:layout_width="80dp"
+            android:layout_width="160dp"
             android:layout_height="fill_parent"
-            android:paddingTop="10dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:paddingTop="20dp"
+            android:textSize="45sp"
             android:text="@string/hotLabel"
             android:gravity="right"
             android:id="@+id/hotLabel"
             android:textColor="#1f052f" />
 
         <TextView
-            android:layout_width="20dp"
+            android:layout_width="40dp"
             android:layout_height="fill_parent"
             android:id="@+id/hotSpace2" />
 
 
         <EditText
-            android:layout_width="60dp"
+            android:layout_width="120dp"
             android:layout_height="fill_parent"
-            android:paddingTop="10dp"
+            android:paddingTop="20dp"
             android:inputType="number"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="45sp"
             android:gravity="top"
             android:imeOptions="actionNext"
             android:text="@string/hotNumber"
@@ -89,14 +88,15 @@
             android:textColor="#1f052f" />
 
         <TextView
-            android:layout_width="95dp"
+            android:layout_width="200dp"
             android:layout_height="fill_parent"
-            android:paddingTop="10dp"
+            android:paddingTop="20dp"
             android:id="@+id/degrees"
             android:gravity="right"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/degrees"
-            android:textColor="#1f052f" />
+            android:textColor="#1f052f"
+            android:textIsSelectable="false"
+            android:textSize="45dp" />
     </LinearLayout>
 
 
@@ -109,19 +109,19 @@
         android:background="@drawable/cold">
 
         <TextView
-            android:layout_width="15dp"
+            android:layout_width="110dp"
             android:layout_height="fill_parent"
             android:id="@+id/coldSpace1" />
 
         <TextView
-            android:layout_width="95dp"
+            android:layout_width="180dp"
             android:layout_height="fill_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:paddingTop="10dp"
+            android:paddingTop="20dp"
             android:gravity="right"
             android:id="@+id/coldLabel"
             android:text="Too Cold"
-            android:textColor="#1f052f" />
+            android:textColor="#1f052f"
+            android:textSize="45dp" />
 
         <TextView
             android:layout_width="20dp"
@@ -130,26 +130,27 @@
 
 
         <EditText
-            android:layout_width="60dp"
+            android:layout_width="120dp"
             android:layout_height="fill_parent"
             android:inputType="number"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="45sp"
             android:gravity="top"
-            android:paddingTop="10dp"
+            android:paddingTop="20dp"
             android:imeOptions="actionNext"
             android:text="@string/coldNumber"
             android:id="@+id/coldNumber"
             android:textColor="#1f052f" />
 
         <TextView
-            android:layout_width="95sp"
+            android:layout_width="200dp"
             android:layout_height="fill_parent"
             android:id="@+id/degrees1"
-            android:paddingTop="10dp"
+            android:paddingTop="20dp"
             android:gravity="right"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+
             android:text="@string/degrees"
-            android:textColor="#1f052f" />
+            android:textColor="#1f052f"
+            android:textSize="45dp" />
 
     </LinearLayout>
 
@@ -162,15 +163,15 @@
         android:background="@drawable/perfect">
 
         <TextView
-            android:layout_width="30dp"
+            android:layout_width="120dp"
             android:layout_height="fill_parent"
             android:id="@+id/perfectSpace1" />
 
         <TextView
-            android:layout_width="80dp"
+            android:layout_width="160dp"
             android:layout_height="fill_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:paddingTop="10dp"
+            android:textSize="45sp"
+            android:paddingTop="20dp"
             android:text="@string/perfectLabel"
             android:gravity="right"
             android:id="@+id/perfectLabel"
@@ -183,23 +184,23 @@
 
 
         <EditText
-            android:layout_width="60dp"
+            android:layout_width="120dp"
             android:layout_height="fill_parent"
             android:inputType="number"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="45sp"
             android:gravity="top"
-            android:paddingTop="10dp"
+            android:paddingTop="20dp"
             android:imeOptions="actionDone"
             android:text="@string/perfectNumber"
             android:id="@+id/perfectNumber"
             android:textColor="#1f052f" />
 
         <TextView
-            android:layout_width="95dp"
+            android:layout_width="200dp"
             android:layout_height="fill_parent"
             android:id="@+id/degrees2"
-            android:paddingTop="10sp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:paddingTop="20dp"
+            android:textSize="45sp"
             android:gravity="right"
             android:text="@string/degrees"
             android:textColor="#1f052f" />

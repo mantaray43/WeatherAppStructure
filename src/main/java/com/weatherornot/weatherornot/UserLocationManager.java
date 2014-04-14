@@ -26,6 +26,7 @@ public class UserLocationManager implements LocationListener {
 
         try {
             lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+            lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0,0,this);
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -57,7 +57,7 @@ public class DisplayWeatherActivity extends Activity {
 //        DisplayWeatherActivity.theIcon = theIcon;
 //    }
 
-
+   
     static final String PREFERENCES = "temps";
     ProgressDialog waiting;
 

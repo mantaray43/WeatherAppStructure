@@ -19,7 +19,13 @@ import android.widget.EditText;
 public class DisplaySettingsActivity extends Activity {
 
     static final String PREFERENCES = "temps";
-
+//    public static final String tempsSaved = "tempsSaved";
+//    EditText hot;
+//    EditText cold;
+//    EditText perfect;
+//    int hot1;
+//    int cold1;
+//    int perfect1;
 
 
     @Override

@@ -27,7 +27,7 @@
 
             android:textColor="#d4d2e0"
             android:typeface="normal"
-            android:textSize="40sp" />
+            android:textSize="20sp" />
 
 
 
@@ -64,7 +64,7 @@
             android:textColor="#340607"
             android:background="@drawable/chalkone"
 
-            android:textSize="40sp" />
+            android:textSize="25sp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -79,7 +79,7 @@
 
             android:textColor="#340607"
             android:background="@drawable/chalkone"
-            android:textSize="40sp" />
+            android:textSize="25sp" />
     </LinearLayout>
 
     <LinearLayout
