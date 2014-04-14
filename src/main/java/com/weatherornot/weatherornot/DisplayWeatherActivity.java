@@ -51,13 +51,13 @@ public class DisplayWeatherActivity extends Activity {
     private final String THUNDERSTORMS = "THUNDERSTORMS";
     private final String TORNADO = "TORNADO";
 
-    static final int SET_SERVICES = 0;
+//    static final int SET_SERVICES = 0;
 
-    public static void setTheIcon(int theIcon) {
-        DisplayWeatherActivity.theIcon = theIcon;
-    }
+//    public static void setTheIcon(int theIcon) {
+//        DisplayWeatherActivity.theIcon = theIcon;
+//    }
 
-    public static int theIcon;
+
     static final String PREFERENCES = "temps";
     ProgressDialog waiting;
 

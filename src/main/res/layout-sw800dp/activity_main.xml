@@ -27,7 +27,7 @@
 
             android:textColor="#d4d2e0"
             android:typeface="normal"
-            android:textSize="10dp" />
+            android:textSize="40sp" />
 
 
 
@@ -36,13 +36,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:textSize="20dp"
+            android:textSize="80sp"
             android:id="@+id/location"
             android:paddingBottom="4dp"
             android:clickable="false"
             android:typeface="serif"
             android:textColor="#F0F5EF"
-            android:layout_marginTop="-10dp" />
+            android:layout_marginTop="-20dp" />
 
      </LinearLayout>
 
@@ -64,7 +64,7 @@
             android:textColor="#340607"
             android:background="@drawable/chalkone"
 
-            android:textSize="13sp" />
+            android:textSize="40sp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -76,10 +76,10 @@
             android:id="@+id/Hourlyscroll"
 
             android:clickable="false"
-            android:typeface="serif"
+
             android:textColor="#340607"
             android:background="@drawable/chalkone"
-            android:textSize="13dp" />
+            android:textSize="40sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -100,14 +100,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="55dp"
+                android:textSize="220sp"
                 android:gravity="center_horizontal"
                 android:id="@+id/currenttemp"
                 android:layout_weight="1"
                 android:textColor="#F0F5EF"
                 android:autoText="false"
                 android:typeface="sans"
-                android:paddingTop="5dp"
+                android:paddingTop="10dp"
                 android:paddingBottom="5dp"/>
 
             <ImageView
@@ -115,7 +115,7 @@
                 android:layout_height="match_parent"
                 android:id="@+id/icon"
                 android:gravity="top"
-                android:paddingBottom="5dp"
+                android:paddingBottom="10dp"
                 android:layout_weight="1" />
 
 
@@ -145,14 +145,14 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
 
-            android:textSize="15dp"
+            android:textSize="60sp"
 
             android:id="@+id/snarky"
             android:layout_weight="2.6"
             android:gravity="center_vertical"
-            android:paddingTop="3dp"
-            android:paddingRight="5dp"
-            android:paddingLeft="10dp"
+            android:paddingTop="6dp"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
             android:textColor="#fefefe"
 
             android:background="@drawable/chalktwo" />

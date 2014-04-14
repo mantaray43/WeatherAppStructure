@@ -2,15 +2,15 @@ package com.weatherornot.weatherornot;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.LocationManager;
-import android.os.Build;
+
 import android.os.Bundle;
-import android.provider.Settings;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -19,13 +19,7 @@ import android.widget.EditText;
 public class DisplaySettingsActivity extends Activity {
 
     static final String PREFERENCES = "temps";
-    public static final String TEMPSAVED = "tempsSaved";
-    EditText hot;
-    EditText cold;
-    EditText perfect;
-    int hot1;
-    int cold1;
-    int perfect1;
+
 
 
     @Override
