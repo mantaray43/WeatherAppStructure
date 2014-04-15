@@ -220,9 +220,11 @@
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_gravity="center"
+            android:textSize="15sp"
             android:text="@string/doneButton"
             android:id="@+id/donebutton"
-            />
+            android:background="@drawable/done"
+            android:textColor="#1f052f"/>
     </LinearLayout>
 
     <LinearLayout

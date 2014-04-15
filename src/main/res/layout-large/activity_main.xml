@@ -36,9 +36,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:textSize="80sp"
+            android:textSize="40sp"
             android:id="@+id/location"
-            android:paddingBottom="4dp"
+            android:paddingBottom="10dp"
             android:clickable="false"
             android:typeface="serif"
             android:textColor="#F0F5EF"
@@ -64,7 +64,7 @@
             android:textColor="#340607"
             android:background="@drawable/chalkone"
 
-            android:textSize="25sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -79,7 +79,7 @@
 
             android:textColor="#340607"
             android:background="@drawable/chalkone"
-            android:textSize="25sp" />
+            android:textSize="30sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -100,7 +100,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="220sp"
+                android:textSize="110sp"
                 android:gravity="center_horizontal"
                 android:id="@+id/currenttemp"
                 android:layout_weight="1"
@@ -115,7 +115,9 @@
                 android:layout_height="match_parent"
                 android:id="@+id/icon"
                 android:gravity="top"
-                android:paddingBottom="10dp"
+                android:paddingBottom="25dp"
+                android:paddingRight="35dp"
+                android:paddingLeft="2dp"
                 android:layout_weight="1" />
 
 
@@ -143,16 +145,16 @@
         >
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="300dp"
 
-            android:textSize="60sp"
+            android:textSize="22sp"
 
             android:id="@+id/snarky"
             android:layout_weight="2.6"
-            android:gravity="center_vertical"
-            android:paddingTop="6dp"
-            android:paddingRight="8dp"
-            android:paddingLeft="8dp"
+            android:gravity="center"
+            android:paddingTop="2dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="12dp"
             android:textColor="#fefefe"
 
             android:background="@drawable/chalktwo" />
@@ -165,7 +167,7 @@
 
             android:layout_weight="1"
             android:baselineAlignBottom="false"
-            android:paddingTop="20dp"
+            android:paddingTop="15dp"
             android:paddingBottom="10dp"/>
 
     </LinearLayout>

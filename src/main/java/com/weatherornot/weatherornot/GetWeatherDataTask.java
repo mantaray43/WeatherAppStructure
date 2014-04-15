@@ -184,7 +184,6 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject, Inte
 
     @Override
     protected void onPreExecute() {
-        super.onPreExecute();
 
 
     }

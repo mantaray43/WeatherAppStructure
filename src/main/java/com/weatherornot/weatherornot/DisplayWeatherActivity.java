@@ -70,6 +70,7 @@ public class DisplayWeatherActivity extends Activity {
 
         setContentView(R.layout.activity_main);
         mListView = (ListView) findViewById(R.id.hourly);
+        getWeather();
 
 
         //setting date from phone
@@ -81,7 +82,7 @@ public class DisplayWeatherActivity extends Activity {
         TextView dateview = (TextView) findViewById(R.id.date);
 
         dateview.setText(nowAsString);
-        getWeather();
+
 
 
         TextView templabel = (TextView) findViewById(R.id.tempLabel);
@@ -103,7 +104,7 @@ public class DisplayWeatherActivity extends Activity {
     public void getWeather() {       //asking for the weather
         new GetWeatherDataTask(this);
 
-        //getWeather();
+
         waiting = new ProgressDialog(this);
         waiting.setTitle("Getting Weather Data!");
         waiting.setMessage("Good things come to those who wait.");
@@ -116,7 +117,7 @@ public class DisplayWeatherActivity extends Activity {
     public void receiveWeatherData(PantsWeatherData myDataObject) throws ParseException {
 
         TextView textView = (TextView) findViewById(R.id.currenttemp);
-        waiting.dismiss();
+
 
         mCurrentTemp = myDataObject.getmCurrentTempString();
         String roundedDouble = "";
@@ -124,7 +125,7 @@ public class DisplayWeatherActivity extends Activity {
         textView.setText(roundedDouble + "\u00B0");
 
         Log.e("LOOK--------------------------------------value of mCurrentTemp", String.valueOf(mCurrentTemp.toString()));
-
+        waiting.dismiss();
 
 
 
