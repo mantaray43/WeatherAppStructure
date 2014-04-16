@@ -75,7 +75,7 @@ public class DisplayWeatherActivity extends Activity {
 
         //setting date from phone
         Date now = new Date();
-        Date giveDate = Calendar.getInstance().getTime();
+        Date a  = Calendar.getInstance().getTime();
         String nowAsString = new SimpleDateFormat("EEEE,  LLLLL  dd,  yyyy").format(now);
 
 
