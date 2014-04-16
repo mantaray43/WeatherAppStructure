@@ -21,12 +21,12 @@
             android:tag="@+id/myCustomFont"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_weight="19"
+            android:gravity="center"
+            android:layout_weight="9"
             android:id="@+id/date"
 
             android:textColor="#d4d2e0"
-            android:typeface="normal"
+
             android:textSize="20sp" />
 
 
