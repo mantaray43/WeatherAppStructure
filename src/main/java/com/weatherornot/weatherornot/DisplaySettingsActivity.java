@@ -1,5 +1,7 @@
 package com.weatherornot.weatherornot;
 
+import android.annotation.TargetApi;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 
@@ -9,14 +11,20 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.LocationManager;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+
 public class DisplaySettingsActivity extends Activity {
+
+
 
     static final String PREFERENCES = "temps";
 //    public static final String tempsSaved = "tempsSaved";
@@ -52,21 +60,27 @@ public class DisplaySettingsActivity extends Activity {
 
                 SharedPreferences myPrefs = getSharedPreferences(PREFERENCES, 0);
                 SharedPreferences.Editor editor = myPrefs.edit();
+
+
                 String hot = h.getText().toString();
-                editor.putString("hot", hot);
+                int x = Integer.parseInt(hot);
+                editor.putInt("hot", x);
                 String cold = c.getText().toString();
-                editor.putString("cold", cold);
+                int y = Integer.parseInt(cold);
+                editor.putInt("cold", y);
                 String perfect = p.getText().toString();
-                editor.putString("perfect", perfect);
+                int z = Integer.parseInt(perfect);
+                editor.putInt("perfect", z);
                 editor.putBoolean("tempSaved",true);
                 editor.commit();
                 finish();
 
-                Log.e("LOOK--------------------------------- prefs saved", hot + cold + perfect);
+                Log.e("LOOK--------------------------------- prefs saved", Integer.valueOf(x)+ Integer.valueOf(y) + Integer.valueOf(z).toString());
                 editor.putBoolean("tempSaved",true);
 
 
                 Intent toWeather = new Intent(getApplicationContext(), DisplayWeatherActivity.class);
+//                toWeather.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(toWeather);
 
 
@@ -75,7 +89,7 @@ public class DisplaySettingsActivity extends Activity {
 
             }
         });
-
+//        ActionBar actionBar = getActionBar();
     }
 
     /**
@@ -96,7 +110,8 @@ public class DisplaySettingsActivity extends Activity {
                 public void onClick(DialogInterface dialog, int which) {
                     startActivityForResult(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS), 0);
 
-                    loadPrefs();
+
+
 
                 }
 
@@ -108,44 +123,53 @@ public class DisplaySettingsActivity extends Activity {
 
 
         }
-        if(networkLocationEnabled==true){
+        else if(networkLocationEnabled==true){
             loadPrefs();
+
+
         }
     }
 
 private void loadPrefs(){
     SharedPreferences myPrefs = getSharedPreferences(PREFERENCES, 0);
-    boolean lp = myPrefs.getBoolean("tempSaved",false);
+    boolean lp = myPrefs.getBoolean("tempSaved",true);
 
     if(lp == true){
         Intent i = new Intent(getApplicationContext(),DisplayWeatherActivity.class);
+//        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
-    }else if(lp == false){
+
+    }else
         onResume();
-    }
+
 }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_settings:
 
-        EditText h = (EditText) findViewById(R.id.hotNumber);
-        EditText c = (EditText) findViewById(R.id.coldNumber);
-        EditText p = (EditText) findViewById(R.id.perfectNumber);
+                Intent i = new Intent(getApplicationContext(), DisplaySettingsActivity.class);
 
-        SharedPreferences myPrefs = getSharedPreferences(PREFERENCES, 0);
-        SharedPreferences.Editor editor = myPrefs.edit();
-        String hot = h.getText().toString();
-        editor.putString("hot", hot);
-        String cold = c.getText().toString();
-        editor.putString("cold", cold);
-        String perfect = p.getText().toString();
-        editor.putString("perfect", perfect);
-        editor.commit();
+                startActivity(i);
 
-        Log.e("LOOK--------------------------------- prefs savedx2", hot + cold + perfect);
-        editor.putBoolean("tempsSaved",true);
+                return true;
 
+            default:
+                return super.
+
+                        onOptionsItemSelected(item);
+        }
     }
+
+
+
 }

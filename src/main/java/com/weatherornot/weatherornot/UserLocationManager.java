@@ -40,9 +40,13 @@ public class UserLocationManager implements LocationListener {
     public void onLocationChanged(Location location) {
 
 
-        lm.removeUpdates(this);
+
 
         getWeatherDataTask.receiveUserLocation(location);
+
+
+        lm.removeUpdates(this);
+        onStop();
 
 //13
         Log.e("LOOK-----------------------------Get weather data task", getWeatherDataTask.toString());
@@ -64,5 +68,13 @@ public class UserLocationManager implements LocationListener {
     public void onProviderDisabled(String s) {
 
     }
+
+
+    protected void onStop() {
+
+        lm.removeUpdates(this);
+
+    }
+
 
 }

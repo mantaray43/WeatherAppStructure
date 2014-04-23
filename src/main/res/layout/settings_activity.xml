@@ -56,7 +56,7 @@
         android:background="@drawable/hot">
 
         <TextView
-        android:layout_width="55dp"
+        android:layout_width="45dp"
         android:layout_height="fill_parent"
         android:id="@+id/hotSpace1" />
 
@@ -109,7 +109,7 @@
         android:background="@drawable/cold">
 
         <TextView
-            android:layout_width="40dp"
+            android:layout_width="30dp"
             android:layout_height="fill_parent"
             android:id="@+id/coldSpace1" />
 
@@ -162,7 +162,7 @@
         android:background="@drawable/perfect">
 
         <TextView
-            android:layout_width="55dp"
+            android:layout_width="45dp"
             android:layout_height="fill_parent"
             android:id="@+id/perfectSpace1" />
 

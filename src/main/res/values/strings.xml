@@ -7,7 +7,7 @@
     <string name="snarky"></string>
     <string name="tempLabel">Current Conditions</string>
     <string name="hourlyRow"></string>
-    <string name="action_settings"></string>
+    <string name="action_settings">Settings</string>
     <string name="hourlytemp">Hourly Temperature</string>
     <string name="hotLabel">Too Hot</string>
     <string name="hotNumber"></string>

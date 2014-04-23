@@ -3,6 +3,7 @@ package com.weatherornot.weatherornot;
 
 import android.app.ProgressDialog;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -197,6 +198,8 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject, Inte
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+
 
 
         Log.e("LOOK---------------------------------------------------------------", "received weather data");

@@ -1,5 +1,6 @@
 package com.weatherornot.weatherornot;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -10,7 +11,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MenuInflater;
+
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -29,13 +35,17 @@ import java.util.Date;
 import java.util.Random;
 
 
+
+
+
+
 public class DisplayWeatherActivity extends Activity {
 
     ListView mListView;
     Typeface font;
     String fontPathB = "fonts/playtime.ttf";
     String fontPathC = "fonts/edo.ttf";
-    String mCurrentTemp;
+    Double mCurrentTemp;
 
     private final String CLOUDY = "CLOUDY";
     private final String CLEAR_DAY = "CLEAR-DAY";
@@ -57,7 +67,7 @@ public class DisplayWeatherActivity extends Activity {
 //        DisplayWeatherActivity.theIcon = theIcon;
 //    }
 
-   
+
     static final String PREFERENCES = "temps";
     ProgressDialog waiting;
 
@@ -69,20 +79,21 @@ public class DisplayWeatherActivity extends Activity {
 
 
         setContentView(R.layout.activity_main);
+
+
         mListView = (ListView) findViewById(R.id.hourly);
         getWeather();
 
 
-        //setting date from phone
+        /* setting date from phone */
         Date now = new Date();
-        Date a  = Calendar.getInstance().getTime();
+        now = Calendar.getInstance().getTime();
         String nowAsString = new SimpleDateFormat("EEEE,  LLLLL  dd,  yyyy").format(now);
 
 
         TextView dateview = (TextView) findViewById(R.id.date);
 
         dateview.setText(nowAsString);
-
 
 
         TextView templabel = (TextView) findViewById(R.id.tempLabel);
@@ -119,14 +130,17 @@ public class DisplayWeatherActivity extends Activity {
         TextView textView = (TextView) findViewById(R.id.currenttemp);
 
 
-        mCurrentTemp = myDataObject.getmCurrentTempString();
-        String roundedDouble = "";
-        roundedDouble = mCurrentTemp.substring(0, mCurrentTemp.indexOf('.'));
-        textView.setText(roundedDouble + "\u00B0");
+          double mCurrentTemp = myDataObject.getmCurrentTemp();
+          int temp = (int)mCurrentTemp;
+          textView.setText(String.valueOf(temp) + "\u00B0");
 
-        Log.e("LOOK--------------------------------------value of mCurrentTemp", String.valueOf(mCurrentTemp.toString()));
+//        mCurrentTemp = myDataObject.getmCurrentTempString();
+//        String roundedDouble = "";
+//        roundedDouble = mCurrentTemp.substring(0, mCurrentTemp.indexOf('.'));
+//        textView.setText(roundedDouble + "\u00B0");
+
+//        Log.e("LOOK--------------------------------------value of mCurrentTemp", String.valueOf(mCurrentTemp.toString()));
         waiting.dismiss();
-
 
 
         mListView = (ListView) findViewById(R.id.hourly);
@@ -175,7 +189,9 @@ public class DisplayWeatherActivity extends Activity {
 
         //oh, go and update with a snarky message
         //convert the temperature to an int
-        int currentTemp = myDataObject.getmCurrentTemp().intValue();
+        int currentTemp = temp;
+//                myDataObject.getmCurrentTemp().intValue();
+
 
 
         //pass it to the snark
@@ -193,13 +209,32 @@ public class DisplayWeatherActivity extends Activity {
     }
 
 
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
-//
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                startActivity(new Intent(getApplicationContext(), DisplaySettingsActivity.class)
+                                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)//updated
+                                .addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+                );
+
+    return true;
+    default:
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+
+
+
+
 //
     //   Here is all the code from SnarkyDisplay moved over to this
     //   Activity so we can use it on our display.
@@ -214,18 +249,36 @@ public class DisplayWeatherActivity extends Activity {
 
         SharedPreferences myPrefs = getSharedPreferences(PREFERENCES, 0);
         SharedPreferences.Editor editor = myPrefs.edit();
-        String a = myPrefs.getString("hot", "888");
-        String b = myPrefs.getString("cold", "888");
-        String c = myPrefs.getString("perfect", "888");
+
+        int hot1 = myPrefs.getInt("hot",0);
+        int cold1 = myPrefs.getInt("cold",0);
+        int perfect1 = myPrefs.getInt("perfect",0);
+        editor.commit();
 
 
-        int hot1 = Integer.parseInt(a);
-        int cold1 = Integer.parseInt(b);
-        int perfect1 = Integer.parseInt(c);
+//        String a = myPrefs.getString("hot", "888");
+//        String b = myPrefs.getString("cold", "888");
+//        String c = myPrefs.getString("perfect", "888");
 
 
-        Log.e("LOOK-----------------get pref strings", String.valueOf(a) + String.valueOf(b) + String.valueOf(c));
-        Log.e("LOOK------------ PREFS CONVERTED TO INTEGERS", String.valueOf(hot1) + String.valueOf(cold1) + String.valueOf(c));
+//        Log.e("LOOK------------",a);
+//        Log.e("LOOK------------",b);
+//        Log.e("LOOK------------",c);
+
+
+
+//        int hot1 = Integer.parseInt(a);
+//        int cold1 = Integer.parseInt(b);
+//        int perfect1 = Integer.parseInt(c);
+
+//
+        Log.e("LOOK------------saved prefs", String.valueOf(hot1));
+        Log.e("LOOK------------saved prefs", String.valueOf(cold1));
+        Log.e("LOOK------------saved prefs", String.valueOf(perfect1));
+
+
+//        Log.e("LOOK-----------------get pref strings", String.valueOf(a) + String.valueOf(b) + String.valueOf(c));
+        Log.e("LOOK------------ PREFS CONVERTED TO INTEGERS", String.valueOf(hot1) + String.valueOf(cold1) + String.valueOf(perfect1));
 
         //this is getting a reference to the view
         TextView myTextView = (TextView) findViewById(R.id.currenttemp);
@@ -239,7 +292,7 @@ public class DisplayWeatherActivity extends Activity {
 
         if (mCTemp < cold1) {    //bittercold
             range = "bittercold";
-        } else if ((mCTemp <= cold1) && mCTemp <= (cold1 + 10)) {     //toocold
+        } else if ((mCTemp <= cold1) && mCTemp > (cold1 + 10)) {     //toocold
             range = "toocold";
         } else if ((mCTemp > (cold1 + 10) && (mCTemp <= (cold1 + 17)))) {      //good
             range = "good";
@@ -247,9 +300,9 @@ public class DisplayWeatherActivity extends Activity {
             range = "perfect";
         } else if ((mCTemp > (perfect1 + 10) && (mCTemp <= (hot1 - 5)))) {   //warm
             range = "warm";
-        } else if (mCTemp > (hot1 - 5) && (mCTemp <= (hot1 + 3))) { //too hot
+        } else if (mCTemp > (hot1 - 2) && (mCTemp <= (hot1 + 6))) { //too hot
             range = "toohot";
-        } else if (mCTemp > (hot1 + 4)) {
+        } else if (mCTemp < (hot1 + 7)) {
             range = "toodanghot";
         } else {
             range = "toodanghot";
@@ -315,23 +368,8 @@ public class DisplayWeatherActivity extends Activity {
         }
 
     }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_settings:
-                Intent a;
-                a = new Intent(getApplicationContext(), DisplaySettingsActivity.class);
-                startActivity(a);
-
-                return true;
-
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-
 }
+
+
 
 
