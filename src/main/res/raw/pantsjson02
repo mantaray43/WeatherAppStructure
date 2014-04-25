@@ -2,62 +2,62 @@
     "bittercold":[
 		
 			{
-				"text":"Revenge is a dish best served cold.  Put on your Revenge pants because it is colder than a welldiggers bottom.",
+				"text":"Revenge is a dish best served cold.  Put on your Revenge pants \nbecause it is colder than a welldiggers bottom.\n",
 				"image":"revengepants"
 			},
-			{	"text":"Wear your parka pants today.  It is mind-numbingly cold and you can't afford to lose any brain power because of the weather.",
+			{	"text":"Wear your parka pants today.  It is mind-numbingly cold \nand you can't afford to lose any brain power because of the weather.\n",
 				"image": "parkapants"
 			},
 			{
-				"text":"It's cold as ice.  Give the weather an obscene gesture and wear your hot pants!",
+				"text":"It's cold as ice.  \nGive the weather an obscene gesture and wear your hot pants!\n",
 				"image": "hotpants"
 			},
 			{
-				"text":"Call in sick, stay in your jammies, it's apocalyptically cold.  Why torture yourself.",
+				"text":"Call in sick, stay in your jammies, \nit's apocalyptically cold.  Why torture yourself.\n",
 				"image": "jammies"
 			},
 			{
-				"text":"Wear your fiery inferno pants today, otherwise you are going to fall down the humiliation hole as you run for shelter.",
+				"text":"Wear your fiery inferno pants today, \notherwise you are going to freeze your biscuits off!\n",
 				"image":"infernopants"
 			},
 			{
-				"text":"Triple ply, down filled, heated, pants-O-fire are recommended for today.  Winter peril is not to be sneezed at.",
+				"text":"Triple ply, down filled, heated, pants-O-fire are recommended \nfor today. Winter peril is not to be sneezed at.\n",
 				"image":"pantsofire"
 			},
 			{
-				"text":"My God!  Move someplace warmer for pitys sake.",
+				"text":"\nMy God!  Move someplace warmer for pitys sake.\n",
 				"image":"pitypants"
 			},
 			{
-				"text":"These aren't the pants you're looking for.",
+				"text":"\nThese aren't the pants you're looking for.\n",
 				"image":"droidpants"
 			},
 			{
-				"text":"It's freaking cold outside, wear your bear rug slacks.",
+				"text":"\nIt's freaking cold outside, wear your bear rug slacks.\n",
 				"image":"bearpants"
 			},
 			{
-				"text":"Wear your fur trousers today it's a frigid disaster out there.",
+				"text":"Wear your fur trousers today \nit's a frigid disaster out there.\n",
 				"image":"furtrousers"
 			},
 			{	
-				"text":"It will be more fun to have colonic irrigation than going outside today;  wear your polar bear pants.",
+				"text":"It will be more fun to have colonic irrigation than going outside today;  \nwear your polar bear pants.\n",
 				"image":"polarpants"
 			},
 			{
-				"text":"Stay in your inner sanctum today;  square dancing Cossacks in your front yard mean it's glacial out there.",
+				"text":"Stay in your inner sanctum today;  \nsquare dancing Cossacks in your front yard mean it's glacial out there.\n",
 				"image":"cossackpants"
 			},
 			{
-				"text":"Bompity, bompity, the bongos pound out the wickedly chilled weather of the day; wear your cool cat pants and snap along.",
+				"text":"Bompity, bompity, the bongos pound out the wickedly chilled weather of the day; \nwear your cool cat pants and snap along.\n",
 				"image":"coolcatpants"
 			},
 			{
-				"text":"It's so cold all of your bumps will be goosed, best wear your wonder sauna hot pants.",
+				"text":"It's so cold all of your bumps will be goosed, \nbest wear your wonder sauna hot pants.\n",
 				"image":"wondersaunapants"
 			},
 			{
-				"text":"There's a frozen tundra outside, roam the arctic wild in your Siberian tiger pants.",
+				"text":"There's a frozen tundra outside, \nroam the arctic wild in your Siberian tiger pants.\n",
 				"image":"siberiantigerpants"
 			}
 		],
@@ -72,11 +72,11 @@
 				"image":"wildpants"
 			},
 			{
-				"text":"Wear your plastic pants today.  It's gonna be so cold your nose is going to run like Niagra Falls",
+				"text":"Wear your plastic pants today.  \nIt's gonna be so cold your nose is going to run like Niagra Falls\n",
 				"image":"plasticpants"
 			},
 			{
-				"text":"Today is a day Mr. Freeze would bitch about.  Wear your super bat anti-freeze pants.",
+				"text":"Today is a day Mr. Freeze would bitch about.  \nWear your super bat anti-freeze pants.\n",
 				"image":"batantifreezepants"
 			},
 			{	
@@ -88,7 +88,7 @@
 				"image":"heatedtweedpants"
 			},
 			{
-				"text":"It's so cold today, you better wear pants with a back door to easily dispose of poop cubes.",
+				"text":"It's so cold today, you better wear pants with a back door \nto easily dispose of poop cubes.\n",
 				"image":"backdoorpants"
 			},
 			{
@@ -96,27 +96,27 @@
 				"image":"kickasserypants"
 			},
 			{
-				"text":"Winter melodrama will not be tolerated.  Put on your Sansabelt Satan Slacks and get out there and make it a great day.",
+				"text":"Winter melodrama will not be tolerated.  \nPut on your Sansabelt Satan Slacks and get out there and make it a great day.\n",
 				"image":"sansabeltslacks"
 			},
 			{
-				"text":"Slip into your Nuclear Fission underpants today.  It's the only way to keep the nuts toasty.",
+				"text":"Slip into your Nuclear Fission underpants today.  \nIt's the only way to keep the nuts toasty.\n",
 				"image":"fissionunderpants"
 			},
 			{
-				"text":"The only way to describe the weather is craptastic. Jump in your 'I don't give a damn' pants and thumb your nose at Mother Nature.'",
+				"text":"The only way to describe the weather is craptastic. \nJump in your 'I don't give a damn' pants and thumb your nose at Mother Nature.\n",
 				"image":"damnpants"
 			},
 			{
-				"text":"The weather is served, a savory bowl of suck soup.  Put on your plaid pants to give the day some cheer.",
+				"text":"The weather is served, a savory bowl of suck soup.  \nPut on your plaid pants to give the day some cheer.\n",
 				"image":"plaidpants"
 			},
 			{
-				"text":"Today's weather supplied by the Suck-O-Matic;   Your blow me pants may keep you from getting sucked in.",
+				"text":"Today's weather supplied by the Suck-O-Matic;   \nYour blow me pants may keep you from getting sucked in.\n",
 				"image":"blowmepants"
 			},
 			{
-				"text":"Today's weather brought to you by the Fail Troll.  Your billy goat pants may keep you from getting pulled under the bridge.",
+				"text":"Today's weather brought to you by the Fail Troll.  \nYour billy goat pants may keep you from getting pulled under the bridge.\n",
 				"image":"goatpants"
 			},
 			{
@@ -131,39 +131,39 @@
 	"good":[
 		
 			{
-				"text":"The cold isn't too bad today.  You can finally wear those smart cotton plaid pants you've been waiting for.  We really can't monitor good taste...only the weather.",
+				"text":"The cold isn't too bad today. You can finally wear those smart cotton \nplaid pants. We really can't monitor good taste...only the weather.\n",
 				"image":"plaidpantsb"
 			},
 			{
-				"text":"It's Chilly outside. You should wear your Elvis sequined jumpsuit today, that always gets your minions excited.",
+				"text":"It's Chilly outside. You should wear your Elvis sequined jumpsuit today, \nthat always gets your minions excited.\n",
 				"image":"elvispants"
 			},
 			{
-				"text":"There's a nip in the air. That leather shorts set with the knee high moccasins will get you the attention you deserve.",
+				"text":"There's a nip in the air. That leather shorts set with the knee high \nmoccasins will get you the attention you deserve.\n",
 				"image":"leathershortpants"
 			},
 			{	
-				"text":"The air is crisp. Polkas and merrymaking ensue. Snatch your Lederhosen out of the closet; the beer line is long.",
+				"text":"The air is crisp. Polkas and merrymaking ensue. \nSnatch your Lederhosen out of the closet; the beer line is long.\n",
 				"image":"lederhosen"
 			},
 			{	
-				"text":"It's a great day for a square dance; promenade left in your hootenanny pants.",
+				"text":"It's a great day for a square dance; \npromenade left in your hootenanny pants.\n",
 				"image":"hootenannypants"
 			},
 			{
-				"text":"Put on your Johdpurs for an equestrian adventure; the weather is great for horsing around.",
+				"text":"Put on your Johdpurs for an equestrian adventure; \nthe weather is great for horsing around.\n",
 				"image":"johdpurs"
 			},
 			{
-				"text":"Spin, thrust, parry! Wear your Robin Hood pants and clobber a fat friar!",
+				"text":"Spin, thrust, parry! \nWear your Robin Hood pants and clobber a fat friar!\n",
 				"image":"robinhoodpants"
 			},
 			{
-				"text":"Wear your vortex pants  and suck all the blazing buffoonery from the day." ,
+				"text":"Wear your vortex pants \nand suck all the blazing buffoonery from the day.\n" ,
 				"image":"vortexpants"
 			},
 			{
-				"text":"It&s a whiz-bang day; wear your monkey pants and fling some poo.",
+				"text":"It's a whiz-bang day; wear your monkey pants and fling some poo.",
 				"image":"monkeypants"
 			},
 			{
@@ -171,7 +171,7 @@
 				"image":"nastypants"
 			},
 			{
-				"text":"The day is perfect for a mythical adventure; get in your dragon pants and go on a quest with the elves.",
+				"text":"The day is perfect for a mythical adventure; \nget in your dragon pants and go on a quest with the elves.\n",
 				"image":"dragonpants"
 			},
 			{
@@ -179,7 +179,7 @@
 				"image":"waders"
 			},
 			{
-				"text":"It's just a jump to the left, and a jump to the right;  Be Transylvania bound in your time warp pants.",
+				"text":"It's just a jump to the left, and a jump to the right;  \nBe Transylvania bound in your time warp pants.\n",
 				"image":"timewarppants"
 			},
 			{
@@ -196,47 +196,47 @@
 				"image":"overalls"
 			},
 			{
-				"text":"The weather is perfect for a shindig! Put on your party pants and be groovy.",
+				"text":"The weather is perfect for a shindig! \nPut on your party pants and be groovy.\n",
 				"image":"partypants"
 			},
 			{
-				"text":"The weather is ideal! Put on your Dandy Pants and make a statement.",
+				"text":"The weather is ideal! \nPut on your Dandy Pants and make a statement.\n",
 				"image":"dandypants"
 			},
 			{	
-				"text":"The weather is aces! Put on your jet pants and buzz your besties.",
+				"text":"The weather is aces! \nPut on your jet pants and buzz your besties.\n",
 				"image":"jetpants"
 			},
 			{	
-				"text":"Today's weather will be primo. Enjoy the day in your imported modern leather pants.",
+				"text":"Today's weather will be primo. \nEnjoy the day in your imported modern leather pants.\n",
 				"image":"leatherpants"
 			},
 			{
-				"text":"Today's weather is far out!  Wear your groovy pants and feel the love.",
+				"text":"Today's weather is far out!  \nWear your groovy pants and feel the love.\n",
 				"image":"groovypants"
 			},
 			{
-				"text":"Utopian is the weather du jour.  Put on your hip huggers and attend a love-in.",
+				"text":"Utopian is the weather du jour.  \nPut on your hip huggers and attend a love-in.\n",
 				"image":"hiphuggers"
 			},
 			{
-				"text":"It will be a bang-up day.  Wear your double knit slacks with pride.",
+				"text":"It will be a bang-up day.  \nWear your double knit slacks with pride.\n",
 				"image":"knitslacks"
 			},
 			{
-				"text":"The weather will be fab to day.  Wear your Batman pants, it's a good day to fight crime.",
+				"text":"The weather will be fab to day.  \nWear your Batman pants, it's a good day to fight crime.\n",
 				"image":"batpants"
 			},
 			{
-				"text":"CrackerJack weather today! Put on your clam diggers and have a clambake!",
+				"text":"CrackerJack weather today! \nPut on your clam diggers and have a clambake!\n",
 				"image":"clamdiggers"
 			},
 			{
-				"text":"The weather is mind blowing today!  Put on your oracle pants and prepare to know all.",
+				"text":"The weather is mind blowing today!  \nPut on your oracle pants and prepare to know all.\n",
 				"image":"oraclepants"
 			},
 			{
-				"text":"The weather is splendid today. Put on your swami pants and search for the meaning of it all.",
+				"text":"The weather is splendid today. \nPut on your swami pants and search for the meaning of it all.\n",
 				"image":"swamipants"
 			},
 			{
@@ -254,7 +254,7 @@
 			},
 			{
 				
-				"text":"Jump for joy, today is balmy and a perfect day to wear your favorite polyester knickers.",
+				"text":"Jump for joy, today is balmy \nand a perfect day to wear your favorite polyester knickers.\n",
 				"image":"polyknickers"
 
 			}
@@ -276,7 +276,7 @@
 				"image":"bermudashorts"
 			},
 			{
-				"text":"At high noon the sun will be beating down on you.  Wear your dude pants, head for the nearest saloon, and order a White Russian.",
+				"text":"At high noon the sun will be beating down on you.  Wear your dude pants, \nhead for the nearest saloon, and order a White Russian.\n",
 				"image":"dudepants"
 			},
 			{	
@@ -284,7 +284,7 @@
 				"image":"shortpantsb"
 			},
 			{	
-				"text":"The weather is served, a big hot crap casserole, wear your whiny pants and moan all day.",
+				"text":"The weather is served, a big hot crap casserole, \nwear your whiny pants and moan all day.\n",
 				"image":"whinypants"
 			},
 			{
@@ -292,7 +292,7 @@
 				"image":"kickedpants"
 			},
 			{
-				"text":"Wear your evil genius pants today.  It's just warm enough to make you fiendishly clever.",
+				"text":"Wear your evil genius pants today.  \nIt's just warm enough to make you fiendishly clever.\n",
 				"image":"evilpants"
 			},
 			{
@@ -300,11 +300,11 @@
 				"image":"bloomers"
 			},
 			{
-				"text":"Today is a day for panties, getting in them or getting out of them.",
+				"text":"Today is a day for panties, \ngetting in them or getting out of them.\n",
 				"image":"panties"
 			},
 			{
-				"text":"Welcome to the sweaty jamboree; wear your dungarees as we  go frog steppin' in the holler.",
+				"text":"Welcome to the sweaty jamboree; \nwear your dungarees as we  go frog steppin' in the holler.\n",
 				"image":"dungarees"
 			},
 			{
@@ -332,27 +332,27 @@
 
 		
 			{
-				"text":"The only way to describe the weather is craptastic. Jump in your 'I don't give a damn' pants and thumb your nose at Mother Nature.",
+				"text":"The only way to describe the weather is craptastic. \nJump in your 'I don't give a damn' pants and thumb \nyour nose at Mother Nature.\n",
 				"image":"damnpants"
 			},
 			{
-				"text":"The weather is served, a 3 tier poop cake. Put on your bunny pants and hop over the poop slices.",
+				"text":"The weather is served, a 3 tier poop cake.  \nPut on your bunny pants and hop over the poop slices.\n",
 				"image":"bunnypants"
 			},
 			{
-				"text":"Today's weather is a mushroom cloud of failure. Your clown pants will brighten your day.",
+				"text":"Today's weather is a mushroom cloud of failure. \nYour clown pants will brighten your day.\n",
 				"image":"clownpants"
 			},
 			{	
-				"text":"Today's weather supplied by the Suck-O-Matic; Your airfan pants may keep you from getting sucked in.",
+				"text":"Today's weather supplied by the Suck-O-Matic; \nYour airfan pants may keep you from getting sucked in.\n",
 				"image":"airfanpants"
 			},
 			{	
-				"text":"The air is sultry and torrid a perfect day for your  vo-de-o-do pants.",
+				"text":"The air is sultry and torrid  \na perfect day for your  vo-de-o-do pants.\n",
 				"image":"vodepants"
 			},
 			{
-				"text":"The weather is served, a habanero with a chili pepper chaser; best put on your exploding fireball pants.",
+				"text":"The weather is served, a habanero with a chili pepper chaser;\nbest put on your exploding fireball pants.\n",
 				"image":"fireballpants"
 			},
 			{
@@ -360,15 +360,15 @@
 				"image":"scorchingpants"
 			},
 			{
-				"text":"Welcome to the giant toaster oven, your heat reflecting pants will keep you from getting crispy.",
+				"text":"Welcome to the giant toaster oven, \nyour heat reflecting pants will keep you from getting crispy.\n",
 				"image":"reflectingpants"
 			},
 			{
-				"text":"The weather is hideous and ghastly, your disaster pants may keep you safe from the suns wrath.",
+				"text":"The weather is hideous and ghastly, \nyour disaster pants may keep you safe from the suns wrath.\n",
 				"image":"disasterpants"
 			},
 			{
-				"text":"It's Krakatoa outside, put on your frosty pants and avoid all that pesky lava.",
+				"text":"It's Krakatoa outside, \nput on your frosty pants and avoid all that pesky lava.\n",
 				"image":"frostypants"
 			},
 			{
@@ -381,12 +381,12 @@
 				"image":"icyshorts"
 			},
 			{
-				"text":"The heat is cataclysmic; wear your Armageddon pants and keep an eye out for the four horsemen.",
+				"text":"The heat is cataclysmic; wear your Armageddon pants \nand keep an eye out for the four horsemen.\n",
 				"image":"armageddonpants"
 			},
 			{
 				
-				"text":"The heat is beastly, go for the Adam and Eve look today. Stay away from the apple tree.",
+				"text":"The heat is beastly, go for the Adam and Eve look today. \nStay away from the apple tree.\n",
 				"image":"figleaf"
 			}
 		],
@@ -397,19 +397,19 @@
 
 		
 			{
-				"text":"Today is super steamy hot;  might as well wear your 'Boom-Chick-A-Wow-Wow' pants.",
+				"text":"Today is super steamy hot;  \nmight as well wear your 'Boom-Chick-A-Wow-Wow' pants.\n",
 				"image":"boomchickpants"
 			},
 			{
-				"text":"Outside it  suckity, suck, sucks.  Might as well wear your crabby pants and gripe all day.",
+				"text":"Outside it  suckity, suck, sucks.  \nMight as well wear your crabby pants and gripe all day.\n",
 				"image":"crabbypants"
 			},
 			{
-				"text":"The sun is scorching the earth with fiery fireballs; garb yourself in your Apocalypse pants.",
+				"text":"The sun is scorching the earth with fiery fireballs; \ngarb yourself in your Apocalypse pants.\n",
 				"image":"apocalypsepants"
 			},
 			{	
-				"text":"You can fry an egg on the sidewalk;  wear your prancing pants and keep moving to avoid ending up an egg sandwich.",
+				"text":"You can fry an egg on the sidewalk;  wear your prancing pants \nand keep moving to avoid ending up an egg sandwich.\n",
 				"image":"prancingpants"
 			},
 			{	
@@ -421,7 +421,7 @@
 				"image":"shortpants"
 			},
 			{
-				"text":"The heat is inconceivable and we do know what that word means;  wear as little as possible and lay on the sofa.",
+				"text":"The heat is inconceivable and we do know what that word means;  \nwear as little as possible and lay on the sofa.\n",
 				"image":"underwearb"
 			},
 			{
@@ -433,11 +433,11 @@
 				"image":"balloonpants"
 			},
 			{
-				"text":"Horrific heat and the jumbo enchilada plate you had for lunch have made your pants a smell-ferno of methane",
+				"text":"Horrific heat and the jumbo enchilada plate you had for lunch \nhave made your pants a smell-ferno of methane\n",
 				"image":"methanepants"
 			},
 			{
-				"text":"It's as hot as the Sahara out there, put on your camel pants and look for an oasis.",
+				"text":"It's as hot as the Sahara out there, \nput on your camel pants and look for an oasis.\n",
 				"image":"camelpants"
 			},
 			{

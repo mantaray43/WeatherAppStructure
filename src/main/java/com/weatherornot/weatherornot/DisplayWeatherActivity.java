@@ -219,7 +219,7 @@ public class DisplayWeatherActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_settings:
+            case R.id.home:
                 startActivity(new Intent(getApplicationContext(), DisplaySettingsActivity.class)
                                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)//updated
                                 .addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)

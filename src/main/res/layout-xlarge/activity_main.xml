@@ -156,7 +156,7 @@
             android:paddingRight="10dp"
             android:paddingLeft="12dp"
             android:textColor="#fefefe"
-
+            android:includeFontPadding="true"
             android:background="@drawable/chalktwo" />
 
         <ImageView

@@ -139,8 +139,9 @@ private void loadPrefs(){
 //        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
 
-    }else
+    }else if(lp== false) {
         onResume();
+    }
 
 }
 
@@ -155,7 +156,7 @@ private void loadPrefs(){
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle presses on the action bar items
         switch (item.getItemId()) {
-            case R.id.action_settings:
+            case R.id.home:
 
                 Intent i = new Intent(getApplicationContext(), DisplaySettingsActivity.class);
 
