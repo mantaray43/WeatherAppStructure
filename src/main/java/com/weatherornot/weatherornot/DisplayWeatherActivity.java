@@ -81,11 +81,7 @@ public class DisplayWeatherActivity extends Activity {
 
         setContentView(R.layout.activity_main);
 
-        ActionBar ab = getActionBar();
-        ab.setHomeButtonEnabled(true);
-
-        ab.show();
-
+        
 
 
         mListView = (ListView) findViewById(R.id.hourly);
