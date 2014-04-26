@@ -9,7 +9,7 @@ public class PantsWeatherData {
 
 
     private Double mtime;
-    private Double mCurrentTemp;
+    public Double mCurrentTemp;
     private Double[] mHourly;
     private String[] mHourlyData;
 
@@ -69,9 +69,7 @@ public class PantsWeatherData {
         this.mHourlyData = mHourlyData;
     }
 
-    public String getmCurrentTempString() {
-        return mCurrentTemp.toString();
-    }
+
 
     public Double getMtime() {
         return mtime;
@@ -84,6 +82,10 @@ public class PantsWeatherData {
 
     public Double getmCurrentTemp() {
         return mCurrentTemp;
+    }
+
+    public String getmCurrentTempString() {
+        return mCurrentTemp.toString();
     }
 
     public void setmCurrentTemp(Double mCurrentTemp) {

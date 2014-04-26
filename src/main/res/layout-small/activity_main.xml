@@ -19,7 +19,7 @@
 
         <TextView
             android:tag="@+id/myCustomFont"
-            android:layout_width="600dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_weight="19"
@@ -27,7 +27,7 @@
 
             android:textColor="#d4d2e0"
             android:typeface="normal"
-            android:textSize="20sp" />
+            android:textSize="10sp" />
 
 
 
@@ -36,13 +36,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:textSize="40sp"
+            android:textSize="20dp"
             android:id="@+id/location"
-            android:paddingBottom="10dp"
+            android:paddingBottom="4dp"
             android:clickable="false"
             android:typeface="serif"
             android:textColor="#F0F5EF"
-            android:layout_marginTop="-20dp" />
+            android:layout_marginTop="-10dp" />
 
      </LinearLayout>
 
@@ -64,7 +64,7 @@
             android:textColor="#340607"
             android:background="@drawable/chalkone"
 
-            android:textSize="30sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -76,10 +76,10 @@
             android:id="@+id/Hourlyscroll"
 
             android:clickable="false"
-
+            android:typeface="serif"
             android:textColor="#340607"
             android:background="@drawable/chalkone"
-            android:textSize="30sp" />
+            android:textSize="16dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -100,14 +100,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="110sp"
+                android:textSize="55dp"
                 android:gravity="center_horizontal"
                 android:id="@+id/currenttemp"
                 android:layout_weight="1"
                 android:textColor="#F0F5EF"
                 android:autoText="false"
                 android:typeface="sans"
-                android:paddingTop="10dp"
+                android:paddingTop="5dp"
                 android:paddingBottom="5dp"/>
 
             <ImageView
@@ -115,9 +115,7 @@
                 android:layout_height="match_parent"
                 android:id="@+id/icon"
                 android:gravity="top"
-                android:paddingBottom="25dp"
-                android:paddingRight="35dp"
-                android:paddingLeft="2dp"
+                android:paddingBottom="5dp"
                 android:layout_weight="1" />
 
 
@@ -145,21 +143,19 @@
         >
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:textSize="23sp"
+            android:layout_height="160dp"
+
+            android:textSize="12dp"
+
             android:id="@+id/snarky"
-            android:layout_gravity="top"
+            android:layout_weight="2.6"
             android:gravity="center"
-            android:paddingTop="3dp"
-            android:includeFontPadding="true"
-            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
             android:paddingRight="10dp"
-
+            android:paddingLeft="10dp"
             android:textColor="#fefefe"
-
-            android:background="@drawable/chalktwo"
-            android:textAlignment="center"
-            android:width="@dimen/activity_horizontal_margin" />
+            android:includeFontPadding="true"
+            android:background="@drawable/chalktwo" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -169,8 +165,8 @@
 
             android:layout_weight="1"
             android:baselineAlignBottom="false"
-            android:paddingTop="15dp"
-            android:paddingBottom="20dp"/>
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"/>
 
     </LinearLayout>
 </LinearLayout>

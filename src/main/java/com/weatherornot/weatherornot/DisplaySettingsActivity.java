@@ -1,39 +1,31 @@
 package com.weatherornot.weatherornot;
 
-import android.annotation.TargetApi;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
-
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.LocationManager;
-
 import android.os.Build;
 import android.os.Bundle;
-
+import android.provider.Settings;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-
 public class DisplaySettingsActivity extends Activity {
 
-
-
     static final String PREFERENCES = "temps";
-//    public static final String tempsSaved = "tempsSaved";
-//    EditText hot;
-//    EditText cold;
-//    EditText perfect;
-//    int hot1;
-//    int cold1;
-//    int perfect1;
+    public static final String TEMPSAVED = "tempsSaved";
+    EditText hot;
+    EditText cold;
+    EditText perfect;
+    int hot1;
+    int cold1;
+    int perfect1;
 
 
     @Override
@@ -80,8 +72,8 @@ public class DisplaySettingsActivity extends Activity {
 
 
                 Intent toWeather = new Intent(getApplicationContext(), DisplayWeatherActivity.class);
-//                toWeather.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(toWeather);
+                finish();
 
 
 
@@ -89,7 +81,7 @@ public class DisplaySettingsActivity extends Activity {
 
             }
         });
-//        ActionBar actionBar = getActionBar();
+
     }
 
     /**
@@ -110,8 +102,7 @@ public class DisplaySettingsActivity extends Activity {
                 public void onClick(DialogInterface dialog, int which) {
                     startActivityForResult(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS), 0);
 
-
-
+                    loadPrefs();
 
                 }
 
@@ -119,58 +110,33 @@ public class DisplaySettingsActivity extends Activity {
 
 
             dialog.show();
-
+//            loadPrefs();
 
 
         }
-        else if(networkLocationEnabled==true){
+        if(networkLocationEnabled==true){
             loadPrefs();
-
-
         }
     }
 
 private void loadPrefs(){
     SharedPreferences myPrefs = getSharedPreferences(PREFERENCES, 0);
-    boolean lp = myPrefs.getBoolean("tempSaved",true);
+    boolean lp = myPrefs.getBoolean("tempSaved",false);
 
     if(lp == true){
         Intent i = new Intent(getApplicationContext(),DisplayWeatherActivity.class);
-//        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
-
-    }else if(lp== false) {
+    }else if(lp == false){
         onResume();
     }
-
 }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle presses on the action bar items
-        switch (item.getItemId()) {
-            case R.id.home:
+    protected void onDestroy() {
+        super.onDestroy();
 
-                Intent i = new Intent(getApplicationContext(), DisplaySettingsActivity.class);
 
-                startActivity(i);
 
-                return true;
-
-            default:
-                return super.
-
-                        onOptionsItemSelected(item);
-        }
     }
-
-
-
 }

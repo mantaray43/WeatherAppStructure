@@ -60,6 +60,7 @@ public class DisplayWeatherActivity extends Activity {
     private final String HAIL = "HAIL";
     private final String THUNDERSTORMS = "THUNDERSTORMS";
     private final String TORNADO = "TORNADO";
+    int temp;
 
 //    static final int SET_SERVICES = 0;
 
@@ -79,6 +80,12 @@ public class DisplayWeatherActivity extends Activity {
 
 
         setContentView(R.layout.activity_main);
+
+        ActionBar ab = getActionBar();
+        ab.setHomeButtonEnabled(true);
+
+        ab.show();
+
 
 
         mListView = (ListView) findViewById(R.id.hourly);
@@ -197,7 +204,9 @@ public class DisplayWeatherActivity extends Activity {
         //pass it to the snark
         determineSnark(currentTemp);
 
+
         Log.e("LOOK----------------------------------------value of currentTemp", String.valueOf(currentTemp));
+        Log.e("LOOK----------------------------------------value of mcurrentTemp", String.valueOf(mCurrentTemp));
     }
 
 
@@ -220,17 +229,17 @@ public class DisplayWeatherActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.home:
-                startActivity(new Intent(getApplicationContext(), DisplaySettingsActivity.class)
-                                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)//updated
-                                .addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
-                );
 
-    return true;
-    default:
-            return super.onOptionsItemSelected(item);
+                Intent homeIntent = new Intent(this,DisplaySettingsActivity.class);
+                homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(homeIntent);
+
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
-
 
 
 
@@ -292,7 +301,7 @@ public class DisplayWeatherActivity extends Activity {
 
         if (mCTemp < cold1) {    //bittercold
             range = "bittercold";
-        } else if ((mCTemp <= cold1) && mCTemp > (cold1 + 10)) {     //toocold
+        } else if ((mCTemp >= cold1) && mCTemp <= (cold1 + 10)) {     //toocold
             range = "toocold";
         } else if ((mCTemp > (cold1 + 10) && (mCTemp <= (cold1 + 17)))) {      //good
             range = "good";

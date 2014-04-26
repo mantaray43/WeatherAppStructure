@@ -23,7 +23,8 @@
             android:name=".DisplaySettingsActivity"
             android:screenOrientation="portrait"
             android:label="@string/app_name"
-             >
+
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,6 +39,7 @@
             android:name=".DisplayWeatherActivity"
             android:screenOrientation="portrait"
             android:label="@string/app_name"
+            android:parentActivityName=".DisplaySettingsActivity"
 
             android:noHistory="true">
         </activity>
