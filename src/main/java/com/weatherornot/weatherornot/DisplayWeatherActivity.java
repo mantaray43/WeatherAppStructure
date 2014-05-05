@@ -60,7 +60,6 @@ public class DisplayWeatherActivity extends Activity {
     private final String HAIL = "HAIL";
     private final String THUNDERSTORMS = "THUNDERSTORMS";
     private final String TORNADO = "TORNADO";
-    int temp;
 
 //    static final int SET_SERVICES = 0;
 
@@ -80,8 +79,6 @@ public class DisplayWeatherActivity extends Activity {
 
 
         setContentView(R.layout.activity_main);
-
-        
 
 
         mListView = (ListView) findViewById(R.id.hourly);
@@ -200,9 +197,7 @@ public class DisplayWeatherActivity extends Activity {
         //pass it to the snark
         determineSnark(currentTemp);
 
-
         Log.e("LOOK----------------------------------------value of currentTemp", String.valueOf(currentTemp));
-        Log.e("LOOK----------------------------------------value of mcurrentTemp", String.valueOf(mCurrentTemp));
     }
 
 
@@ -217,7 +212,7 @@ public class DisplayWeatherActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.settings, menu);
         return true;
     }
 
@@ -225,17 +220,14 @@ public class DisplayWeatherActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.home:
+               
 
-                Intent homeIntent = new Intent(this,DisplaySettingsActivity.class);
-                homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(homeIntent);
-
-
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+    return true;
+    default:
+            return super.onOptionsItemSelected(item);
         }
     }
+
 
 
 
@@ -297,7 +289,7 @@ public class DisplayWeatherActivity extends Activity {
 
         if (mCTemp < cold1) {    //bittercold
             range = "bittercold";
-        } else if ((mCTemp >= cold1) && mCTemp <= (cold1 + 10)) {     //toocold
+        } else if ((mCTemp <= cold1) && mCTemp > (cold1 + 10)) {     //toocold
             range = "toocold";
         } else if ((mCTemp > (cold1 + 10) && (mCTemp <= (cold1 + 17)))) {      //good
             range = "good";
@@ -307,7 +299,7 @@ public class DisplayWeatherActivity extends Activity {
             range = "warm";
         } else if (mCTemp > (hot1 - 2) && (mCTemp <= (hot1 + 6))) { //too hot
             range = "toohot";
-        } else if (mCTemp < (hot1 + 7)) {
+        } else if (mCTemp > (hot1 + 7)) {
             range = "toodanghot";
         } else {
             range = "toodanghot";

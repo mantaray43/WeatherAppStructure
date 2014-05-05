@@ -18,6 +18,6 @@
     <string name="perfectLabel">Perfect</string>
     <string name="doneButton">Done</string>
     <string name="credit">Powered by Forecast API and Geonames API</string>
-
+    <string name="Change">Change Temp settings</string>
 
 </resources>
