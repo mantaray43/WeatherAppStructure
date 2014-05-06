@@ -5,7 +5,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.util.Log;
+
 
 
 //  This class wraps all the code we will use to manage getting updates on the location
@@ -26,11 +26,11 @@ public class UserLocationManager implements LocationListener {
 
         try {
             lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-//            lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0,0,this);
+
 
         } catch (Exception e) {
             e.printStackTrace();
-            Log.e("Look----------------------------------------------------------------------", e.getMessage(), e);
+
         }
     }
 
@@ -39,18 +39,9 @@ public class UserLocationManager implements LocationListener {
     @Override
     public void onLocationChanged(Location location) {
 
-
-
-
         getWeatherDataTask.receiveUserLocation(location);
-
-
         lm.removeUpdates(this);
         onStop();
-
-//13
-        Log.e("LOOK-----------------------------Get weather data task", getWeatherDataTask.toString());
-
 
     }
 
@@ -71,10 +62,7 @@ public class UserLocationManager implements LocationListener {
 
 
     protected void onStop() {
-
         lm.removeUpdates(this);
 
     }
-
-
 }

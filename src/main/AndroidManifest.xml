@@ -20,7 +20,8 @@
         <activity
             android:name="com.weatherornot.weatherornot.DisplaySettingsActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +31,7 @@
         <activity
             android:name="com.weatherornot.weatherornot.DisplayWeatherActivity"
             android:label="@string/app_name"
-
+            android:noHistory="true"
             android:screenOrientation="portrait" >
         </activity>
     </application>

@@ -1,7 +1,7 @@
 package com.weatherornot.weatherornot;
 
 import android.location.Location;
-import android.util.Log;
+
 
 
 public class ForecastAPIRequestObject {
@@ -31,7 +31,7 @@ public class ForecastAPIRequestObject {
     public String getAssembledURL() {
         String pantsURL;
         pantsURL = mURL + mAPI_KEY + "/" + mlatitude.toString() + "," + mlongitude.toString();
-        Log.e("LOOK------------------------------------- we have location data!", mlatitude.toString() + " " + mlongitude.toString());
+
 
         return pantsURL;
 

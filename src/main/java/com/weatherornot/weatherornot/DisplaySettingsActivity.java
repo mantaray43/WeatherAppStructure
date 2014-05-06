@@ -2,18 +2,12 @@ package com.weatherornot.weatherornot;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.LocationManager;
-
 import android.os.Bundle;
-
-import android.util.Log;
-
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,9 +25,6 @@ public class DisplaySettingsActivity extends Activity {
         setContentView(R.layout.settings_activity);
 
         checkIfNetworkLocationAvailable();
-
-
-
 
         Button doneSaveButton = (Button) findViewById(R.id.donebutton);
 
@@ -64,17 +55,11 @@ public class DisplaySettingsActivity extends Activity {
                 editor.commit();
                 finish();
 
-                Log.e("LOOK--------------------------------- prefs saved", Integer.valueOf(x)+ Integer.valueOf(y) + Integer.valueOf(z).toString());
                 editor.putBoolean("tempSaved",true);
-
 
                 Intent toWeather = new Intent(getApplicationContext(), DisplayWeatherActivity.class);
                 startActivity(toWeather);
                 finish();
-
-
-
-
 
             }
         });
@@ -132,16 +117,9 @@ public class DisplaySettingsActivity extends Activity {
         }
     }
 
-
-
-
-
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
-
 
     }
 }

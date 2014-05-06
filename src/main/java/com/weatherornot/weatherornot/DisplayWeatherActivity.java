@@ -1,40 +1,26 @@
 package com.weatherornot.weatherornot;
 
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
 
-import android.content.Context;
-import android.content.DialogInterface;
+import android.app.Activity;
+
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.location.LocationManager;
-import android.os.Build;
 import android.os.Bundle;
-
-import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
-
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
-
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.ParseException;
@@ -54,7 +40,7 @@ public class DisplayWeatherActivity extends Activity {
     Typeface font;
     String fontPathB = "fonts/playtime.ttf";
     String fontPathC = "fonts/edo.ttf";
-    Double mCurrentTemp;
+
 
     private final String CLOUDY = "CLOUDY";
     private final String CLEAR_DAY = "CLEAR-DAY";
@@ -70,12 +56,6 @@ public class DisplayWeatherActivity extends Activity {
     private final String THUNDERSTORMS = "THUNDERSTORMS";
     private final String TORNADO = "TORNADO";
 
-//    static final int SET_SERVICES = 0;
-
-//    public static void setTheIcon(int theIcon) {
-//        DisplayWeatherActivity.theIcon = theIcon;
-//    }
-
 
     static final String PREFERENCES = "temps";
     ProgressDialog waiting;
@@ -83,15 +63,8 @@ public class DisplayWeatherActivity extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-//        checkIfNetworkLocationAvailable();
-
-
-
-
         setContentView(R.layout.activity_main);
         getActionBar();
-
 
         mListView = (ListView) findViewById(R.id.hourly);
         getWeather();
@@ -194,13 +167,10 @@ public class DisplayWeatherActivity extends Activity {
         //oh, go and update with a snarky message
         //convert the temperature to an int
         int currentTemp = temp;
-//                myDataObject.getmCurrentTemp().intValue();
-
 
         //pass it to the snark
         determineSnark(currentTemp);
 
-        Log.e("LOOK----------------------------------------value of currentTemp", String.valueOf(currentTemp));
     }
 
 
@@ -212,17 +182,10 @@ public class DisplayWeatherActivity extends Activity {
     }
 
 
-//
-    //   Here is all the code from SnarkyDisplay moved over to this
-    //   Activity so we can use it on our display.
-    //
-
-
+//get snark
     public void determineSnark(int currentTemp) throws ParseException {
 
-
         String range;
-
 
         SharedPreferences myPrefs = getSharedPreferences(PREFERENCES, 0);
         SharedPreferences.Editor editor = myPrefs.edit();
@@ -233,17 +196,6 @@ public class DisplayWeatherActivity extends Activity {
         editor.commit();
 
 
-
-
-//
-        Log.e("LOOK------------saved prefs", String.valueOf(hot1));
-        Log.e("LOOK------------saved prefs", String.valueOf(cold1));
-        Log.e("LOOK------------saved prefs", String.valueOf(perfect1));
-
-
-//        Log.e("LOOK-----------------get pref strings", String.valueOf(a) + String.valueOf(b) + String.valueOf(c));
-        Log.e("LOOK------------ PREFS CONVERTED TO INTEGERS", String.valueOf(hot1) + String.valueOf(cold1) + String.valueOf(perfect1));
-
         //this is getting a reference to the view
         TextView myTextView = (TextView) findViewById(R.id.currenttemp);
 
@@ -252,7 +204,6 @@ public class DisplayWeatherActivity extends Activity {
 
         int mCTemp = currentTemp;
 
-        Log.e("LOOK------------------------------what is the value of mCTemp?", String.valueOf(mCTemp));
 
         if (mCTemp < cold1) {    //bittercold
             range = "bittercold";
@@ -274,7 +225,7 @@ public class DisplayWeatherActivity extends Activity {
 
         displaySnarkiness(range);
 
-        Log.e("LOOK-----------------------------------------------------------------what is the range?", String.valueOf(range));
+
         myTextView = (TextView) findViewById(R.id.snarky);
     }
 
@@ -328,7 +279,7 @@ public class DisplayWeatherActivity extends Activity {
 
         } catch (JSONException e) {
             e.printStackTrace();
-            Log.e("Look----------------------------------------------------------------------", e.getMessage(), e);
+
         }
 
     }
@@ -360,12 +311,6 @@ public class DisplayWeatherActivity extends Activity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
-
-
-
-
-
 
 }
 

@@ -21,7 +21,7 @@
 				"image":"infernopants"
 			},
 			{
-				"text":"Triple ply, down filled, heated seat pants, are recommended \nfor today. Winter peril is not to be sneezed at.\n",
+				"text":"Triple ply, heated seat pants, are recommended. \n Winter peril is not to be sneezed at.\n",
 				"image":"pantsofire"
 			},
 			{
@@ -121,7 +121,7 @@
 			},
 			{
 				
-				"text":"Icebox weather for today;  \nperfect for your ultra-tight super neon pants.\n",
+				"text":"Icebox weather for today;  \nperfect for your high waisted polyknit  neon pants.\n",
 				"image":"superneonpants"
 			}
 		],
@@ -131,7 +131,7 @@
 	"good":[
 		
 			{
-				"text":"The cold isn't too bad today. You can finally wear those \nsmart cotton plaid pants. We really can't monitor good taste...\nonly the weather.\n",
+				"text":"Great! You can finally wear \nthose smart cotton plaid pants. \nWe really can't monitor good taste...only the weather.\n",
 				"image":"plaidpantsb"
 			},
 			{
@@ -236,7 +236,7 @@
 				"image":"oraclepants"
 			},
 			{
-				"text":"The weather is splendid today. \nPut on your swami pants and search for the meaning of it all.\n",
+				"text":"The weather is splendid today. \nPut on your swami pants \nand search for the meaning of it all.\n",
 				"image":"swamipants"
 			},
 			{
@@ -276,7 +276,7 @@
 				"image":"bermudashorts"
 			},
 			{
-				"text":"At high noon the sun will be beating down on you.  Wear your dude pants, \nhead for the nearest saloon, and order a White Russian.\n",
+				"text":"At high noon the sun will be beating down on you.  \nWear your dude pants \nHead for the nearest saloon  and order a White Russian.\n",
 				"image":"dudepants"
 			},
 			{	
@@ -296,7 +296,7 @@
 				"image":"evilpants"
 			},
 			{
-				"text":"It's hot today, \nwear some bloomers with good ventilation to prevent chafing.\n",
+				"text":"It's hot today, \nwear some bloomers with good ventilation \nto prevent chafing.\n",
 				"image":"bloomers"
 			},
 			{
@@ -397,7 +397,7 @@
 
 		
 			{
-				"text":"Today is super steamy hot;  \nmight as well wear your 'Boom-Chick-A-Wow-Wow' pants.\n",
+				"text":"Today is super steamy hot; might as well wear your \n'Boom-Chick-A-Wow-Wow' pants.\n",
 				"image":"boomchickpants"
 			},
 			{
@@ -417,7 +417,7 @@
 				"image":"flamingpants"
 			},
 			{
-				"text":"The air is like steaming dumplings slapping you in the face; \nshort pants are a must.",
+				"text":"The air is like steaming dumplings slapping you in the face; \nshort pants are a must.\n",
 				"image":"shortpants"
 			},
 			{

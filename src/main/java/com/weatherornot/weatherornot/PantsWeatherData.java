@@ -39,17 +39,6 @@ public class PantsWeatherData {
     public String icon;
 
 
-//    public PantsWeatherData getCityData() {
-//        return cityData;
-//    }
-//
-//    public void setCityData(PantsWeatherData cityData) {
-//        this.cityData = cityData;
-//    }
-
-    //public PantsWeatherData cityData = new PantsWeatherData();
-
-
     public String getGiveDate() {
         return giveDate;
     }

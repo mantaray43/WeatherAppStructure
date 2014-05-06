@@ -2,7 +2,6 @@ package com.weatherornot.weatherornot;
 
 import android.location.Location;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -17,11 +16,10 @@ import java.io.ByteArrayOutputStream;
 
 public class GeonameAPITask extends AsyncTask<Location, Integer, String> {
 
-    public String myCity;
+
     public String myURL = "http://api.geonames.org/findNearbyPlaceNameJSON?";
     public String API_User = "mantaray43";
-    public String mlatitude;
-    public String mLongitude;
+
     public DisplayWeatherActivity cityDisplay;
 
     public String geoAssembledURL(Location l) {
@@ -54,7 +52,7 @@ public class GeonameAPITask extends AsyncTask<Location, Integer, String> {
                 httpResponse.getEntity().writeTo(out);
                 out.close();
                 String responseString = out.toString();
-                Log.e("look", responseString);
+
 
 
                 JSONObject gRootJSON = new JSONObject(responseString);
@@ -65,11 +63,7 @@ public class GeonameAPITask extends AsyncTask<Location, Integer, String> {
                     JSONObject cName = geonamesJSON.getJSONObject(0);
                     JSONObject sName = geonamesJSON.getJSONObject(0);
 
-                    //cName.getJSONObject("name");
-
                     myCity = cName.getString("name") + ", " + sName.getString("adminCode1");
-
-                    Log.e("LOOK--------------------------------------- we have the city name", myCity);
 
                 }
 
@@ -92,8 +86,6 @@ public class GeonameAPITask extends AsyncTask<Location, Integer, String> {
 
         super.onPostExecute(cityData);
         cityDisplay.updateMyCity(cityData);
-
-        Log.e("LOOK----------------------------------------- city is displayed", cityData);
 
     }
 

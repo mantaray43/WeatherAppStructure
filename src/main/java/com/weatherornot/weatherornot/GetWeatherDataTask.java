@@ -1,11 +1,9 @@
 package com.weatherornot.weatherornot;
 
 
-import android.app.ProgressDialog;
+
 import android.location.Location;
 import android.os.AsyncTask;
-import android.util.Log;
-
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.StatusLine;
@@ -14,7 +12,6 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.io.ByteArrayOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -25,7 +22,7 @@ import java.util.Date;
 public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject, Integer, PantsWeatherData> {
     public DisplayWeatherActivity pantsWeatherDisplay;
     UserLocationManager myLocationManager;
-    public Date formattedTime;
+
     private final String CLOUDY = "CLOUDY";
     private final String CLEAR_DAY = "CLEAR-DAY";
     private final String CLEAR_NIGHT = "CLEAR-NIGHT";
@@ -41,43 +38,31 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject, Inte
     private final String TORNADO = "TORNADO";
     public static int theIcon;
 
-    public ProgressDialog waiting;
-
 
     /////4
     public GetWeatherDataTask(DisplayWeatherActivity b) {
-        //this is the constructor//expecting a display weather activity and we are calling it B
+        //expecting a display weather activity and we are calling it B
         super();
-        Log.e("LOOK-------------------------------------", "Get Weather Data task works");
-        pantsWeatherDisplay = b;  //This is a DisplayWeatherActivity (refers to our display view) we
-        //are referencing it as pantsWeatherDisplay a
 
+        pantsWeatherDisplay = b;
         goGetLocation();
-
-
     }
 
     //////5
     public void goGetLocation() {
 
         myLocationManager = new UserLocationManager(this);
-
-
     }
 
     ///11
     public void receiveUserLocation(Location location) {
         ForecastAPIRequestObject forecastAPIRequestObject = new ForecastAPIRequestObject(location);
         this.execute(forecastAPIRequestObject);
-
-
     }
 
     public static void setTheIcon(int theIcon) {
         GetWeatherDataTask.theIcon = theIcon;
-
     }
-
 
     @Override
     ///...means array of forecastAPIRequestObjects
@@ -133,8 +118,6 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject, Inte
                 } else theIcon = (R.drawable.tornado);
 
 
-                Log.e("LOOK-------------------------------------------getting icon", (String) currentlyJSON.get("icon"));
-
 
                 JSONObject hourlyJSON = rootJSON.getJSONObject("hourly");
                 JSONArray hourlyDataJSON = hourlyJSON.getJSONArray("data");
@@ -164,7 +147,7 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject, Inte
                     String a = finalFormattedDate + "     " + temperature + "\u00BA" + "   " + summary;
                     myHourlyText[i] = a;
 
-                    Log.e("LOOK---------------------------------------------------weather data", finalFormattedDate + " , " + temperature + summary);
+
                 }
 
                 myData.setmHourlyData(myHourlyText);
@@ -199,15 +182,11 @@ public class GetWeatherDataTask extends AsyncTask<ForecastAPIRequestObject, Inte
             e.printStackTrace();
         }
 
-
-        Log.e("LOOK---------------------------------------------------------------", "received weather data");
-
     }
 
     @Override
     protected void onProgressUpdate(Integer... values) {
         super.onProgressUpdate(values);
     }
-
 
 }
