@@ -3,14 +3,18 @@ package com.weatherornot.weatherornot;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -77,15 +81,16 @@ public class DisplayWeatherActivity extends Activity {
     ProgressDialog waiting;
 
 
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+//        checkIfNetworkLocationAvailable();
+
+
+
 
         setContentView(R.layout.activity_main);
-
         getActionBar();
-
 
 
         mListView = (ListView) findViewById(R.id.hourly);
@@ -140,8 +145,6 @@ public class DisplayWeatherActivity extends Activity {
         double mCurrentTemp = myDataObject.getmCurrentTemp();
         int temp = (int) mCurrentTemp;
         textView.setText(String.valueOf(temp) + "\u00B0");
-
-
 
 
         mListView = (ListView) findViewById(R.id.hourly);
@@ -230,19 +233,7 @@ public class DisplayWeatherActivity extends Activity {
         editor.commit();
 
 
-//        String a = myPrefs.getString("hot", "888");
-//        String b = myPrefs.getString("cold", "888");
-//        String c = myPrefs.getString("perfect", "888");
 
-
-//        Log.e("LOOK------------",a);
-//        Log.e("LOOK------------",b);
-//        Log.e("LOOK------------",c);
-
-
-//        int hot1 = Integer.parseInt(a);
-//        int cold1 = Integer.parseInt(b);
-//        int perfect1 = Integer.parseInt(c);
 
 //
         Log.e("LOOK------------saved prefs", String.valueOf(hot1));
@@ -265,7 +256,7 @@ public class DisplayWeatherActivity extends Activity {
 
         if (mCTemp < cold1) {    //bittercold
             range = "bittercold";
-        } else if ((mCTemp <= cold1) && mCTemp > (cold1 + 10)) {     //toocold
+        } else if ((mCTemp >= cold1) && mCTemp < (cold1 + 10)) {     //toocold
             range = "toocold";
         } else if ((mCTemp > (cold1 + 10) && (mCTemp <= (cold1 + 17)))) {      //good
             range = "good";
@@ -275,7 +266,7 @@ public class DisplayWeatherActivity extends Activity {
             range = "warm";
         } else if (mCTemp > (hot1 - 2) && (mCTemp <= (hot1 + 6))) { //too hot
             range = "toohot";
-        } else if (mCTemp > (hot1 + 7)) {
+        } else if (mCTemp < (hot1 + 7)) {
             range = "toodanghot";
         } else {
             range = "toodanghot";
@@ -341,6 +332,9 @@ public class DisplayWeatherActivity extends Activity {
         }
 
     }
+
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
@@ -354,19 +348,26 @@ public class DisplayWeatherActivity extends Activity {
         // Handle presses on the action bar items
         switch (item.getItemId()) {
             case R.id.Change:
-                Intent myIntent = new Intent(getBaseContext(), DisplaySettingsActivity.class);
-                myIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(myIntent);
-
+                //removes shared preferences goes back to settings activity
+                SharedPreferences myPrefs = getSharedPreferences(PREFERENCES, 0);
+                SharedPreferences.Editor editor = myPrefs.edit();
+                myPrefs.edit().clear().commit();
+                Intent boo = new Intent(this,DisplaySettingsActivity.class);
+                startActivity(boo);
 
                 return true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
-}
 
+
+
+
+
+
+
+}
 
 
 

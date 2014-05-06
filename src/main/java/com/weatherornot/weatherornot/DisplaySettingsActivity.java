@@ -22,13 +22,7 @@ import android.widget.EditText;
 public class DisplaySettingsActivity extends Activity {
 
     static final String PREFERENCES = "temps";
-    public static final String TEMPSAVED = "tempsSaved";
-    EditText hot;
-    EditText cold;
-    EditText perfect;
-    int hot1;
-    int cold1;
-    int perfect1;
+
 
 
     @Override
@@ -89,6 +83,8 @@ public class DisplaySettingsActivity extends Activity {
 
 
 
+
+
     /**
      * checks if NETWORK LOCATION PROVIDER is available
      */
@@ -104,10 +100,11 @@ public class DisplaySettingsActivity extends Activity {
             dialog.setMessage("Please enable Location Services and GPS");
 
             dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
                 public void onClick(DialogInterface dialog, int which) {
                     startActivityForResult(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS), 0);
 
-                    loadPrefs();
+
 
                 }
 
@@ -115,7 +112,6 @@ public class DisplaySettingsActivity extends Activity {
 
 
             dialog.show();
-//            loadPrefs();
 
 
         }
@@ -123,19 +119,20 @@ public class DisplaySettingsActivity extends Activity {
             loadPrefs();
         }
     }
+    private void loadPrefs(){
+        SharedPreferences myPrefs = getSharedPreferences(PREFERENCES, 0);
+        boolean lp = myPrefs.getBoolean("tempSaved",false);
 
-private void loadPrefs(){
-    SharedPreferences myPrefs = getSharedPreferences(PREFERENCES, 0);
-    boolean lp = myPrefs.getBoolean("tempSaved",false);
+        if(lp == true){
+            Intent i = new Intent(getApplicationContext(),DisplayWeatherActivity.class);
+            startActivity(i);
 
-    if(lp == true){
-        Intent i = new Intent(getApplicationContext(),DisplayWeatherActivity.class);
-        startActivity(i);
-        finish();
-    }else if(lp == false){
-        onResume();
+        }else if(lp == false){
+            onResume();
+        }
     }
-}
+
+
 
 
 
