@@ -1,9 +1,11 @@
 package com.weatherornot.weatherornot;
 
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ProgressDialog;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -12,8 +14,12 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 
 import android.widget.ImageView;
@@ -78,7 +84,7 @@ public class DisplayWeatherActivity extends Activity {
 
         setContentView(R.layout.activity_main);
 
-
+        getActionBar();
 
 
 
@@ -335,7 +341,30 @@ public class DisplayWeatherActivity extends Activity {
         }
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.settings, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.Change:
+                Intent myIntent = new Intent(getBaseContext(), DisplaySettingsActivity.class);
+                myIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(myIntent);
+
+
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
 
 
