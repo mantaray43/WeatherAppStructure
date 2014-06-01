@@ -3,15 +3,15 @@
     <!-- These settings headers are only used on tablets. -->
 
     <header
-        android:fragment="com.weatherornot.weatherornot.NewActivity$GeneralPreferenceFragment"
+        android:fragment="com.weatherornot.nightmare.NewActivity$GeneralPreferenceFragment"
         android:title="@string/pref_header_general" />
 
     <header
-        android:fragment="com.weatherornot.weatherornot.NewActivity$NotificationPreferenceFragment"
+        android:fragment="com.weatherornot.nightmare.NewActivity$NotificationPreferenceFragment"
         android:title="@string/pref_header_notifications" />
 
     <header
-        android:fragment="com.weatherornot.weatherornot.NewActivity$DataSyncPreferenceFragment"
+        android:fragment="com.weatherornot.nightmare.NewActivity$DataSyncPreferenceFragment"
         android:title="@string/pref_header_data_sync" />
 
 </preference-headers>

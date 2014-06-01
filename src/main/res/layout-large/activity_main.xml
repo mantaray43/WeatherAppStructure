@@ -19,7 +19,7 @@
 
         <TextView
             android:tag="@+id/myCustomFont"
-            android:layout_width="600dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_weight="19"
@@ -163,7 +163,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
 
             android:id="@+id/pants"
 
