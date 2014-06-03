@@ -1,4 +1,4 @@
-package com.weatherornot.weatherornot;
+package com.weatherornot.nightmare;
 
 import android.location.Location;
 

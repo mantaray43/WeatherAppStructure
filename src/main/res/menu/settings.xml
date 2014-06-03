@@ -8,5 +8,10 @@
         android:title="@string/Change"
         android:showAsAction="always" />
 
+    <item android:id="@+id/email"
+        android:icon="@drawable/ic_email"
+        android:title="@string/SubmitPantsIdeas"
+        android:showAsAction="always" />
+
 
 </menu>

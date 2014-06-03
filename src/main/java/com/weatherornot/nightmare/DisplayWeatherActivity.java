@@ -1,4 +1,4 @@
-package com.weatherornot.weatherornot;
+package com.weatherornot.nightmare;
 
 
 
@@ -307,6 +307,12 @@ public class DisplayWeatherActivity extends Activity {
                 startActivity(boo);
 
                 return true;
+
+            case R.id.email:
+                Intent email = new Intent(this,Email_activity.class);
+                startActivity(email);
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }

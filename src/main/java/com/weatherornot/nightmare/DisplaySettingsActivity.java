@@ -1,4 +1,4 @@
-package com.weatherornot.weatherornot;
+package com.weatherornot.nightmare;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -22,7 +22,7 @@ public class DisplaySettingsActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.settings_activity);
+        setContentView(R.layout.alt_settings_activity);
 
         checkIfNetworkLocationAvailable();
 

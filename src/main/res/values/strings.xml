@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
     <string name="app_name">WeatherPants</string>
     <string name="currenttemp"></string>
     <string name="snarky"></string>
@@ -19,5 +18,15 @@
     <string name="doneButton">Done</string>
     <string name="credit">Powered by Forecast API and Geonames API</string>
     <string name="Change">Change Temp settings</string>
+    <string name="title_activity_email">EmailActivity</string>
+
+    <string name="emailicon">SubmitPantsIdeas</string>
+    <string name="yourIdea">Add your own Pants idea to the next update of Weather Pants!</string>
+    <string name="pantsAddress">moreweatherpants@gmail.com</string>
+    <string name="sendbutton">Send</string>
+    <string name="instructions">Type in your Pants idea and send it to us. If you make us laugh we will use your idea! Remember to keep it fairly clean we\'re a medium maturity app. There is no payment or credit for submissions. If we use your idea we have the right to modify it if necessary.</string>
+    <string name="SubmitPantsIdeas">Submit Pants Ideas</string>
+    <string name="title_activity_email_activity">title_activity_email_activity</string>
+
 
 </resources>
