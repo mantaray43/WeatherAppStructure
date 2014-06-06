@@ -25,7 +25,7 @@ public class DisplaySettingsActivity extends Activity {
         setContentView(R.layout.alt_settings_activity);
 
         checkIfNetworkLocationAvailable();
-
+        AppRater.app_launched(this);
         Button doneSaveButton = (Button) findViewById(R.id.donebutton);
 
         doneSaveButton.setOnClickListener(new View.OnClickListener() {

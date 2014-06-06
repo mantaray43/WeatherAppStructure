@@ -19,14 +19,16 @@
     <string name="credit">Powered by Forecast API and Geonames API</string>
     <string name="Change">Change Temp settings</string>
     <string name="title_activity_email">EmailActivity</string>
-
     <string name="emailicon">SubmitPantsIdeas</string>
     <string name="yourIdea">Add your own Pants idea to the next update of Weather Pants!</string>
     <string name="pantsAddress">moreweatherpants@gmail.com</string>
     <string name="sendbutton">Send</string>
     <string name="instructions">Type in your Pants idea and send it to us. If you make us laugh we will use your idea! Remember to keep it fairly clean we\'re a medium maturity app. There is no payment or credit for submissions. If we use your idea we have the right to modify it if necessary.</string>
     <string name="SubmitPantsIdeas">Submit Pants Ideas</string>
-    <string name="title_activity_email_activity">title_activity_email_activity</string>
 
+    <string name="feedbacktext">We want to hear from you!  If you have any feedback on WeatherPants please let us know.  If you have any problems or just want to put in your 2 cents we want to hear about it.  Just click on the email address below and tell us what you think.</string>
+    <string name="rate">Hey! If you like WeatherPants it would be cool if you would rate us and write a review. Just click on the star!</string>
+    <string name="share">Share</string>
+    <string name="blazing">blazingadventurepants@gmail.com</string>
 
 </resources>

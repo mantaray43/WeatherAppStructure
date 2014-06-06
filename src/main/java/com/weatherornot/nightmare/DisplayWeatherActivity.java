@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ShareActionProvider;
 import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -66,6 +68,7 @@ public class DisplayWeatherActivity extends Activity {
         setContentView(R.layout.activity_main);
         getActionBar();
 
+        AppRater.app_launched(this);
         mListView = (ListView) findViewById(R.id.hourly);
         getWeather();
 
@@ -313,9 +316,19 @@ public class DisplayWeatherActivity extends Activity {
                 startActivity(email);
                 return true;
 
+            case R.id.rate:
+                Intent rate = new Intent(this,RateMyAPPActivity.class);
+                startActivity(rate);
+
+
+
             default:
                 return super.onOptionsItemSelected(item);
         }
+
+
+
+
     }
 
 }
