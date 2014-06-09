@@ -20,8 +20,9 @@ public class Email_activity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alt_email_activity);
-
+        getActionBar();
         TextView x = (TextView) findViewById(R.id.linkview);
+
 
 
     }

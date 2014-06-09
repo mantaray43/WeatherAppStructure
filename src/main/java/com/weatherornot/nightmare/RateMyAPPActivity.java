@@ -25,7 +25,7 @@ public class RateMyAPPActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rate_my_app);
-
+        getActionBar();
 
         Button rateIt = (Button) findViewById(R.id.ratebutton);
         rateIt.setOnClickListener(new View.OnClickListener() {
