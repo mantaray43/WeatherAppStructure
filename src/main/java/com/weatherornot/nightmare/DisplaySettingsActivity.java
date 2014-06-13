@@ -111,8 +111,9 @@ public class DisplaySettingsActivity extends Activity {
         if(lp == true){
             Intent i = new Intent(getApplicationContext(),DisplayWeatherActivity.class);
             startActivity(i);
+            onDestroy();
 
-        }else if(lp == false){
+        }else if(lp){
             onResume();
         }
     }

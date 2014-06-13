@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:paddingBottom="100dp"
+        android:paddingBottom="50dp"
         android:textSize="40sp"
         android:text="moreweatherpants@gmail.com"
         android:id="@+id/linkview"

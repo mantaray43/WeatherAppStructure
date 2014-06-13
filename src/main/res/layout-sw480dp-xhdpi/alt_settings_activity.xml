@@ -11,8 +11,7 @@
     <ImageView
         android:id="@+id/directions"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
+        android:layout_height="300dp"
         android:src="@drawable/directions"
         android:scaleType="fitXY"
         android:layout_alignParentRight="true"
@@ -24,7 +23,7 @@
     <Space
         android:id="@+id/space1"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="45dp"
         android:layout_below="@+id/directions"
         android:paddingBottom="30dp"
        />
@@ -229,7 +228,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/perfectline"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/donebutton"
         android:id="@+id/donebutton"
         />
@@ -245,7 +244,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="15dp"
         android:layout_alignParentBottom="true"
         android:text="@string/credit"
         android:gravity="center_horizontal" />

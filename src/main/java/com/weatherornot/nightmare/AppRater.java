@@ -10,9 +10,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
-/**
- * Created by cheryl on 6/5/14.
- */
+
 public class AppRater extends Activity {
     private final static String APP_TITLE = "WeatherPants";
     private final static String APP_PACKAGE_NAME = "weatherornot.nightmare";

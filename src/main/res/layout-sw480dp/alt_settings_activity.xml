@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/directions"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
 
         android:src="@drawable/directions"
         android:scaleType="fitXY"
@@ -24,14 +24,14 @@
     <Space
         android:id="@+id/space1"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/directions"
         android:paddingBottom="30dp"
        />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/space1"
         android:background="@drawable/hot"
         android:id="@+id/hotline"
@@ -67,8 +67,8 @@
                 android:textColor="#1f052f"
                 android:layout_weight="30"
                 android:inputType="number"
-
                 android:maxLength="3"
+
                 />
 
             <Space
@@ -100,7 +100,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/space2"
         android:background="@drawable/cold"
         android:id="@+id/coldline"
@@ -166,7 +166,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/space3"
         android:background="@drawable/perfect"
         android:id="@+id/perfectline"
@@ -229,7 +229,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/perfectline"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/donebutton"
         android:id="@+id/donebutton"
         />
@@ -245,10 +245,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="15dp"
         android:layout_alignParentBottom="true"
         android:text="@string/credit"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:textSize="15sp"/>
 
 
 </RelativeLayout>

@@ -53,7 +53,7 @@
 
     <ImageView
         android:layout_width="750dp"
-        android:layout_height="435dp"
+        android:layout_height="470dp"
         android:src="@drawable/feedbacknotepaper"
         android:layout_below="@+id/horizontal_line"
         android:scaleType="fitXY"

@@ -76,10 +76,6 @@ public class GeonameAPITask extends AsyncTask<Location, Integer, String> {
 
     }
 
-    @Override
-    protected void onPreExecute() {
-        super.onPreExecute();
-    }
 
 
     protected void onPostExecute(String cityData) {
