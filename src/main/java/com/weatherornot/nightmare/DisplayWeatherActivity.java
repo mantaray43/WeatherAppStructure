@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ShareActionProvider;
 import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -185,7 +186,7 @@ public class DisplayWeatherActivity extends Activity {
 
 
 //get snark
-    public void determineSnark(int currentTemp)  {
+    public void determineSnark(int currentTemp) throws ParseException {
 
         String range;
 
