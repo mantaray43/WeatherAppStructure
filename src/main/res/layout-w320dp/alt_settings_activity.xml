@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/directions"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="200dp"
 
         android:src="@drawable/directions"
         android:scaleType="fitXY"
@@ -24,14 +24,14 @@
     <Space
         android:id="@+id/space1"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:layout_below="@+id/directions"
         android:paddingBottom="30dp"
        />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="30dp"
         android:layout_below="@+id/space1"
         android:background="@drawable/hot"
         android:id="@+id/hotline"
@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hotLabel"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textColor="#1f052f"
                 android:layout_weight="30"
                 android:gravity="right"
@@ -58,11 +58,12 @@
 
             <EditText
 
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="10dp"
+                android:layout_height="30dp"
+                android:gravity="center_vertical"
                 android:imeOptions="actionNext"
-                android:layout_gravity="center"
-                android:textSize="30sp"
+                android:layout_gravity="bottom"
+                android:textSize="15sp"
                 android:id="@+id/hotNumber"
                 android:textColor="#1f052f"
                 android:layout_weight="30"
@@ -81,7 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/degrees"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textColor="#1f052f"
                 android:id="@+id/degrees"
                 android:layout_weight="30"
@@ -100,7 +101,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="30dp"
         android:layout_below="@+id/space2"
         android:background="@drawable/cold"
         android:id="@+id/coldline"
@@ -113,7 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/coldLabel"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:textColor="#1f052f"
             android:layout_weight="25"
             android:gravity="right"
@@ -127,11 +128,12 @@
 
         <EditText
 
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="10dp"
+                     android:layout_height="30dp"
+                    android:gravity="center_vertical"
                     android:imeOptions="actionNext"
                     android:layout_gravity="center"
-                    android:textSize="30sp"
+                    android:textSize="15sp"
                     android:id="@+id/coldNumber"
                     android:textColor="#1f052f"
                     android:layout_weight="30"
@@ -150,7 +152,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/degrees"
-                    android:textSize="30sp"
+                    android:textSize="20sp"
                     android:textColor="#1f052f"
                     android:id="@+id/degrees1"
                     android:layout_weight="35"
@@ -166,7 +168,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="30dp"
         android:layout_below="@+id/space3"
         android:background="@drawable/perfect"
         android:id="@+id/perfectline"
@@ -178,7 +180,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/perfectLabel"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:textColor="#1f052f"
             android:layout_weight="40"
             android:gravity="right"
@@ -191,11 +193,11 @@
                     android:layout_weight="7"/>
 
         <EditText
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-
+                    android:layout_width="10dp"
+                    android:layout_height="30dp"
+                    android:gravity="center_vertical"
                     android:layout_gravity="center"
-                    android:textSize="30sp"
+                    android:textSize="15sp"
                     android:id="@+id/perfectNumber"
                     android:textColor="#1f052f"
                     android:layout_weight="35"
@@ -216,7 +218,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/degrees"
-                    android:textSize="30sp"
+                    android:textSize="20sp"
                     android:textColor="#1f052f"
 
                     android:layout_weight="35"
@@ -225,18 +227,18 @@
     </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="30dp"
         android:layout_below="@+id/perfectline"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/donebutton"
         android:id="@+id/donebutton"
         />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="20dp"
         android:layout_below="@+id/donebutton"
         android:id="@+id/space4"
 
@@ -245,11 +247,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="10dp"
         android:layout_alignParentBottom="true"
         android:text="@string/credit"
         android:gravity="center_horizontal"
-        android:textSize="15sp"/>
+        android:textSize="10sp"/>
 
 
 </RelativeLayout>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chalkboardbackground"
+    android:baselineAligned="false"
+    android:id="@+id/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1.5">
+
+
+
+        <TextView
+            android:tag="@+id/myCustomFont"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="19"
+            android:id="@+id/date"
+
+            android:textColor="#d4d2e0"
+            android:typeface="normal"
+            android:textSize="10sp" />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textSize="20dp"
+            android:id="@+id/location"
+            android:paddingBottom="4dp"
+            android:clickable="false"
+            android:typeface="serif"
+            android:textColor="#F0F5EF"
+            android:layout_marginTop="-10dp" />
+
+     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1.6"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.6"
+            android:text="@string/tempLabel"
+            android:inputType="number"
+            android:gravity="center"
+            android:id="@+id/tempLabel"
+            android:textColor="#340607"
+            android:background="@drawable/chalkone"
+
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:gravity="center"
+
+            android:text="@string/hourlytemp"
+            android:id="@+id/Hourlyscroll"
+
+            android:clickable="false"
+            android:typeface="serif"
+            android:textColor="#340607"
+            android:background="@drawable/chalkone"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.6"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="55dp"
+                android:gravity="center_horizontal"
+                android:id="@+id/currenttemp"
+                android:layout_weight="1"
+                android:textColor="#F0F5EF"
+                android:autoText="false"
+                android:typeface="sans"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/icon"
+                android:gravity="top"
+                android:paddingBottom="5dp"
+                android:layout_weight="1" />
+
+
+
+        </LinearLayout>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:id="@+id/hourly"
+            android:textColor="#ffffff"
+            android:padding="5dp"
+
+
+            android:fadeScrollbars="false"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+
+            android:textSize="15sp"
+
+            android:id="@+id/snarky"
+            android:layout_weight="2.6"
+            android:gravity="center"
+            android:paddingTop="3dp"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:paddingBottom="3dp"
+            android:textColor="#fefefe"
+            android:includeFontPadding="true"
+            android:background="@drawable/chalktwo" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/pants"
+            android:layout_weight="1"
+            android:baselineAlignBottom="false"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"/>
+
+
+
+    </LinearLayout>
+</LinearLayout>
