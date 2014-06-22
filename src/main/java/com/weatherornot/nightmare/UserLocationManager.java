@@ -24,9 +24,7 @@ public class UserLocationManager implements LocationListener {
         getWeatherDataTask = x;   // use getWeatherDataTask when onLocationChanged is called
         lm = (LocationManager) getWeatherDataTask.pantsWeatherDisplay.getSystemService(Context.LOCATION_SERVICE);
 
-
         try {
-            lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
             lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
 
 

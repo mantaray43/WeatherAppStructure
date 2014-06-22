@@ -59,9 +59,8 @@
             android:label="WeatherPants"
             android:parentActivityName="com.weatherornot.nightmare.DisplayWeatherActivity"
             android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="DisplayWeatherActivity" />
+
+
         </activity>
     </application>
 
