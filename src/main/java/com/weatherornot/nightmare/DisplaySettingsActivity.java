@@ -28,7 +28,6 @@ public class DisplaySettingsActivity extends Activity {
         AppRater.app_launched(this);
         Button doneSaveButton = (Button) findViewById(R.id.donebutton);
 
-
         doneSaveButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -112,9 +111,8 @@ public class DisplaySettingsActivity extends Activity {
         if(lp == true){
             Intent i = new Intent(getApplicationContext(),DisplayWeatherActivity.class);
             startActivity(i);
-            onDestroy();
 
-        }else if(lp){
+        }else if(lp == false){
             onResume();
         }
     }
