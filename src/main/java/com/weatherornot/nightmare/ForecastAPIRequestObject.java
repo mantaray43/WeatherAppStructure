@@ -3,7 +3,6 @@ package com.weatherornot.nightmare;
 import android.location.Location;
 
 
-
 public class ForecastAPIRequestObject {
 
 
@@ -38,11 +37,3 @@ public class ForecastAPIRequestObject {
     }
 
 }
-
-
-
-
-
-
-
-

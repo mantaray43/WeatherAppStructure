@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,13 +12,18 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
-
-
 
 
 public class RateMyAPPActivity extends Activity {
     static final String PREFERENCES = "temps";
+
+    String fontPathE = "fonts/playtime.ttf";
+    String fontPathF = "fonts/edo.ttf";
+    String fontPathG = "fonts/PENCILP.ttf";
+
+    Typeface font;
 
 
     @Override
@@ -46,9 +52,23 @@ public class RateMyAPPActivity extends Activity {
             }
 
         });
+
+        TextView rate = (TextView) findViewById(R.id.ratebutton);
+        font = Typeface.createFromAsset(getAssets(), fontPathF);
+        rate.setTypeface(font);
+
+        TextView boo = (TextView) findViewById(R.id.ratetext);
+        font = Typeface.createFromAsset(getAssets(), fontPathG);
+        boo.setTypeface(font);
+
+        TextView x = (TextView) findViewById(R.id.wewant);
+        font = Typeface.createFromAsset(getAssets(), fontPathF);
+        x.setTypeface(font);
+
+        TextView z = (TextView) findViewById(R.id.feebacktext);
+        font = Typeface.createFromAsset(getAssets(), fontPathE);
+        z.setTypeface(font);
     }
-
-
 
 
     private boolean MyStartActivity(Intent aIntent) {

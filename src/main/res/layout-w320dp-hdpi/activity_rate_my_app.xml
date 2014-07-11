@@ -4,69 +4,84 @@
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="5dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.weatherornot.nightmare.RateMyAPPActivity"
     android:background="@drawable/chalkboardbackground">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/blankratebutton"
-        android:id="@+id/ratebutton"/>
 
     <TextView
         android:text="@string/rate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/ratebutton"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="1dp"
-        android:textSize="15sp"
-        android:id="@+id/ratetext"/>
 
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="5dp"
+        android:textSize="23sp"
+        android:id="@+id/ratetext"
+        android:textColor="#ff42d9de" />
 
-
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="#ffe9e583"
-        android:id="@+id/horizontal_line"
-        android:layout_below="@+id/ratebutton"
-        android:layout_margin="15dp"/>
-
-
-
-    <ImageView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/feedbacknotepaper"
-        android:layout_below="@+id/horizontal_line"
-        android:scaleType="fitXY"
-        android:id="@+id/cutoffs"
-        android:paddingTop="1dp"
-        android:layout_centerHorizontal="true"/>
+        android:id="@+id/ratebutton"
+        android:layout_below="@+id/ratetext"
+        android:layout_centerHorizontal="true"
+        android:text="@string/ratebutton"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        android:textColor="#1f052f"
+        android:background="#ffdf3a2f"
+        android:padding="6dp" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:id="@+id/spacefeedback"
-        android:layout_below="@+id/cutoffs"/>
+        android:layout_height="40dp"
+        android:layout_below="@+id/ratebutton"
+        android:layout_marginTop="2dp"
+        android:id="@+id/space1" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spacefeedback"
-        android:layout_marginTop="3dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="15sp"
-        android:textColor="#ffeae7a7"
-        android:text="@string/blazing"
-        android:id="@+id/feedbacklink"
-        android:autoLink="email"
-       />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/space1"
+        android:orientation="vertical"
+        android:background="@drawable/feedbackcutoffs">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wewant"
+            android:textSize="18dp"
+            android:paddingLeft="8dp"
+            android:text="@string/want"
+            android:textColor="#ff8900"
+            android:gravity="left" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/feebacktext"
+            android:text="@string/feedbacktext"
+            android:textColor="#1f052f"
+            android:textSize="14dp"
+            android:layout_marginTop="5dp"
+            android:paddingRight="95dp"
+            android:paddingLeft="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:textSize="13sp"
+            android:textColorLink="#ffdf3a2f"
+            android:text="@string/blazing"
+            android:id="@+id/feedbacklink"
+            android:autoLink="email" />
+
+    </LinearLayout>
 
 
 </RelativeLayout>

@@ -7,7 +7,6 @@ import android.location.LocationManager;
 import android.os.Bundle;
 
 
-
 //  This class wraps all the code we will use to manage getting updates on the location
 
 public class UserLocationManager implements LocationListener {

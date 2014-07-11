@@ -1,16 +1,13 @@
 package com.weatherornot.nightmare;
 
 
-
 import android.app.Activity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,11 +15,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.ShareActionProvider;
 import android.widget.TextView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.ParseException;
@@ -76,7 +74,7 @@ public class DisplayWeatherActivity extends Activity {
         /* setting date from phone */
         Date now = new Date();
         now = Calendar.getInstance().getTime();
-        String nowAsString = new SimpleDateFormat("EEEE,  MMMM,  dd,  yyyy").format(now);
+        String nowAsString = new SimpleDateFormat("EEEE,  LLLLL  dd,  yyyy").format(now);
 
 
         TextView dateview = (TextView) findViewById(R.id.date);
@@ -185,7 +183,7 @@ public class DisplayWeatherActivity extends Activity {
     }
 
 
-//get snark
+    //get snark
     public void determineSnark(int currentTemp) throws ParseException {
 
         String range;
@@ -332,6 +330,3 @@ public class DisplayWeatherActivity extends Activity {
     }
 
 }
-
-
-

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/chalkboardbackground"
     android:baselineAligned="false"
-    android:id="@+id/background">
+    android:id="@+id/background"
+    android:weightSum="100">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="1.5">
-
+        android:layout_weight="30">
 
 
         <TextView
@@ -30,7 +29,6 @@
             android:textSize="10sp" />
 
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,14 +42,13 @@
             android:textColor="#F0F5EF"
             android:layout_marginTop="-10dp" />
 
-     </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:layout_weight="1.6"
-        >
+        android:layout_weight="32">
 
         <TextView
             android:layout_width="match_parent"
@@ -87,20 +84,19 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:layout_gravity="center"
-        android:layout_weight="1"
+        android:layout_weight="23"
         android:baselineAligned="false">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.6"
-            >
+            android:layout_weight="1.6">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="55dp"
+                android:textSize="45dp"
                 android:gravity="center_horizontal"
                 android:id="@+id/currenttemp"
                 android:layout_weight="1"
@@ -108,7 +104,7 @@
                 android:autoText="false"
                 android:typeface="sans"
                 android:paddingTop="5dp"
-                android:paddingBottom="5dp"/>
+                android:paddingBottom="5dp" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -119,8 +115,8 @@
                 android:layout_weight="1" />
 
 
-
         </LinearLayout>
+
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -139,17 +135,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="1"
-        >
+        android:layout_weight="15">
+
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="280dp"
 
-            android:textSize="12sp"
+            android:textSize="16sp"
 
             android:id="@+id/snarky"
             android:layout_weight="2.6"
-            android:gravity="top|center"
+            android:gravity="center"
             android:paddingTop="3dp"
             android:paddingRight="5dp"
             android:paddingLeft="5dp"
@@ -162,12 +158,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/pants"
-            android:scaleType="fitCenter"
             android:layout_weight="1"
             android:baselineAlignBottom="false"
-            android:paddingTop="1dp"
-            android:paddingBottom="7dp"/>
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/credit"
+            android:gravity="center_horizontal"
+            android:textSize="8dp" />
 
 
     </LinearLayout>

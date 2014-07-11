@@ -14,13 +14,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <supports-screens
-        android:requiresSmallestWidthDp="320"
-        android:resizeable="true"
-        android:normalScreens="true"
-        android:largeScreens="true"
-        android:xlargeScreens="true"
-        android:anyDensity="true"/>
+
     <application
         android:uiOptions="splitActionBarWhenNarrow"
         android:icon="@drawable/ic_launcher"
@@ -60,10 +54,11 @@
             android:parentActivityName="com.weatherornot.nightmare.DisplayWeatherActivity"
             android:screenOrientation="portrait">
 
-
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="DisplayWeatherActivity" />
         </activity>
-        <meta-data android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
+
     </application>
 
 </manifest>

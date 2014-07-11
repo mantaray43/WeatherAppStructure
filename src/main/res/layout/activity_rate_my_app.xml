@@ -9,71 +9,78 @@
     tools:context="com.weatherornot.nightmare.RateMyAPPActivity"
     android:background="@drawable/chalkboardbackground">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/blankratebutton"
-        android:id="@+id/ratebutton"/>
 
     <TextView
         android:text="@string/rate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/ratebutton"
+
         android:layout_marginLeft="18dp"
         android:layout_marginTop="5dp"
-        android:textSize="15sp"
-        android:id="@+id/ratetext"/>
+        android:textSize="30sp"
+        android:id="@+id/ratetext"
+        android:textColor="#ff42d9de" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratebutton"
+        android:layout_below="@+id/ratetext"
+        android:layout_centerHorizontal="true"
+        android:text="@string/ratebutton"
+        android:layout_marginTop="10dp"
+        android:textColor="#1f052f"
+        android:background="#ffdf3a2f"
+        android:padding="9dp" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:layout_below="@+id/ratebutton"
         android:layout_marginTop="2dp"
-        android:id="@+id/space1"
-        />
+        android:id="@+id/space1" />
 
 
-    <View
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="#ffe9e583"
-        android:id="@+id/horizontal_line"
+        android:layout_height="300dp"
         android:layout_below="@+id/space1"
-        android:layout_margin="10dp"/>
+        android:orientation="vertical"
+        android:background="@drawable/feedbackcutoffs">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wewant"
+            android:textSize="22dp"
+            android:paddingLeft="8dp"
+            android:text="@string/want"
+            android:textColor="#ff8900"
+            android:gravity="left" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/feebacktext"
+            android:text="@string/feedbacktext"
+            android:textColor="#1f052f"
+            android:textSize="19dp"
+            android:layout_marginTop="5dp"
+            android:paddingRight="95dp"
+            android:paddingLeft="18dp" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/feedbacknotepaper"
-        android:layout_below="@+id/horizontal_line"
-        android:scaleType="fitXY"
-        android:id="@+id/cutoffs"
-        android:paddingTop="25dp"
-        android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:textSize="15sp"
+            android:textColorLink="#ffdf3a2f"
+            android:text="@string/blazing"
+            android:id="@+id/feedbacklink"
+            android:autoLink="email" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="15dp"
-        android:id="@+id/spacefeedback"
-        android:layout_below="@+id/cutoffs"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spacefeedback"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="5dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="16sp"
-        android:textColor="#ff8900"
-        android:text="@string/blazing"
-        android:id="@+id/feedbacklink"
-        android:autoLink="email"
-       />
-
+    </LinearLayout>
 
 
 </RelativeLayout>

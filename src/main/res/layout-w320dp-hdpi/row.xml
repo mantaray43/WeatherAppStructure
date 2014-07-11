@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
-    android:textSize="9sp"
+    android:textSize="10sp"
     android:textStyle="italic"
     android:textColor="#d4d2e0"
 
@@ -16,4 +16,4 @@
     android:paddingStart="@dimen/activity_horizontal_margin"
     android:typeface="normal">
 
-    </TextView>
+</TextView>

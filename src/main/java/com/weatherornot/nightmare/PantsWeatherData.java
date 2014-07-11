@@ -2,7 +2,9 @@ package com.weatherornot.nightmare;
 
 import android.location.Location;
 
-
+/**
+ * Created by cheryl on 9/3/13.
+ */
 public class PantsWeatherData {
 
 
@@ -37,9 +39,13 @@ public class PantsWeatherData {
     public String icon;
 
 
+    public String getGiveDate() {
+        return giveDate;
+    }
 
-
-
+    public void setGiveDate(String giveDate) {
+        this.giveDate = giveDate;
+    }
 
     private String giveDate;
 
@@ -53,10 +59,14 @@ public class PantsWeatherData {
     }
 
 
+    public Double getMtime() {
+        return mtime;
+    }
 
 
-
-
+    public void setMtime(Double mtime) {
+        this.mtime = mtime;
+    }
 
     public Double getmCurrentTemp() {
         return mCurrentTemp;
@@ -74,8 +84,11 @@ public class PantsWeatherData {
         return mHourly;
     }
 
+    public void setmHourly(Double[] mHourly) {
+        this.mHourly = mHourly;
+    }
 
 
-
-
+    public void setMyCityName(String name) {
+    }
 }

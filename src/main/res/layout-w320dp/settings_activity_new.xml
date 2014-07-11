@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/settingbackground"
+    android:orientation="vertical"
+    android:background="@drawable/chalkboardbackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:background="@drawable/directions_yellow"
+        android:orientation="vertical"
+        android:id="@+id/directions">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enter"
+
+            android:text="@string/directions"
+            android:gravity="left"
+            android:paddingTop="5dp"
+            android:paddingLeft="20dp"
+            android:paddingBottom="8dp"
+            android:textSize="23sp"
+            android:textColor="#ff120631" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dang"
+
+            android:text="@string/dang"
+            android:gravity="fill_horizontal"
+            android:paddingTop="10sp"
+            android:paddingLeft="5dp"
+            android:textSize="13sp"
+            android:textColor="#ff120631" />
+
+
+    </LinearLayout>
+
+
+    <Space
+        android:id="@+id/space1"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/directions" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/space1"
+        android:id="@+id/hotline"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <TextView
+            android:id="@+id/hotLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hotLabel"
+            android:textSize="20sp"
+            android:textColor="#ffdf3a2f"
+            android:layout_weight="40"
+            android:gravity="right"
+            android:paddingRight="5dp"
+            android:layout_gravity="center"
+            android:includeFontPadding="true" />
+
+
+        <EditText
+            android:layout_width="40dp"
+
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:layout_gravity="bottom"
+            android:textSize="20sp"
+            android:id="@+id/hotNumber"
+            android:text=""
+            android:textColor="#ffdf3a2f"
+            android:layout_weight="20"
+            android:inputType="number"
+            android:maxLength="6"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="fill_vertical"
+            android:includeFontPadding="true"
+
+
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/degrees"
+            android:textSize="20sp"
+            android:textColor="#ffdf3a2f"
+            android:id="@+id/degrees"
+            android:layout_weight="40"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:paddingLeft="5dp"
+            android:includeFontPadding="true" />
+
+
+    </LinearLayout>
+
+
+    <Space
+        android:id="@+id/space2"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/hotline" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/space2"
+
+        android:id="@+id/coldline"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <TextView
+            android:id="@+id/coldLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/coldLabel"
+            android:textSize="20sp"
+            android:textColor="#ff42d9de"
+            android:layout_weight="38"
+            android:gravity="right"
+            android:layout_gravity="center"
+            android:paddingRight="5dp"
+            android:includeFontPadding="true" />
+
+
+        <EditText
+
+            android:layout_width="40dp"
+
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:layout_gravity="bottom"
+            android:textSize="20sp"
+            android:id="@+id/coldNumber"
+            android:text=""
+            android:textColor="#ff42d9de"
+            android:layout_weight="20"
+            android:inputType="number"
+            android:maxLength="6"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="fill_vertical"
+            android:includeFontPadding="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/degrees"
+            android:textSize="20sp"
+            android:textColor="#ff42d9de"
+            android:id="@+id/degrees1"
+            android:layout_weight="40"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:paddingLeft="5dp"
+            android:includeFontPadding="true" />
+    </LinearLayout>
+
+    <Space
+        android:id="@+id/space3"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/coldline" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/space3"
+
+        android:id="@+id/perfectline"
+        android:orientation="horizontal"
+        android:layout_weight="10">
+
+        <TextView
+            android:id="@+id/perfectLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/perfectLabel"
+            android:textSize="20sp"
+            android:textColor="#ffe0e063"
+            android:layout_weight="46"
+            android:gravity="right"
+            android:layout_gravity="center"
+            android:paddingRight="5dp"
+            android:includeFontPadding="true" />
+
+
+        <EditText
+            android:layout_width="40dp"
+
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:layout_gravity="bottom"
+            android:textSize="20sp"
+            android:id="@+id/perfectNumber"
+            android:text=""
+            android:textColor="#ffe0e063"
+            android:layout_weight="20"
+            android:inputType="number"
+            android:maxLength="6"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="fill_vertical"
+            android:includeFontPadding="true" />
+
+
+        <TextView
+            android:id="@+id/degrees2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/degrees"
+            android:textSize="20sp"
+            android:textColor="#ffe0e063"
+            android:paddingLeft="5dp"
+
+            android:layout_weight="35"
+
+            android:layout_gravity="bottom"
+            android:includeFontPadding="true"
+
+            />
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_below="@+id/perfectline"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:id="@+id/donebutton"
+        android:textColor="#1f052f"
+        android:text="@string/button"
+        android:background="#ffdf3a2f"
+        android:layout_marginTop="15dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/donebutton"
+        android:id="@+id/space4"
+        android:layout_weight="5" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="8dp"
+        android:text="@string/credit"
+        android:gravity="center_horizontal" />
+
+
+</RelativeLayout>
